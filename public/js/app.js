@@ -232,6 +232,13 @@ var MD5 = function (string) {
       this.notification1=[{}];
      
 
+
+     $scope.update = function(params)
+     {
+console.log("Update click");
+        console.log(params);
+     };
+
        $scope.login = function(user,pass)
       {
 	
