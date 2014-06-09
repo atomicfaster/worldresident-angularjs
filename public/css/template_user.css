@@ -43,33 +43,54 @@ a:active {
   border-bottom: 1px solid #79bd9a; }
   .head_content:last-child {
     margin-right: 0; }
-  @media screen and (min-width: 1024px) {
-    .head_content .box1 {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
-      height: 100%; }
-      .head_content .box1:last-child {
-        margin-right: 0; } }
-  @media screen and (min-width: 1024px) {
-    .head_content .box2 {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
-      height: 100%;
-      text-align: right;
-      padding-top: 1em; }
-      .head_content .box2:last-child {
-        margin-right: 0; } }
+  .head_content .box1 {
+    margin-left: 2em;
+    text-align: center; }
+    @media screen and (min-width: 1024px) {
+      .head_content .box1 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        height: 100%;
+        margin-left: 0em;
+        text-align: left; }
+        .head_content .box1:last-child {
+          margin-right: 0; } }
+    .head_content .box1 h1 {
+      font-size: 5em; }
+      @media screen and (min-width: 1024px) {
+        .head_content .box1 h1 {
+          font-size: 2em; } }
+  .head_content .box2 {
+    background-color: black;
+    text-align: center; }
+    @media screen and (min-width: 1024px) {
+      .head_content .box2 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        height: 100%;
+        text-align: right;
+        padding-top: 1em;
+        background-color: transparent; }
+        .head_content .box2:last-child {
+          margin-right: 0; } }
+    .head_content .box2 a {
+      font-size: 3em; }
+      @media screen and (min-width: 1024px) {
+        .head_content .box2 a {
+          font-size: 1em; } }
 
 .banner {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%;
-  margin: 1em; }
+  margin: 1em 0 0em 0;
+  width: 100%;
+  height: auto; }
   .banner:last-child {
     margin-right: 0; }
   .banner img {
