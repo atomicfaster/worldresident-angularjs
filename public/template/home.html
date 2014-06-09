@@ -1,0 +1,16 @@
+<div class="main_content">
+ 
+<div class="main_content_inner1">
+    <div id="wrapper" >
+   <p id="apartment_txt_head">Apartment search <span ng-bind="search"></span></p>
+      <div id="columns">
+      
+      <div class="pin" ng-repeat="nlist in lists.list | filter:search">
+			<img src={{nlist.images[8]}} />
+			<p>
+				{{nlist.title}}
+			</p>
+		</div><!--{{nlist.detail}}--></div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,306 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+p.register_pg {
+  font-size: 5em;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0 0 0 1em; }
+  @media screen and (min-width: 1024px) {
+    p.register_pg {
+      font-size: 3em; } }
+
+.chose_type {
+  display: inline-flex;
+  margin: 0 0 2em 3em;
+  width: 90%; }
+  .chose_type p {
+    font-size: 3em;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 0 1em; }
+    @media screen and (min-width: 1024px) {
+      .chose_type p {
+        font-size: 1em; } }
+  .chose_type select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 0em 0.8em 0em 0.4em;
+    border: 1px solid #79bd9a;
+    font-style: italic;
+    font-size: 2em;
+    font-style: italic;
+    padding: 0em 0.8em 0em 0.4em;
+    width: 80%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: ''; }
+    @media screen and (min-width: 1024px) {
+      .chose_type select {
+        font-size: 0.8em;
+        font-style: italic;
+        padding: 0em 0.8em 0em 0.4em;
+        width: 50%;
+        margin-left: 1em; } }
+
+#tableregister {
+  border-radius: 5px;
+  border: 1px dotted #79bd9a;
+  width: 100%;
+  margin: 0 0 0 0; }
+  @media screen and (min-width: 1024px) {
+    #tableregister {
+      width: 60%;
+      margin: 0 20% 0 20%; } }
+  #tableregister #bullet_left {
+    text-align: right; }
+  #tableregister td {
+    border-bottom: 1px dotted #79bd9a; }
+  #tableregister p {
+    margin: 0.5em 0em 0.5em 0.5em;
+    display: inline;
+    width: 1em;
+    margin: 0em;
+    font-size: 2.5em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister p {
+        font-size: 1em;
+        width: 1em;
+        margin: 0em;
+        display: inline; } }
+  #tableregister h6 {
+    font-size: 2em;
+    color: transparent(black, 0.7);
+    margin: 0.5em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister h6 {
+        font-size: 1em;
+        color: transparent(black, 0.7);
+        margin: 0.5em; } }
+  #tableregister input, #tableregister select {
+    border-radius: 4px;
+    border: 1px solid #79bd9a;
+    color: #000;
+    width: 80%;
+    height: 2.1em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister input, #tableregister select {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 50%;
+        height: 2em; } }
+  #tableregister textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #79bd9a;
+    color: #000;
+    width: 60%;
+    margin-top: 0.5em;
+    font-size: 2em;
+    font-style: italic;
+    padding: 0em 0.8em 0em 0.4em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister textarea {
+        font-size: 0.8em;
+        font-style: italic;
+        padding: 0em 0.8em 0em 0.4em; } }
+  #tableregister input[type=text], #tableregister select[type=text] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    font-size: 2em;
+    font-style: italic;
+    padding: 0em 0.8em 0em 0.4em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister input[type=text], #tableregister select[type=text] {
+        font-size: 0.8em;
+        font-style: italic;
+        padding: 0em 0.8em 0em 0.4em; } }
+  #tableregister input[type=radio], #tableregister select[type=radio] {
+    padding: 0em 0.8em 0em 0.4em;
+    font-size: .8em;
+    font-style: italic;
+    height: 5em;
+    width: 5em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister input[type=radio], #tableregister select[type=radio] {
+        height: 1em;
+        width: 1em; } }
+    #tableregister input[type=radio] label, #tableregister select[type=radio] label {
+      font-size: 3em; }
+      @media screen and (min-width: 1024px) {
+        #tableregister input[type=radio] label, #tableregister select[type=radio] label {
+          font-size: 1em; } }
+  #tableregister input[type=password], #tableregister select[type=password] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    font-size: 2em;
+    font-style: italic;
+    padding: 0em 0.8em 0em 0.4em;
+    font-style: italic;
+    height: 2.1em; }
+    @media screen and (min-width: 1024px) {
+      #tableregister input[type=password], #tableregister select[type=password] {
+        font-size: 0.8em;
+        font-style: italic;
+        padding: 0em 0.8em 0em 0.4em;
+        height: 2em; } }
+  #tableregister select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 0em 0.8em 0em 0.4em;
+    border: 1px solid #79bd9a;
+    font-style: italic;
+    font-size: 2em;
+    font-style: italic;
+    padding: 0em 0.8em 0em 0.4em;
+    width: 80%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: ''; }
+    @media screen and (min-width: 1024px) {
+      #tableregister select {
+        font-size: 0.8em;
+        font-style: italic;
+        padding: 0em 0.8em 0em 0.4em;
+        width: 50%; } }
+  #tableregister select::-ms-expand {
+    display: none; }
+  #tableregister select::-moz-expand {
+    display: none; }
+  #tableregister select::-webkit-expand {
+    display: none; }
+  #tableregister input[type=submit], #tableregister select[type=submit] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 0em 0.8em 0em 0.4em;
+    font-style: italic;
+    width: 20em;
+    font-size: 1em;
+    height: 5em;
+    border-width: 1px;
+    border-color: #79bd9a;
+    margin: 1em 0 1em 0; }
+    @media screen and (min-width: 1024px) {
+      #tableregister input[type=submit], #tableregister select[type=submit] {
+        height: 2em;
+        margin: 0.5em 0 0 0;
+        font-size: .8em; } }
+    #tableregister input[type=submit]:hover, #tableregister select[type=submit]:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #FFF; }
+  #tableregister input[type=reset], #tableregister select[type=reset] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 0em 0.8em 0em 0.4em;
+    font-style: italic;
+    width: 20em;
+    margin: 1em 0 1em 0;
+    font-size: 1em;
+    height: 5em;
+    border-width: 1px;
+    border-color: #79bd9a; }
+    @media screen and (min-width: 1024px) {
+      #tableregister input[type=reset], #tableregister select[type=reset] {
+        height: 2em;
+        font-size: .8em;
+        margin: 0.5em 0 0.5em 0; } }
+    #tableregister input[type=reset]:hover, #tableregister select[type=reset]:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #FFF; }
+
+#confacebook {
+  margin: 0.5em; }
+
+#regiscommon {
+  width: 60%;
+  height: auto;
+  margin: 1em 20% 0em 20%;
+  border: 1px solid #79bd9a;
+  border-radius: 5px;
+  background-color: rgba(168, 219, 168, 0.2);
+  text-align: center; }
+  #regiscommon h1 {
+    margin: 0.5em;
+    font-size: 4em; }
+    @media screen and (min-width: 1024px) {
+      #regiscommon h1 {
+        font-size: 2em; } }
+
+#regisnone {
+  width: 60%;
+  height: auto;
+  margin: 1em 20% 0em 20%;
+  border: 1px solid #79bd9a;
+  border-radius: 5px;
+  background-color: rgba(168, 219, 168, 0.2);
+  text-align: center; }
+  #regisnone h1 {
+    margin: 0.5em;
+    font-size: 4em; }
+    @media screen and (min-width: 1024px) {
+      #regisnone h1 {
+        font-size: 2em; } }
+
+#regiscoop {
+  width: 60%;
+  height: auto;
+  margin: 1em 20% 0em 20%;
+  border: 1px solid #79bd9a;
+  border-radius: 5px;
+  background-color: rgba(168, 219, 168, 0.2);
+  text-align: center; }
+  #regiscoop h1 {
+    margin: 0.5em;
+    font-size: 4em; }
+    @media screen and (min-width: 1024px) {
+      #regiscoop h1 {
+        font-size: 2em; } }
+
+#plus, #minus {
+  width: 4em;
+  height: auto; }
+  @media screen and (min-width: 1024px) {
+    #plus, #minus {
+      width: 1em;
+      height: auto; } }
+  #plus img, #minus img {
+    width: 4em;
+    height: auto;
+    margin: 0.5em; }
+    @media screen and (min-width: 1024px) {
+      #plus img, #minus img {
+        width: 1em;
+        height: auto; } }
+    #plus img:hover, #minus img:hover {
+      opacity: 0.4; }
+
+.css-form input.ng-invalid.ng-dirty, .css-form #tableregister select.ng-invalid.ng-dirty, #tableregister .css-form select.ng-invalid.ng-dirty {
+  background-color: #FA787E; }
+
+.css-form input.ng-valid.ng-dirty, .css-form #tableregister select.ng-valid.ng-dirty, #tableregister .css-form select.ng-valid.ng-dirty {
+  background-color: #78FA89; }

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="ngRouteExample">
+<head>
+<link rel="stylesheet" type="text/css" href="css/aprt_manager.css"/>
+<link rel="stylesheet" type="text/css" href="css/first_step.css"/>
+<link rel="stylesheet" type="text/css" href="css/firststep.css"/>
+<link rel="stylesheet" type="text/css" href="th_sarabun_new/style.css">
+<link rel="stylesheet" type="text/css" href="css/customers.css"/>
+ <script src="/js/lib/angular/angular.js"></script>
+  <script src="/js/lib/angular/angular-route.js"></script>
+  <script src="/js/lib/angular/angular-animate.js"></script>
+  <script src="/js/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/aprt_list.css">
+  <link rel="stylesheet" type="text/css" href="css/room_list_manage.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wRd.net Manage Page</title>
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  var tid = setInterval( function () {
+    if ( document.readyState !== 'complete' ) return;
+    else
+    {
+       if(window.location.pathname!="/manage")
+    window.location.pathname="/manage";
+    clearInterval( tid );       
+   
+}
+}, 100 );
+  
+  </script>
+</head>
+
+<body ng-controller="listcontroller as lists">
+<!--outer-container-------------------------------------->
+<div class="outer-container">
+  <div class="layout-left-top">
+    <div class="logo_top"><img src="image/icon/House 512.png" /></div>
+    <div class="logo_content">
+      <li>Apartment Name</li>
+      <li>Login by : users</li>
+      <li>Date : 30/05/57</li>
+      <li>Home page</li>
+    </div>
+  </div>
+  <div class="layout-right-top">
+  <p class="notification_head">Notification</p>
+    <div class="notification_left">
+    <ul>
+    <p class="content_notification">
+Notification 1
+    </p>
+      <p class="content_notification">
+Notification 2
+    </p>
+      <p class="content_notification">
+Notification 3
+    </p>
+    </ul></div>
+    <div class="notification_right"><p class="content_notification">
+    <ul>
+    <p class="content_notification">
+Notification 1
+    </p>
+      <p class="content_notification">
+Notification 2
+    </p>
+      <p class="content_notification">
+Notification 3
+    </p>
+    </ul>
+    </p></div>
+    <div></div>
+  </div>
+  <div class="layout-left-bot">
+<p class="main_menu_head">Menu</p>
+    <a class="main_menu_left" href="/roomsmg">Room</a>
+    <a class="main_menu_left" href="/customers">Customer</a>
+   <a class="main_menu_left" href="/book_infomation">Booking</a>
+    <a class="main_menu_left" href="/charter_information">Charter</a>
+    <a class="main_menu_left" href="/water_information">Water meter</a>
+    <a class="main_menu_left" href="/energy_information">Energy meter</a>
+    <a class="main_menu_left" href="/phone_information">Telephone</a>
+    <a class="main_menu_left" href="/invoice_information">Invoice</a>
+    <a class="main_menu_left" href="/receipt_information">Receipt</a>
+    <a class="main_menu_left" href="/common_receipt_export">Common Receipt</a>
+    <a class="main_menu_left" href="/check_out_report">Check out</a>
+    <a class="main_menu_left" href="/report_income">Report</a>
+    <a class="main_menu_left" href="/sms_send">SMS</a>
+    <a class="main_menu_left" href="/calendar">Calendar</a>
+    <a class="main_menu_left" href="/rooms">Edit Profile</a>
+  </div> 
+  <div class="layout-right-bot">
+  
+    <div ng-view></div>
+ 
+  </div>
+</div>
+
+</body>
+</html>

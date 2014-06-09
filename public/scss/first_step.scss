@@ -1,0 +1,80 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+$default-line:#79BD9A;
+$large-screen:1024px;
+$main_font:THSarabunNew;
+$default-font-color:transparentize(#000,0.5);
+$link-color:#3B8686;
+//---------------------------------------------------------------------------------------------------------
+ body{
+  
+  font-family:$main_font;
+ }
+ a:link {color: $link-color;
+  text-decoration:none;}      
+a:visited {color: $link-color;
+  text-decoration:none;}  
+a:hover {color: $link-color;
+  text-decoration:none;}  
+a:active {color: $link-color;
+  text-decoration:none;}
+ .outer_container{
+    @include outer-container;
+
+  }
+
+  
+  .header_box_content{
+    @include media($large-screen){
+      text-align: left;
+      padding-left: 30px;
+    }
+    text-align: center;
+        h1.first{
+                color:#3B8686;
+                @include media($large-screen){
+                font-size: 2em;
+                }
+                font-size: 4em;
+                display: inline;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                }
+
+                h1.mid{
+                  @extend h1.first;
+                  color:#79BD9A;
+                }
+                h1.end{
+                  @extend h1.first;
+                  color:#A8D8A8;
+                }
+
+              }
+
+
+      .body_box_content{
+          border-top: 1px solid transparentize(#000,0.8);
+          border-left: 1px solid transparentize(#000,0.8);
+          border-top-left-radius: 2em 2em;
+          @include span-columns(12);
+          min-height: 768px;
+      }
+
+      .for_ng{
+        width: 90%;
+        margin:2.5em 5% 2.5em 5%; 
+        height: auto;
+        
+         h2{
+            @include media($large-screen){
+                font-size: 1.7em;
+
+                }
+                font-size: 3em;
+                color: $default-font-color;
+              
+          }
+      }
+//----------------------------------------------------------------------------------------------------------

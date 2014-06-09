@@ -1,0 +1,384 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+$default-line:#79BD9A;
+$large-screen:1024px;
+//---------------------------------------------------------------------------------------------------------
+
+p.register_pg{
+        @include media($large-screen) {
+        font-size: 3em;
+        
+        }
+        font-size: 5em;
+        color: transparentize(#000,0.3);
+        margin: 0 0 0 1em;
+}
+
+
+.chose_type{
+display:inline-flex;
+margin: 0 0 2em 3em;
+width: 90%;
+
+    p{  
+        @include media($large-screen) {
+        font-size: 1em;
+        
+        }
+        font-size: 3em;
+        color: transparentize(#000,0.3);
+        margin: 0 0 0 1em;
+
+    }
+
+    select{
+              @include appearance(none);
+              padding: 0em 0.8em 0em 0.4em;
+              border: 1px solid $default-line;
+              font-style: italic;
+              @include media($large-screen) {
+                  font-size: 0.8em;
+                  font-style: italic;
+                  padding: 0em 0.8em 0em 0.4em;
+                  width: 50%;
+                  margin-left: 1em;
+                }
+              font-size: 2em;
+              font-style: italic;
+                padding: 0em 0.8em 0em 0.4em;
+              width: 80%;
+              -moz-appearance: none;
+              -webkit-appearance:none;
+              -ms-appearance:none;
+                text-indent: 0.01px;
+                text-overflow: '';
+
+
+
+            }
+}
+//---------------------------------------------------------------------------------------------------------
+
+#tableregister{
+        border-radius:5px;
+        border:1px dotted $default-line;
+        @include media($large-screen) {
+        width: 60%;
+        margin: 0 20% 0 20%;}
+			width: 100%;
+        margin: 0 0 0 0;
+          #bullet_left{
+                text-align: right;
+
+
+            }
+
+        td{
+          border-bottom: 1px dotted $default-line;
+
+        }
+        p{
+          margin: 0.5em 0em 0.5em 0.5em;
+    @include media($large-screen) {
+          font-size: 1em;
+          width: 1em;
+          margin: 0em;
+          display: inline;
+          }
+          display: inline;
+          width: 1em;
+          margin: 0em;
+          font-size: 2.5em;
+        }
+        h6{
+        	@include media($large-screen) {
+        	font-size: 1em;
+        	color: transparent(#000,0.7);
+        	margin: 0.5em;
+        		}
+        	font-size: 2em;
+        	color: transparent(#000,0.7);
+        	margin: 0.5em;
+
+        }
+        
+
+        	input {
+              border-radius: 4px;
+              border: 1px solid $default-line;
+              color: #000;
+        		@include media($large-screen) {
+              @include box-sizing(border-box);
+              
+              width: 50%;
+              height: 2em;
+          		}
+              width: 80%;
+              height: 2.1em;
+            }
+            textarea{
+
+            	@include box-sizing(border-box);
+              //background-color:#FFF;
+              border-radius: 4px;
+              border: 1px solid $default-line;
+              color: #000;
+              width: 60%;
+              margin-top: 0.5em;
+              @include media($large-screen) {
+                  font-size: 0.8em;
+                  font-style: italic;
+                  padding: 0em 0.8em 0em 0.4em;
+                }
+              font-size: 2em;
+              font-style: italic;
+                padding: 0em 0.8em 0em 0.4em;
+            }
+            input[type=text] {
+              @include appearance(none);
+              
+                  @include media($large-screen) {
+                  font-size: 0.8em;
+                  font-style: italic;
+                  padding: 0em 0.8em 0em 0.4em;
+                }
+              font-size: 2em;
+              font-style: italic;
+                padding: 0em 0.8em 0em 0.4em;
+
+
+            }
+            input[type=radio] {
+              padding: 0em 0.8em 0em 0.4em;
+              font-size: .8em;
+              font-style: italic;
+              @include media($large-screen) {
+                    height: 1em;
+                    width: 1em;
+                    }
+              height: 5em;
+              width: 5em;
+
+              label{
+                @include media($large-screen) {
+                    font-size: 1em;
+                    }
+                font-size: 3em;
+              }
+              
+            }
+            input[type=password] {
+              @include appearance(none);
+              @include media($large-screen) {
+                  font-size: 0.8em;
+                  font-style: italic;
+                  padding: 0em 0.8em 0em 0.4em;
+                  height: 2em;
+                }
+              font-size: 2em;
+              font-style: italic;
+                padding: 0em 0.8em 0em 0.4em;
+              font-style: italic;
+              height: 2.1em;   
+            }
+            select{
+              @include appearance(none);
+              @extend input;
+              padding: 0em 0.8em 0em 0.4em;
+              border: 1px solid $default-line;
+              font-style: italic;
+              @include media($large-screen) {
+                  font-size: 0.8em;
+                  font-style: italic;
+                  padding: 0em 0.8em 0em 0.4em;
+                  width: 50%;
+
+                }
+              font-size: 2em;
+              font-style: italic;
+                padding: 0em 0.8em 0em 0.4em;
+              width: 80%;
+              -moz-appearance: none;
+              -webkit-appearance:none;
+              -ms-appearance:none;
+                text-indent: 0.01px;
+                text-overflow: '';
+
+
+
+            }
+                select::-ms-expand {
+                display: none;
+                }
+                select::-moz-expand {
+                display: none;
+                }
+                select::-webkit-expand {
+                display: none;
+                }
+                input[type=submit] {
+              @include appearance(none);
+              padding: 0em 0.8em 0em 0.4em;
+              
+              font-style: italic;
+              width: 20em;
+              @include media($large-screen) {
+                    height: 2em;
+                    margin: 0.5em 0 0 0;
+                    font-size: .8em;
+                    }
+                    font-size: 1em;
+              height: 5em;
+              border-width:1px;
+              border-color:$default-line;
+              margin: 1em 0 1em 0;
+                  &:hover{
+                    background-color:transparentize(#000,0.8);
+                    color:#FFF;
+                  }
+              }
+              input[type=reset] {
+              @include appearance(none);
+              padding: 0em 0.8em 0em 0.4em;
+              
+              font-style: italic;
+              width: 20em;
+              @include media($large-screen) {
+                    height: 2em;
+                    font-size: .8em;
+                    margin: 0.5em 0 0.5em 0;
+                    }
+                    margin: 1em 0 1em 0;
+                    font-size: 1em;
+
+                    
+
+              height: 5em;
+              border-width:1px;
+              border-color:$default-line;
+              
+              &:hover{
+                    background-color:transparentize(#000,0.8);
+                    color:#FFF;
+                  }
+              }
+
+      }
+      #confacebook{
+
+        margin: 0.5em;
+            
+      }
+      #commonuser{
+
+      }
+      #apartmentowner_nonecop{
+        
+      }
+      #apartmentowner_cop{
+        
+      }
+      #regiscommon{
+        width: 60%;
+        height: auto;
+        margin: 1em 20% 0em 20%;
+        border:1px solid $default-line;
+        border-radius:5px;
+        background-color: transparentize( #A8DBA8 , 0.8);
+        text-align: center;
+
+          h1{ 
+            margin: 0.5em;
+            @include media($large-screen) {
+                 
+            font-size: 2em;
+              }
+
+            
+            font-size: 4em;
+          }
+        }
+        #regisnone{
+        width: 60%;
+        height: auto;
+        margin: 1em 20% 0em 20%;
+        border:1px solid $default-line;
+        border-radius:5px;
+        background-color: transparentize( #A8DBA8 , 0.8);
+        text-align: center;
+
+          h1{ 
+            margin: 0.5em;
+            @include media($large-screen) {
+                 
+            font-size: 2em;
+              }
+
+            
+            font-size: 4em;
+          }
+        }
+        #regiscoop{
+        width: 60%;
+        height: auto;
+        margin: 1em 20% 0em 20%;
+        border:1px solid $default-line;
+        border-radius:5px;
+        background-color: transparentize( #A8DBA8 , 0.8);
+        text-align: center;
+
+          h1{ 
+            margin: 0.5em;
+            @include media($large-screen) {
+                 
+            font-size: 2em;
+              }
+
+            
+            font-size: 4em;
+          }
+        }
+
+
+
+#plus{
+//display:inline;
+@include media($large-screen) {
+      width: 1em;
+      height: auto;
+    }
+    width: 4em;
+  height: auto;
+
+ img {
+      @include media($large-screen) {
+      width: 1em;
+      height: auto;
+    }
+  width: 4em;
+  height: auto;
+  margin: 0.5em;
+
+  &:hover{
+    opacity:0.4;
+  }
+
+ }
+
+}
+#minus{
+  @extend #plus;
+}
+ 
+
+.css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+  }
+
+  .css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+  }
+        
+//----------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------

@@ -1,0 +1,41 @@
+ <script type="text/javascript">
+    
+  var tid = setInterval( function () {
+    if ( document.readyState !== 'complete' ) return;
+    else
+    {
+       if(window.location.pathname!="/manage")
+    window.location.pathname="/manage";
+    clearInterval( tid );       
+   
+}
+}, 100 );
+  
+  </script>
+<div class="main_content">
+<!--div ng-include="rooms_head_include.html"></div-->
+ <div class="main_content_head"><a href="/roomsmg">View room</a> | <a href="/add_rooms">Add room</a></div>
+<div class="main_content_inner1">
+    
+    
+   <p id="apartment_txt_head">Rooms search <input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""><br />
+      <input type="checkbox" name="ch_ava" ng-model="search" id="ch_ava" ng-true-value="yes" ng-false-value=""/>
+     <label for="ch_ava">Available</label>
+     <input type="checkbox" ng-model="search"  name="ch_unava" ng-true-value="no" ng-false-value="" id="ch_unava" />
+     <label for="ch_unava">Unavailable</label>
+   </p>
+    
+      
+    <div class="pin_rooms" ng-repeat="nlist in lists.room | filter:search">
+			<img src="image/icon/3.png" />
+			<p>
+				Room : {{nlist.roomno}}<br />
+                
+	  </p>
+		</div>
+
+       
+  </div>
+
+</div>
+  

@@ -1,0 +1,462 @@
+ <script type="text/javascript">   
+  var tid = setInterval( function () {
+    if ( document.readyState !== 'complete' ) return;
+    else
+    {
+       if(window.location.pathname!="/homes")
+    window.location.pathname="/homes";
+    clearInterval( tid );       
+   
+}
+}, 100 );
+  
+  </script><div class="main_content">
+
+<div class="main_content"> 
+<p class="register_pg">Register</p>
+<div class="chose_type">
+<p>Please chose type of user</p>
+<select ng-model="myDropDown" ng-init="myDropDown='zero'">
+			<option value="zero">Chose</option>
+          <option value="one">Standard User</option>
+          <option value="two">Register Apartment Owner(None-Corporation)</option>
+          <option value="three">Register Apartment Owner(Corporation)</option>
+    </select>
+    </div>           
+    <div ng-show="myDropDown=='zero'" style="text-align:center;color:red;"></div>         
+<!--Box1------------------------------------------>
+                         <div id="box1" ng-show="myDropDown=='one'">
+       <form novalidate class="css-form"> <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+          <tr>
+            <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกทั่วไป</h6></td>
+          </tr>
+          <tr>
+          <tr>
+            <td width="30%" align="right"></td>
+            <td width="70%"><div id="confacebook"><img src="image/icon/FBloginbutton.jpg" width="40%"></div></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Username-Password
+              <h6></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Username :
+              <h6></td>
+            <td><input type="text" ng-model="std_user.username" required />
+              <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Password :
+              <h6></td>
+            <td><input type="password" name="txt_pass" class="txt_pass"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              RePassword :
+              <h6></td>
+            <td><input type="password" name="txt_repass" class="txt_repass"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Personal information
+              <h6></td>
+          </tr>
+          
+            <td align="right"><h6>
+              Name :
+              <h6></td>
+            <td width="70%"><input type="text" name="txt_name" class="txt_name"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Last Name :
+              <h6></td>
+            <td><label for="txt_lastname"></label>
+              <input type="text" name="txt_lastname" class="txt_lastname"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              E-mail :
+              <h6></td>
+            <td><label for="txt_email"></label>
+              <input type="text" name="txt_email" class="txt_email"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Address :
+              <h6></td>
+            <td><label for="txt_address"></label>
+              <textarea name="txt_address" rows="4" class="txt_address"></textarea></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Post Code :
+              <h6></td>
+            <td><input type="text" name="txt_zipcode" id="txt_zipcode1" list="htmlListTags"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Amphures :
+              <h6></td>
+            <td><input type="text" name="txt_amphures" class="txt_amphures" style="border-color:red;" disabled>
+              <p> Edit : </p>
+              <select name="sel_amphures_plus" class="sel_amphures_plus" style="width:20%; margin-left:0.5em;">
+                <option>...</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              District :
+              <h6></td>
+            <td><input type="text" name="txt_district" class="txt_district" style="border-color:red;" disabled>
+              <p> Edit : </p>
+              <select name="sel_amphures_plus" class="sel_District_plus" style="width:20%;">
+                <option>...</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Provinces :
+              <h6></td>
+            <td><input type="text" name="txt_provinces" class="txt_provinces" style="border-color:red;" disabled></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Tel :
+              <h6></td>
+            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><label for="txt_tel"></label>
+              <input name="txt_tel" type="text" class="txt_tel" maxlength="9" style="display:block;">
+              <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_tel"></div></td></tr></table></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Mobile :
+              <h6></td>
+            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input name="txt_tel_mobile" type="text" class="txt_tel_mobile" maxlength="10" style="display:block;">
+              <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_mobile"></div></td></tr></table></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Fax :
+              <h6></td>
+            <td valign="middle"><input type="text" name="txt_fax" class="txt_fax"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" name="btn_submit" class="btn_submit" value="Submit">
+              <input type="reset" name="btn_cancle" class="btn_cancle" value="Cancle"></td>
+          </tr>
+        </table></form>
+      </div>
+</div>
+<!--Box2------------------------------------------>
+ <div id="box2" ng-show="myDropDown=='two'">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+          <tr>
+            <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกเจ้าของอพาร์ทเม้นนิติบุคคล</h6></td>
+          </tr>
+          <tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Username-Password
+              <h6></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Username :
+              <h6></td>
+            <td><input type="text" name="txt_user" class="txt_user">
+              <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Password :
+              <h6></td>
+            <td><input type="password" name="txt_pass" class="txt_pass"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              RePassword :
+              <h6></td>
+            <td><input type="password" name="txt_repass" class="txt_repass"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Personal information
+              <h6></td>
+          </tr>
+          
+            <td align="right"><h6>
+              Name :
+              <h6></td>
+            <td width="70%"><input type="text" name="txt_name" class="txt_name"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Last Name :
+              <h6></td>
+            <td><label for="txt_lastname"></label>
+              <input type="text" name="txt_lastname" class="txt_lastname"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              E-mail :
+              <h6></td>
+            <td><label for="txt_email"></label>
+              <input type="text" name="txt_email" class="txt_email"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Address :
+              <h6></td>
+            <td><label for="txt_address"></label>
+              <textarea name="txt_address" rows="4" class="txt_address"></textarea></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Post Code :
+              <h6></td>
+            <td><input type="text" name="txt_zipcode" id="txt_zipcode2" list="htmlListTags"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Amphures :
+              <h6></td>
+            <td><input type="text" name="txt_amphures" class="txt_amphures" style="border-color:red;" disabled>
+              <p> Edit : </p>
+              <select name="sel_amphures_plus" class="sel_amphures_plus" style="width:20%; margin-left:0.5em;">
+                <option>...</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              District :
+              <h6></td>
+            <td><input type="text" name="txt_district" class="txt_district" style="border-color:red;" disabled>
+              <p> Edit : </p>
+              <select name="sel_amphures_plus" class="sel_District_plus" style="width:20%;">
+                <option>...</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Provinces :
+              <h6></td>
+            <td><input type="text" name="txt_provinces" class="txt_provinces" style="border-color:red;" disabled></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Tel :
+              <h6></td>
+            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><label for="txt_tel"></label>
+              <input name="txt_tel" type="text" class="txt_tel" maxlength="9" style="display:block;">
+              <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_tel"></div></td></tr></table></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Mobile :
+              <h6></td>
+            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input name="txt_tel_mobile" type="text" class="txt_tel_mobile" maxlength="10" style="display:block;">
+              <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_mobile"></div></td></tr></table></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Fax :
+              <h6></td>
+            <td valign="middle"><input type="text" name="txt_fax" class="txt_fax"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Company information
+              <h6></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" align="right"><h6>
+              Type :
+              <h6></td>
+            <td height="2"><input type="radio" name="radio" class="rdo_store" value="rdo_store" onClick="radiocheck(this.value)">
+              <p>Store</p>
+              <input type="radio" name="radio" class="rdo_company" value="rdo_company" onClick="radiocheck(this.value)">
+              <p>Company</p>
+              <input type="radio" name="radio" class="rdo_limitedpartnership" value="rdo_limitedpartnership" onClick="radiocheck(this.value)">
+              <p>limited partnership</p>
+              <br>
+              <input type="radio" name="radio" class="rdo_registeredpartnership" value="rdo_registeredpartnership" onClick="radiocheck(this.value)">
+              <p>Registered partnership</p></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" align="right" ><h6>
+              Registration <br>
+              number :
+              <h6></td>
+            <td height="2" ><input name="txt_regis_no" type="text" class="txt_regis_no" maxlength="13"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" align="right" ><h6>
+              Registered Capital :
+              <h6></td>
+            <td height="2" ><input type="text" name="txt_capital" class="txt_registered_capital"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" name="btn_submit" class="btn_submit" value="Submit">
+              <input type="reset" name="btn_cancle" class="btn_cancle" value="Cancle"></td>
+          </tr>
+        </table>
+      </div>
+<!--Box3------------------------------------------>
+ <div id="box3" ng-show="myDropDown=='three'">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+          <tr>
+            <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกเจ้าของอพาร์ทเม้น</h6></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Username-Password
+              <h6></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Username :
+              <h6></td>
+            <td><input type="text" name="txt_user" class="txt_user">
+              <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Password :
+              <h6></td>
+            <td><input type="password" name="txt_pass" class="txt_pass"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              RePassword :
+              <h6></td>
+            <td><input type="password" name="txt_repass" class="txt_repass"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Personal information
+              <h6></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Name :
+              <h6></td>
+            <td width="70%"><input type="text" name="txt_name" class="txt_name"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Last Name :
+              <h6></td>
+            <td><label for="txt_lastname"></label>
+              <input type="text" name="txt_lastname" class="txt_lastname"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              E-mail :
+              <h6></td>
+            <td><label for="txt_email"></label>
+              <input type="text" name="txt_email" class="txt_email"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Address :
+              <h6></td>
+            <td><label for="txt_address"></label>
+              <textarea name="txt_address" rows="4" class="txt_address"></textarea></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Post Code :
+              <h6></td>
+            <td><input type="text" name="txt_zipcode" id="txt_zipcode3" list="htmlListTags"></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Amphures :
+              <h6></td>
+            <td><input type="text" name="txt_amphures" class="txt_amphures" style="border-color:red;" disabled>
+              <p> Edit : </p>
+              <select name="sel_amphures_plus" class="sel_amphures_plus" style="width:20%; margin-left:0.5em;">
+                <option>...</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              District :
+              <h6></td>
+            <td><input type="text" name="txt_district" class="txt_district" style="border-color:red;" disabled>
+              <p> Edit : </p>
+              <select name="sel_amphures_plus" class="sel_District_plus" style="width:20%;">
+                <option>...</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Provinces :
+              <h6></td>
+            <td><input type="text" name="txt_provinces" class="txt_provinces" style="border-color:red;" disabled></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Tel :
+              <h6></td>
+            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><input name="txt_tel" type="text" class="txt_tel" maxlength="9" style="display:block;">
+              <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_tel"></div></td></tr></table></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Mobile :
+              <h6></td>
+            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input name="txt_tel_mobile" type="text" class="txt_tel_mobile" maxlength="10" style="display:block;">
+              <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_mobile"></div></td></tr></table></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Fax :
+              <h6></td>
+            <td valign="middle"><input type="text" name="txt_fax" class="txt_fax"></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Company Infomation
+              <h6></td>
+          <tr>
+            <td align="right"><h6>
+              Name :
+              <h6></td>
+            <td valign="middle"><input name="txt_company_name" type="text" class="txt_company_name" maxlength="100"></td>
+          </tr>
+            </tr>
+          
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" name="btn_submit" class="btn_submit" value="Submit">
+              <input type="reset" name="btn_cancle" class="btn_cancle" value="Cancle"></td>
+          </tr>
+        </table>
+      </div></div>

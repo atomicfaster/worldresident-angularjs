@@ -1,0 +1,294 @@
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/1* --ignore-errors root@122.155.191.231:/var/www/avatar/img/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/2* --ignore-errors root@122.155.191.231:/var/www/avatar/img/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/3* --ignore-errors root@122.155.191.231:/var/www/avatar/img/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/4* --ignore-errors root@122.155.191.231:/var/www/avatar/img/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/5* --ignore-errors root@122.155.191.231:/var/www/avatar/img/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/6* --ignore-errors root@122.155.191.231:/var/www/avatar/img/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/7* --ignore-errors root@122.155.191.231:/var/www/avatar/img/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/8* --ignore-errors root@122.155.191.231:/var/www/avatar/img/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/img/9* --ignore-errors root@122.155.191.231:/var/www/avatar/img/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/boy/* --ignore-errors root@122.155.191.231:/var/www/avatar/boy
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/avatar/girl/* --ignore-errors root@122.155.191.231:/var/www/avatar/girl
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/bestsellbook/images/* --ignore-errors root@122.155.191.231:/var/www/bestsellbook/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/book/pic/* --ignore-errors root@122.155.191.231:/var/www/book/pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/book/pic_thumb/* --ignore-errors root@122.155.191.231:/var/www/book/pic_thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/clip/images/* --ignore-errors root@122.155.191.231:/var/www/clip/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/emo/emotion/* --ignore-errors root@122.155.191.231:/var/www/emo/emotion
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/emo/images/* --ignore-errors root@122.155.191.231:/var/www/emo/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/glitter/frames/* --ignore-errors root@122.155.191.231:/var/www/glitter/frames
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/glitter/images/* --ignore-errors root@122.155.191.231:/var/www/glitter/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/glitter/pic/* --ignore-errors root@122.155.191.231:/var/www/glitter/pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/glitter/thumb/* --ignore-errors root@122.155.191.231:/var/www/glitter/thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/images/* --ignore-errors root@122.155.191.231:/var/www/image
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/img/* --ignore-errors root@122.155.191.231:/var/www/img
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/10* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_0
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/12* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/13* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/14* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/15* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/16* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/17* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/18* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/19* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/11* --ignore-errors root@122.155.191.231:/var/www/member/logo/1_1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/member/logo/ --exclude='1*' --ignore-errors root@122.155.191.231:/var/www/member/logo/other
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/images/* --ignore-errors root@122.155.191.231:/var/www/blog/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/icon/* --ignore-errors root@122.155.191.231:/var/www/blog/icon
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/map/* --ignore-errors root@122.155.191.231:/var/www/blog/map
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/pic/* --ignore-errors root@122.155.191.231:/var/www/blog/pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/product_pic/* --ignore-errors root@122.155.191.231:/var/www/blog/product_pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/product_thumb/* --ignore-errors root@122.155.191.231:/var/www/blog/product_thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/blog/thumb/* --ignore-errors root@122.155.191.231:/var/www/blog/thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ckeditor/images/* --ignore-errors root@122.155.191.231:/var/www/ckeditor/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/document/img/* --ignore-errors root@122.155.191.231:/var/www/document/img
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/1* --ignore-errors root@122.155.191.231:/var/www/ecard/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/2* --ignore-errors root@122.155.191.231:/var/www/ecard/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/3* --ignore-errors root@122.155.191.231:/var/www/ecard/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/4* --ignore-errors root@122.155.191.231:/var/www/ecard/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/5* --ignore-errors root@122.155.191.231:/var/www/ecard/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/6* --ignore-errors root@122.155.191.231:/var/www/ecard/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/7* --ignore-errors root@122.155.191.231:/var/www/ecard/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/8* --ignore-errors root@122.155.191.231:/var/www/ecard/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/90* --ignore-errors root@122.155.191.231:/var/www/ecard/9_0
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/91* --ignore-errors root@122.155.191.231:/var/www/ecard/9_1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/92* --ignore-errors root@122.155.191.231:/var/www/ecard/9_2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/93* --ignore-errors root@122.155.191.231:/var/www/ecard/9_3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/94* --ignore-errors root@122.155.191.231:/var/www/ecard/9_4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/95* --ignore-errors root@122.155.191.231:/var/www/ecard/9_5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/96* --ignore-errors root@122.155.191.231:/var/www/ecard/9_6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/97* --ignore-errors root@122.155.191.231:/var/www/ecard/9_7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/98* --ignore-errors root@122.155.191.231:/var/www/ecard/9_8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/99* --ignore-errors root@122.155.191.231:/var/www/ecard/9_9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/1* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/2* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/3* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/4* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/5* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/6* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/7* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/8* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/90* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_0
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/91* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/92* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/93* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/94* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/95* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/96* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/97* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/98* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/ecard/pic/thumb/99* --ignore-errors root@122.155.191.231:/var/www/ecard/thumb/9_9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/90* --ignore-errors root@122.155.191.231:/var/www/game/preview/90
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/91* --ignore-errors root@122.155.191.231:/var/www/game/preview/91
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/92* --ignore-errors root@122.155.191.231:/var/www/game/preview/92
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/93* --ignore-errors root@122.155.191.231:/var/www/game/preview/93
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/94* --ignore-errors root@122.155.191.231:/var/www/game/preview/94
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/95* --ignore-errors root@122.155.191.231:/var/www/game/preview/95
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/96* --ignore-errors root@122.155.191.231:/var/www/game/preview/96
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/97* --ignore-errors root@122.155.191.231:/var/www/game/preview/97
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/98* --ignore-errors root@122.155.191.231:/var/www/game/preview/98
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/preview/99* --ignore-errors root@122.155.191.231:/var/www/game/preview/99
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/90* --ignore-errors root@122.155.191.231:/var/www/game/thumb/90
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/91* --ignore-errors root@122.155.191.231:/var/www/game/thumb/91
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/92* --ignore-errors root@122.155.191.231:/var/www/game/thumb/92
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/93* --ignore-errors root@122.155.191.231:/var/www/game/thumb/93
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/94* --ignore-errors root@122.155.191.231:/var/www/game/thumb/94
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/95* --ignore-errors root@122.155.191.231:/var/www/game/thumb/95
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/96* --ignore-errors root@122.155.191.231:/var/www/game/thumb/96
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/97* --ignore-errors root@122.155.191.231:/var/www/game/thumb/97
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/98* --ignore-errors root@122.155.191.231:/var/www/game/thumb/98
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/thumb/99* --ignore-errors root@122.155.191.231:/var/www/game/thumb/99
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game/tmp/* --ignore-errors root@122.155.191.231:/var/www/game/tmp
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/90* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/90
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/91* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/91
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/92* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/92
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/93* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/93
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/94* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/94
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/95* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/95
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/96* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/96
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/97* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/97
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/98* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/98
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/preview/99* --ignore-errors root@122.155.191.231:/var/www/game_online/preview/99
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/game_online/image/* --ignore-errors root@122.155.191.231:/var/www/game_online/image
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/icon-app/* --ignore-errors root@122.155.191.231:/var/www/icon-app
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/banner/* --ignore-errors root@122.155.191.231:/var/www/banner
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/image_upload/pic/* --ignore-errors root@122.155.191.231:/var/www/image_upload/pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/image_upload/thumb/* --ignore-errors root@122.155.191.231:/var/www/image_upload/thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/interview/head/* --ignore-errors root@122.155.191.231:/var/www/interview/head
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/interview/images/* --ignore-errors root@122.155.191.231:/var/www/interview/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/interview/pic/* --ignore-errors root@122.155.191.231:/var/www/interview/pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/interview/thumb/* --ignore-errors root@122.155.191.231:/var/www/interview/thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/poem/images/* --ignore-errors root@122.155.191.231:/var/www/poem/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/publish/images/* --ignore-errors root@122.155.191.231:/var/www/publish/images
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/publish/pic/* --ignore-errors root@122.155.191.231:/var/www/publish/pic
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/publish/thumb/* --ignore-errors root@122.155.191.231:/var/www/publish/thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/1* --ignore-errors root@122.155.191.231:/var/www/webboard/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/2* --ignore-errors root@122.155.191.231:/var/www/webboard/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/3* --ignore-errors root@122.155.191.231:/var/www/webboard/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/4* --ignore-errors root@122.155.191.231:/var/www/webboard/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/5* --ignore-errors root@122.155.191.231:/var/www/webboard/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/6* --ignore-errors root@122.155.191.231:/var/www/webboard/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/7* --ignore-errors root@122.155.191.231:/var/www/webboard/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/8* --ignore-errors root@122.155.191.231:/var/www/webboard/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/9* --ignore-errors root@122.155.191.231:/var/www/webboard/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/1* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/2* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/3* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/4* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/5* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/6* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/7* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/8* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb/9* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/1* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/2* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/3* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/4* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/5* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/6* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/7* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/8* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/webboard/pic/thumb_hot/9* --ignore-errors root@122.155.191.231:/var/www/webboard/thumb_hot/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/qrcode/temp/* --ignore-errors root@122.155.191.231:/var/www/qrcode
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/1* --ignore-errors root@122.155.191.231:/var/www/story/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/2* --ignore-errors root@122.155.191.231:/var/www/story/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/3* --ignore-errors root@122.155.191.231:/var/www/story/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/4* --ignore-errors root@122.155.191.231:/var/www/story/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/5* --ignore-errors root@122.155.191.231:/var/www/story/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/6* --ignore-errors root@122.155.191.231:/var/www/story/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/7* --ignore-errors root@122.155.191.231:/var/www/story/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/8* --ignore-errors root@122.155.191.231:/var/www/story/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/9* --ignore-errors root@122.155.191.231:/var/www/story/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/a* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/c* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/d* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/e* --ignore-errors root@122.155.191.231:/var/www/story/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/f* --ignore-errors root@122.155.191.231:/var/www/story/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/g* --ignore-errors root@122.155.191.231:/var/www/story/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/h* --ignore-errors root@122.155.191.231:/var/www/story/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/i* --ignore-errors root@122.155.191.231:/var/www/story/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/j* --ignore-errors root@122.155.191.231:/var/www/story/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/k* --ignore-errors root@122.155.191.231:/var/www/story/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/l* --ignore-errors root@122.155.191.231:/var/www/story/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/m* --ignore-errors root@122.155.191.231:/var/www/story/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/n* --ignore-errors root@122.155.191.231:/var/www/story/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/o* --ignore-errors root@122.155.191.231:/var/www/story/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/p* --ignore-errors root@122.155.191.231:/var/www/story/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/q* --ignore-errors root@122.155.191.231:/var/www/story/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/r* --ignore-errors root@122.155.191.231:/var/www/story/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/s* --ignore-errors root@122.155.191.231:/var/www/story/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/t* --ignore-errors root@122.155.191.231:/var/www/story/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/u* --ignore-errors root@122.155.191.231:/var/www/story/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/v* --ignore-errors root@122.155.191.231:/var/www/story/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/w* --ignore-errors root@122.155.191.231:/var/www/story/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/x* --ignore-errors root@122.155.191.231:/var/www/story/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/y* --ignore-errors root@122.155.191.231:/var/www/story/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/z* --ignore-errors root@122.155.191.231:/var/www/story/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/1* --ignore-errors root@122.155.191.231:/var/www/travel/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/2* --ignore-errors root@122.155.191.231:/var/www/travel/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/3* --ignore-errors root@122.155.191.231:/var/www/travel/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/4* --ignore-errors root@122.155.191.231:/var/www/travel/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/5* --ignore-errors root@122.155.191.231:/var/www/travel/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/6* --ignore-errors root@122.155.191.231:/var/www/travel/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/7* --ignore-errors root@122.155.191.231:/var/www/travel/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/8* --ignore-errors root@122.155.191.231:/var/www/travel/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/9* --ignore-errors root@122.155.191.231:/var/www/travel/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/a* --ignore-errors root@122.155.191.231:/var/www/travel/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/b* --ignore-errors root@122.155.191.231:/var/www/travel/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/c* --ignore-errors root@122.155.191.231:/var/www/travel/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/d* --ignore-errors root@122.155.191.231:/var/www/travel/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/e* --ignore-errors root@122.155.191.231:/var/www/travel/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/f* --ignore-errors root@122.155.191.231:/var/www/travel/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/g* --ignore-errors root@122.155.191.231:/var/www/travel/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/h* --ignore-errors root@122.155.191.231:/var/www/travel/e_h
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/i* --ignore-errors root@122.155.191.231:/var/www/travel/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/j* --ignore-errors root@122.155.191.231:/var/www/travel/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/k* --ignore-errors root@122.155.191.231:/var/www/travel/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/l* --ignore-errors root@122.155.191.231:/var/www/travel/i_l
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/m* --ignore-errors root@122.155.191.231:/var/www/travel/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/n* --ignore-errors root@122.155.191.231:/var/www/travel/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/o* --ignore-errors root@122.155.191.231:/var/www/travel/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/p* --ignore-errors root@122.155.191.231:/var/www/travel/m_p
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/q* --ignore-errors root@122.155.191.231:/var/www/travel/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/r* --ignore-errors root@122.155.191.231:/var/www/travel/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/s* --ignore-errors root@122.155.191.231:/var/www/travel/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/t* --ignore-errors root@122.155.191.231:/var/www/travel/q_t
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/u* --ignore-errors root@122.155.191.231:/var/www/travel/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/v* --ignore-errors root@122.155.191.231:/var/www/travel/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/w* --ignore-errors root@122.155.191.231:/var/www/travel/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/x* --ignore-errors root@122.155.191.231:/var/www/travel/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/y* --ignore-errors root@122.155.191.231:/var/www/travel/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/travel/images/z* --ignore-errors root@122.155.191.231:/var/www/travel/u_z
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/1* --ignore-errors root@122.155.191.231:/var/www/wallpaper/1
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/2* --ignore-errors root@122.155.191.231:/var/www/wallpaper/2
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/3* --ignore-errors root@122.155.191.231:/var/www/wallpaper/3
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/4* --ignore-errors root@122.155.191.231:/var/www/wallpaper/4
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/5* --ignore-errors root@122.155.191.231:/var/www/wallpaper/5
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/6* --ignore-errors root@122.155.191.231:/var/www/wallpaper/6
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/7* --ignore-errors root@122.155.191.231:/var/www/wallpaper/7
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/8* --ignore-errors root@122.155.191.231:/var/www/wallpaper/8
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/wallpaper/pic/9* --ignore-errors root@122.155.191.231:/var/www/wallpaper/9
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/writer/pic/* --ignore-errors root@122.155.191.231:/var/www/writer/pic/
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/writer/pic_thumb/* --ignore-errors root@122.155.191.231:/var/www/writer/pic_thumb
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b0* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b1* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b2* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b3* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b4* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b5* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b6* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b7* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b8* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+rsync -rave "ssh -i /home/web3/niyay.pem" /home/web3/story/pic/b9* --ignore-errors root@122.155.191.231:/var/www/story/a_d
+
+
+
+
+
+
+
+
+
+/////////////////////////
+
+RewriteRule  ^11([^/]*)$  http://image2.niyay.com/member/logo/1_1/11$1 [L]
+RewriteRule  ^12([^/]*)$  http://image2.niyay.com/member/logo/1_2/12$1 [L]
+RewriteRule  ^13([^/]*)$  http://image2.niyay.com/member/logo/1_3/13$1 [L]
+RewriteRule  ^14([^/]*)$  http://image2.niyay.com/member/logo/1_4/14$1 [L]
+RewriteRule  ^15([^/]*)$  http://image2.niyay.com/member/logo/1_5/15$1 [L]
+RewriteRule  ^16([^/]*)$  http://image2.niyay.com/member/logo/1_6/16$1 [L]
+RewriteRule  ^17([^/]*)$  http://image2.niyay.com/member/logo/1_7/17$1 [L]
+RewriteRule  ^18([^/]*)$  http://image2.niyay.com/member/logo/1_8/18$1 [L]
+RewriteRule  ^19([^/]*)$  http://image2.niyay.com/member/logo/1_9/19$1 [L]
+RewriteRule  ^10([^/]*)$  http://image2.niyay.com/member/logo/1_0/10$1 [L]
+RewriteRule  ^(([2-9]+)([^/]*))$ http://image2.niyay.com/member/logo/other/$1 [L]
+RewriteRule  ^(([a-z]+)([^/]*))$ http://image2.niyay.com/member/logo/other/$1 [L]
+RewriteRule  ^(([A-Z]+)([^/]*))$ http://image2.niyay.com/member/logo/other/$1 [L]
+
+
+
+
+////////
+
+
+RewriteRule  ^1([^/]*)$  http://image2.niyay.com/story/1/1$1 [L]
+RewriteRule  ^2([^/]*)$  http://image2.niyay.com/story/2/2$1 [L]
+RewriteRule  ^3([^/]*)$  http://image2.niyay.com/story/3/3$1 [L]
+RewriteRule  ^4([^/]*)$  http://image2.niyay.com/story/4/4$1 [L]
+RewriteRule  ^5([^/]*)$  http://image2.niyay.com/story/5/5$1 [L]
+RewriteRule  ^6([^/]*)$  http://image2.niyay.com/story/6/6$1 [L]
+RewriteRule  ^7([^/]*)$  http://image2.niyay.com/story/7/7$1 [L]
+RewriteRule  ^8([^/]*)$  http://image2.niyay.com/story/8/8$1 [L]
+RewriteRule  ^9([^/]*)$  http://image2.niyay.com/story/9/9$1 [L]
+RewriteRule  ^(([A-D]+)([^/]*))$ http://image2.niyay.com//story/a_d/$1 [L]
+RewriteRule  ^(([E-H]+)([^/]*))$ http://image2.niyay.com//story/e_h/$1 [L]
+RewriteRule  ^(([I-L]+)([^/]*))$ http://image2.niyay.com//story/i_l/$1 [L]
+RewriteRule  ^(([M-P]+)([^/]*))$ http://image2.niyay.com//story/m_p/$1 [L]
+RewriteRule  ^(([Q-T]+)([^/]*))$ http://image2.niyay.com//story/q_t/$1 [L]
+RewriteRule  ^(([U-Z]+)([^/]*))$ http://image2.niyay.com//story/u_z/$1 [L]
+RewriteRule  ^(([a-d]+)([^/]*))$ http://image2.niyay.com//story/a_d/$1 [L]
+RewriteRule  ^(([e-h]+)([^/]*))$ http://image2.niyay.com//story/e_h/$1 [L]
+RewriteRule  ^(([i-l]+)([^/]*))$ http://image2.niyay.com//story/i_l/$1 [L]
+RewriteRule  ^(([m-p]+)([^/]*))$ http://image2.niyay.com//story/m_p/$1 [L]
+RewriteRule  ^(([q-t]+)([^/]*))$ http://image2.niyay.com//story/q_t/$1 [L]
+RewriteRule  ^(([u-z]+)([^/]*))$ http://image2.niyay.com//story/u_z/$1 [L]
