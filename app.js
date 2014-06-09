@@ -10,16 +10,20 @@ var express = require('express'),
   path = require('path');
 var chk = require("./backN/login");
 var app = module.exports = express();
-
+mongoose = require('mongoose');
 
 /**
  * Configuration
  */
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
-
+app.set('databaseIP', 'localhost');
+app.set('databasePort', '27017');
+app.set('databaseName', 'apartment');
+// connect database
+mongoose.connect('mongodb://' + app.get('databaseIP') + ':' + app.get('databasePort') + '/' + app.get('databaseName'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,7 +45,7 @@ if (env === 'production') {
  */
 
 // serve index and view partials
-
+app.get("/logins",chk.logins);
 app.get("/checklogin",chk.login);
 app.get('/', routes.index);
 app.get('/header', routes.header);
