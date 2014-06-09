@@ -17,7 +17,7 @@ var app = module.exports = express();
  */
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 
 
@@ -104,7 +104,7 @@ app.get('/sms_send_report', routes.sms_send_report);
 app.get('/sms_credit_history', routes.sms_credit_history);
 app.get('/calendar', routes.calendar);
 app.get('/register', routes.register);
-
+app.get('/template_standard', routes.template_standard);
 
 
 

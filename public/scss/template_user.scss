@@ -1,0 +1,62 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+$default-line:#79BD9A;
+$large-screen:1024px;
+$link-color:#3B8686;
+$main_font:THSarabunNew;
+//---------------------------------------------------------------------------------------------------------
+html, body{
+        font-family:$main_font;
+    
+    }
+    a:link {color: $link-color;
+      text-decoration:none;}      
+    a:visited {color: $link-color;
+      text-decoration:none;}  
+    a:hover {
+      -webkit-transition:all linear 0.5s;
+      transition:all linear 0.5s; 
+      color: $link-color;
+      text-decoration:none;}  
+    a:active {color: $link-color;
+      text-decoration:none;}
+.outer-container{
+  @include media($large-screen) {
+    @include outer-container;
+  
+    }
+  }
+
+  .head_content{
+    @include span-columns(12);
+    height: auto;
+    
+    border-bottom: 1px solid $default-line;
+
+      .box1{@include media($large-screen) {
+        @include span-columns(6);
+        height: 100%;
+      }
+      }
+      .box2{@include media($large-screen) {
+        @include span-columns(6);
+        height: 100%;
+        text-align: right;
+        padding-top: 1em;
+      }
+      }
+  }
+  .banner{
+    @include span-columns(12);
+    margin: 1em;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+//----------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------

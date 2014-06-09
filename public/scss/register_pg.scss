@@ -65,7 +65,7 @@ width: 90%;
         @include media($large-screen) {
         width: 60%;
         margin: 0 20% 0 20%;}
-			width: 100%;
+			 width: 100%;
         margin: 0 0 0 0;
           #bullet_left{
                 text-align: right;
@@ -216,7 +216,7 @@ width: 90%;
                 select::-webkit-expand {
                 display: none;
                 }
-                input[type=submit] {
+                button{
               @include appearance(none);
               padding: 0em 0.8em 0em 0.4em;
               
@@ -226,6 +226,7 @@ width: 90%;
                     height: 2em;
                     margin: 0.5em 0 0 0;
                     font-size: .8em;
+                    width: 9em;
                     }
                     font-size: 1em;
               height: 5em;
@@ -237,31 +238,7 @@ width: 90%;
                     color:#FFF;
                   }
               }
-              input[type=reset] {
-              @include appearance(none);
-              padding: 0em 0.8em 0em 0.4em;
               
-              font-style: italic;
-              width: 20em;
-              @include media($large-screen) {
-                    height: 2em;
-                    font-size: .8em;
-                    margin: 0.5em 0 0.5em 0;
-                    }
-                    margin: 1em 0 1em 0;
-                    font-size: 1em;
-
-                    
-
-              height: 5em;
-              border-width:1px;
-              border-color:$default-line;
-              
-              &:hover{
-                    background-color:transparentize(#000,0.8);
-                    color:#FFF;
-                  }
-              }
 
       }
       #confacebook{
@@ -370,13 +347,22 @@ width: 90%;
   @extend #plus;
 }
  
+ .css-form input,textarea{
+  -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s; 
+  background-color: transparentize(#FA787E,0.8);
+ }
 
-.css-form input.ng-invalid.ng-dirty {
-    background-color: #FA787E;
+.css-form input.ng-invalid.ng-dirty,textarea.ng-invalid.ng-dirty {
+  -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s; 
+    background-color: transparentize(#FA787E,0.8);
   }
 
-  .css-form input.ng-valid.ng-dirty {
-    background-color: #78FA89;
+  .css-form input.ng-valid.ng-dirty,textarea.ng-invalid.ng-dirty {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s; 
+    background-color: transparentize(#78FA89,0.8);
   }
         
 //----------------------------------------------------------------------------------------------------------

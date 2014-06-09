@@ -33,7 +33,7 @@
           <tr>
           <tr>
             <td width="30%" align="right"></td>
-            <td width="70%"><div id="confacebook"><img src="image/icon/FBloginbutton.jpg" width="40%"></div></td>
+            <td width="70%"><div id="confacebook"><a href="http://www.facebook.com"><img src="image/icon/FBloginbutton.jpg" width="40%"></a></div></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -52,13 +52,13 @@
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" name="txt_pass" class="txt_pass"></td>
+            <td><input type="password" ng-model="std_user.password" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" name="txt_repass" class="txt_repass"></td>
+            <td><input type="password" ng-model="std_user.repassword" required /></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -70,42 +70,42 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" name="txt_name" class="txt_name"></td>
+            <td width="70%"><input type="text" ng-model="std_user.name" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
-            <td><label for="txt_lastname"></label>
-              <input type="text" name="txt_lastname" class="txt_lastname"></td>
+            <td>
+              <input type="text" ng-model="std_user.lname" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="text" name="txt_email" class="txt_email"></td>
+              <input type="email" ng-model="std_user.email" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
-            <td><label for="txt_address"></label>
-              <textarea name="txt_address" rows="4" class="txt_address"></textarea></td>
+            <td>
+              <textarea rows="4" ng-model="std_user.address" required /></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" name="txt_zipcode" id="txt_zipcode1" list="htmlListTags"></td>
+            <td><input type="text" ng-model="std_user.post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" name="txt_amphures" class="txt_amphures" style="border-color:red;" disabled>
+            <td><input type="text" ng-model="std_user.amphures" required disabled>
               <p> Edit : </p>
-              <select name="sel_amphures_plus" class="sel_amphures_plus" style="width:20%; margin-left:0.5em;">
+              <select ng-model="std_user.amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -113,9 +113,9 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" name="txt_district" class="txt_district" style="border-color:red;" disabled>
+            <td><input type="text" ng-model="std_user.district" required  disabled>
               <p> Edit : </p>
-              <select name="sel_amphures_plus" class="sel_District_plus" style="width:20%;">
+              <select ng-model="std_user.distruct_plus" required style="width:20%;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -123,28 +123,28 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" name="txt_provinces" class="txt_provinces" style="border-color:red;" disabled></td>
+            <td><input type="text" ng-model="std_user.provices" required disabled></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><label for="txt_tel"></label>
-              <input name="txt_tel" type="text" class="txt_tel" maxlength="9" style="display:block;">
+            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
+              <input ng-model="std_user.tel" required type="text"  maxlength="9" style="display:block;">
               <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_tel"></div></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
-            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input name="txt_tel_mobile" type="text" class="txt_tel_mobile" maxlength="10" style="display:block;">
+            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input  type="text"  maxlength="10" ng-model="std_user.mobile" required style="display:block;">
               <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_mobile"></div></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
-            <td valign="middle"><input type="text" name="txt_fax" class="txt_fax"></td>
+            <td valign="middle"><input type="text" ng-model="std_user.fax" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -152,15 +152,15 @@
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td><input type="submit" name="btn_submit" class="btn_submit" value="Submit">
-              <input type="reset" name="btn_cancle" class="btn_cancle" value="Cancle"></td>
+            <td><button ng-click="reset()">RESET</button>
+    <button ng-click="update(user)">SAVE</button></td>
           </tr>
         </table></form>
       </div>
 </div>
 <!--Box2------------------------------------------>
  <div id="box2" ng-show="myDropDown=='two'">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+        <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
           <tr>
             <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกเจ้าของอพาร์ทเม้นนิติบุคคล</h6></td>
           </tr>
@@ -175,20 +175,20 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" name="txt_user" class="txt_user">
+            <td><input type="text" ng-model="onw_userb.username" required>
               <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" name="txt_pass" class="txt_pass"></td>
+            <td><input type="password" ng-model="onw_userb.password" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" name="txt_repass" class="txt_repass"></td>
+            <td><input type="password" ng-model="onw_userb.repassword" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -200,42 +200,42 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" name="txt_name" class="txt_name"></td>
+            <td width="70%"><input type="text" ng-model="onw_userb.name" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td><label for="txt_lastname"></label>
-              <input type="text" name="txt_lastname" class="txt_lastname"></td>
+              <input type="text" ng-model="onw_userb.lname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="text" name="txt_email" class="txt_email"></td>
+              <input type="email" ng-model="onw_userb.email" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
-            <td><label for="txt_address"></label>
-              <textarea name="txt_address" rows="4" class="txt_address"></textarea></td>
+            <td>
+              <textarea rows="4" ng-model="onw_userb.address" required></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" name="txt_zipcode" id="txt_zipcode2" list="htmlListTags"></td>
+            <td><input type="text" ng-model="onw_userb.post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" name="txt_amphures" class="txt_amphures" style="border-color:red;" disabled>
+            <td><input type="text" ng-model="onw_userb.amphures" required disabled>
               <p> Edit : </p>
-              <select name="sel_amphures_plus" class="sel_amphures_plus" style="width:20%; margin-left:0.5em;">
+              <select ng-model="onw_userb.amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -243,9 +243,9 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" name="txt_district" class="txt_district" style="border-color:red;" disabled>
+            <td><input type="text" ng-model="onw_userb.district" required disabled>
               <p> Edit : </p>
-              <select name="sel_amphures_plus" class="sel_District_plus" style="width:20%;">
+              <select ng-model="onw_userb.district_plus" required style="width:20%;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -253,28 +253,28 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" name="txt_provinces" class="txt_provinces" style="border-color:red;" disabled></td>
+            <td><input type="text" ng-model="onw_userb.provices" required disabled></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><label for="txt_tel"></label>
-              <input name="txt_tel" type="text" class="txt_tel" maxlength="9" style="display:block;">
+            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
+              <input  type="text" ng-model="onw_userb.tel" required maxlength="9" style="display:block;">
               <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_tel"></div></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
-            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input name="txt_tel_mobile" type="text" class="txt_tel_mobile" maxlength="10" style="display:block;">
+            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input  type="text" ng-model="onw_userb.mobile" required maxlength="10" style="display:block;">
               <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_mobile"></div></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
-            <td valign="middle"><input type="text" name="txt_fax" class="txt_fax"></td>
+            <td valign="middle"><input type="text" ng-model="onw_userb.fax" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -286,14 +286,14 @@
             <td height="2" align="right"><h6>
               Type :
               <h6></td>
-            <td height="2"><input type="radio" name="radio" class="rdo_store" value="rdo_store" onClick="radiocheck(this.value)">
+            <td height="2"><input type="radio" ng-model="onw_userb.type" value="rdo_store">
               <p>Store</p>
-              <input type="radio" name="radio" class="rdo_company" value="rdo_company" onClick="radiocheck(this.value)">
+              <input type="radio" ng-model="onw_userb.type" value="rdo_company" >
               <p>Company</p>
-              <input type="radio" name="radio" class="rdo_limitedpartnership" value="rdo_limitedpartnership" onClick="radiocheck(this.value)">
+              <input type="radio" ng-model="onw_userb.type" value="rdo_limitedpartnership" >
               <p>limited partnership</p>
               <br>
-              <input type="radio" name="radio" class="rdo_registeredpartnership" value="rdo_registeredpartnership" onClick="radiocheck(this.value)">
+              <input type="radio" ng-model="onw_userb.type" value="rdo_registeredpartnership"  />
               <p>Registered partnership</p></td>
           </tr>
           <tr height="2" >
@@ -301,13 +301,13 @@
               Registration <br>
               number :
               <h6></td>
-            <td height="2" ><input name="txt_regis_no" type="text" class="txt_regis_no" maxlength="13"></td>
+            <td height="2" ><input  type="text" ng-model="onw_userb.registration_no" required maxlength="13"></td>
           </tr>
           <tr height="2" >
             <td height="2" align="right" ><h6>
               Registered Capital :
               <h6></td>
-            <td height="2" ><input type="text" name="txt_capital" class="txt_registered_capital"></td>
+            <td height="2" ><input type="text" ng-model="onw_userb.registered_cap" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -315,14 +315,14 @@
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td><input type="submit" name="btn_submit" class="btn_submit" value="Submit">
-              <input type="reset" name="btn_cancle" class="btn_cancle" value="Cancle"></td>
+            <td><button ng-click="reset()">RESET</button>
+    <button ng-click="update(user)">SAVE</button></td>
           </tr>
-        </table>
+        </table></form>
       </div>
 <!--Box3------------------------------------------>
  <div id="box3" ng-show="myDropDown=='three'">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+         <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
           <tr>
             <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกเจ้าของอพาร์ทเม้น</h6></td>
           </tr>
@@ -336,20 +336,20 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" name="txt_user" class="txt_user">
+            <td><input type="text" ng-model="onw_usera.username" required>
               <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" name="txt_pass" class="txt_pass"></td>
+            <td><input type="password" ng-model="onw_usera.password" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" name="txt_repass" class="txt_repass"></td>
+            <td><input type="password" ng-model="onw_usera.repassword" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -361,42 +361,42 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" name="txt_name" class="txt_name"></td>
+            <td width="70%"><input type="text" ng-model="onw_usera.name" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td><label for="txt_lastname"></label>
-              <input type="text" name="txt_lastname" class="txt_lastname"></td>
+              <input type="text" ng-model="onw_usera.lname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="text" name="txt_email" class="txt_email"></td>
+              <input type="email" ng-model="onw_usera.email" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
-            <td><label for="txt_address"></label>
-              <textarea name="txt_address" rows="4" class="txt_address"></textarea></td>
+            <td>
+              <textarea name="txt_address" rows="4" ng-model="onw_usera.address" required></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" name="txt_zipcode" id="txt_zipcode3" list="htmlListTags"></td>
+            <td><input type="text" ng-model="onw_usera.post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" name="txt_amphures" class="txt_amphures" style="border-color:red;" disabled>
+            <td><input type="text" ng-model="onw_usera.amphures" required disabled>
               <p> Edit : </p>
-              <select name="sel_amphures_plus" class="sel_amphures_plus" style="width:20%; margin-left:0.5em;">
+              <select ng-model="onw_usera.amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -404,9 +404,9 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" name="txt_district" class="txt_district" style="border-color:red;" disabled>
+            <td><input type="text" ng-model="onw_usera.district" required disabled>
               <p> Edit : </p>
-              <select name="sel_amphures_plus" class="sel_District_plus" style="width:20%;">
+              <select ng-model="onw_usera.district_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -414,27 +414,27 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" name="txt_provinces" class="txt_provinces" style="border-color:red;" disabled></td>
+            <td><input type="text" ng-model="onw_usera.provice" required disabled></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><input name="txt_tel" type="text" class="txt_tel" maxlength="9" style="display:block;">
+            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><input  type="text" ng-model="onw_usera.tel" required maxlength="9" style="display:block;">
               <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_tel"></div></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
-            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input name="txt_tel_mobile" type="text" class="txt_tel_mobile" maxlength="10" style="display:block;">
+            <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><input  type="text"  maxlength="10" ng-model="onw_usera.mobile" required style="display:block;">
               <div id="plus"><img src="image/icon/plus-icon.gif" class="plus_mobile"></div></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
-            <td valign="middle"><input type="text" name="txt_fax" class="txt_fax"></td>
+            <td valign="middle"><input type="text" ng-model="onw_usera.fax" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -445,7 +445,7 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td valign="middle"><input name="txt_company_name" type="text" class="txt_company_name" maxlength="100"></td>
+            <td valign="middle"><input  type="text" ng-model="onw_usera.comp_name" required maxlength="100"></td>
           </tr>
             </tr>
           
@@ -455,8 +455,8 @@
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td><input type="submit" name="btn_submit" class="btn_submit" value="Submit">
-              <input type="reset" name="btn_cancle" class="btn_cancle" value="Cancle"></td>
+            <td><button ng-click="reset()">RESET</button>
+    <button ng-click="update(user)">SAVE</button></td>
           </tr>
-        </table>
+        </table></form>
       </div></div>

@@ -76,6 +76,12 @@
       controller: 'ChapterController'
        
     })
+    .when('/first_step', {
+      templateUrl: '/template/first_step/create_building.html',
+      controller: 'ChapterController'
+       
+    })
+
     .when('/fine', {
       templateUrl: '/template/first_step/fine.html',
       controller: 'ChapterController'
@@ -305,6 +311,10 @@
     })
      .when('/register', {
       templateUrl: '/template/register.html',
+      controller: 'ChapterController'
+    })
+     .when('/template_standard', {
+      templateUrl: '/template/template_user/template_standard.html',
       controller: 'ChapterController'
     });
 

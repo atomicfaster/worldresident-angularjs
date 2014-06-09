@@ -188,7 +188,7 @@ p.register_pg {
     display: none; }
   #tableregister select::-webkit-expand {
     display: none; }
-  #tableregister input[type=submit], #tableregister select[type=submit] {
+  #tableregister button {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -203,33 +203,12 @@ p.register_pg {
     border-color: #79bd9a;
     margin: 1em 0 1em 0; }
     @media screen and (min-width: 1024px) {
-      #tableregister input[type=submit], #tableregister select[type=submit] {
+      #tableregister button {
         height: 2em;
         margin: 0.5em 0 0 0;
-        font-size: .8em; } }
-    #tableregister input[type=submit]:hover, #tableregister select[type=submit]:hover {
-      background-color: rgba(0, 0, 0, 0.2);
-      color: #FFF; }
-  #tableregister input[type=reset], #tableregister select[type=reset] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    padding: 0em 0.8em 0em 0.4em;
-    font-style: italic;
-    width: 20em;
-    margin: 1em 0 1em 0;
-    font-size: 1em;
-    height: 5em;
-    border-width: 1px;
-    border-color: #79bd9a; }
-    @media screen and (min-width: 1024px) {
-      #tableregister input[type=reset], #tableregister select[type=reset] {
-        height: 2em;
         font-size: .8em;
-        margin: 0.5em 0 0.5em 0; } }
-    #tableregister input[type=reset]:hover, #tableregister select[type=reset]:hover {
+        width: 9em; } }
+    #tableregister button:hover {
       background-color: rgba(0, 0, 0, 0.2);
       color: #FFF; }
 
@@ -299,8 +278,17 @@ p.register_pg {
     #plus img:hover, #minus img:hover {
       opacity: 0.4; }
 
-.css-form input.ng-invalid.ng-dirty, .css-form #tableregister select.ng-invalid.ng-dirty, #tableregister .css-form select.ng-invalid.ng-dirty {
-  background-color: #FA787E; }
+.css-form input, .css-form #tableregister select, #tableregister .css-form select, textarea {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  background-color: rgba(250, 120, 126, 0.2); }
 
-.css-form input.ng-valid.ng-dirty, .css-form #tableregister select.ng-valid.ng-dirty, #tableregister .css-form select.ng-valid.ng-dirty {
-  background-color: #78FA89; }
+.css-form input.ng-invalid.ng-dirty, .css-form #tableregister select.ng-invalid.ng-dirty, #tableregister .css-form select.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  background-color: rgba(250, 120, 126, 0.2); }
+
+.css-form input.ng-valid.ng-dirty, .css-form #tableregister select.ng-valid.ng-dirty, #tableregister .css-form select.ng-valid.ng-dirty, textarea.ng-invalid.ng-dirty {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  background-color: rgba(120, 250, 137, 0.2); }

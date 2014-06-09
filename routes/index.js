@@ -189,6 +189,11 @@ exports.calendar = function(req, res){
 exports.register = function(req, res){
   res.sendfile('./public/template/register.html');
 };
+exports.template_standard = function(req, res){
+  res.sendfile('./public/template/template_user/template_standard.html');
+};
+
+
 
 
 
