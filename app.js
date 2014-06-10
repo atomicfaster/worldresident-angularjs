@@ -113,9 +113,9 @@ app.get('/manage_profile', routes.manage_profile);
 app.get('/public_information', routes.public_information);
 app.get('/public_informations', routes.public_informations);
 app.get('/building', routes.building);
-
-
-
+app.get('/cost_of_uti', routes.cost_of_uti);
+app.get('/information_service', routes.information_service);
+app.get('/add_service', routes.add_service);
 
 
 

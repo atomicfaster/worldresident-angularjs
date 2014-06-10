@@ -204,6 +204,15 @@ exports.public_informations = function(req, res){
 exports.building = function(req, res){
   res.sendfile('./public/template/manage/building/building.html');
 };
+exports.cost_of_uti = function(req, res){
+  res.sendfile('./public/template/manage/cost_of_uti/cost_of_uti.html');
+};
+exports.information_service = function(req, res){
+  res.sendfile('./public/template/manage/service/information_service.html');
+};
+exports.add_service = function(req, res){
+  res.sendfile('./public/template/manage/service/add_service.html');
+};
 
 
 exports.partials = function (req, res) {

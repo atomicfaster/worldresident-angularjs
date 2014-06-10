@@ -569,6 +569,18 @@ var MD5 = function (string) {
      .when('/building', {
       templateUrl: '/template/manage/building/building.html',
       controller: 'ChapterController'
+    })
+     .when('/cost_of_uti', {
+      templateUrl: '/template/manage/cost_of_uti/cost_of_uti.html',
+      controller: 'ChapterController'
+    })
+     .when('/information_service', {
+      templateUrl: '/template/manage/service/information_service.html',
+      controller: 'ChapterController'
+    })
+     .when('/add_service', {
+      templateUrl: '/template/manage/service/add_service.html',
+      controller: 'ChapterController'
     });
 
 
