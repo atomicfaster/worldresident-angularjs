@@ -213,7 +213,9 @@ exports.information_service = function(req, res){
 exports.add_service = function(req, res){
   res.sendfile('./public/template/manage/service/add_service.html');
 };
-
+exports.edit_fine = function(req, res){
+  res.sendfile('./public/template/manage/fine/edit_fine.html');
+};
 
 exports.partials = function (req, res) {
   var name = req.params.name;

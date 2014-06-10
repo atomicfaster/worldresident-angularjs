@@ -116,7 +116,7 @@ app.get('/building', routes.building);
 app.get('/cost_of_uti', routes.cost_of_uti);
 app.get('/information_service', routes.information_service);
 app.get('/add_service', routes.add_service);
-
+app.get('/edit_fine', routes.edit_fine);
 
 
 
