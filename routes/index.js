@@ -201,6 +201,9 @@ exports.public_information = function(req, res){
 exports.public_informations = function(req, res){
   res.sendfile('./public/template/first_step/public_information.html');
 };
+exports.building = function(req, res){
+  res.sendfile('./public/template/manage/building/building.html');
+};
 
 
 exports.partials = function (req, res) {

@@ -1,0 +1,50 @@
+
+ <script type="text/javascript">
+   
+  var tid = setInterval( function () {
+    if ( document.readyState !== 'complete' ) return;
+    else
+    {
+       if(window.location.pathname!="/manage")
+    window.location.pathname="/manage";
+    clearInterval( tid );       
+   
+}
+}, 100 );
+  
+  </script>
+<form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" style="margin-top:2em;">
+  <tr>
+    <td colspan="2" align="center"><h6>Edit Building</h6><h5>detail</h5></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr>
+    <td width="30%" align="right"><h6>Name of Building :</h6></td>
+    <td width="70%"><input type="text" ng-model="cre_building.building_name" required /></td>
+  </tr>
+  <tr>
+    <td align="right"><h6>Address :</h6></td>
+    <td><textarea rows="6" required ng-model="cre_building.building_address" /></textarea></td>
+  </tr>
+  <tr>
+    <td align="right"><h6>Tel. :</h6></td>
+    <td><input type="text" ng-model="cre_building.building_tel" required /></td>
+  </tr>
+  <tr>
+    <td align="right"><h6>Fax. :</h6></td>
+    <td><input type="text" ng-model="cre_building.building_fax" required /></td>
+  </tr>
+  <tr>
+    <td align="right"><h6>Detail :</h6></td>
+    <td><textarea rows="6" required ng-model="cre_building.building_detail" /></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><button ng-click="cancle()">Cancle</button><button ng-click="next()">Next</button></td>
+    </tr>
+  
+</table></form>

@@ -565,6 +565,10 @@ var MD5 = function (string) {
      .when('/public_informations', {
       templateUrl: '/template/first_step/public_information.html',
       controller: 'ChapterController'
+    })
+     .when('/building', {
+      templateUrl: '/template/manage/building/building.html',
+      controller: 'ChapterController'
     });
 
 

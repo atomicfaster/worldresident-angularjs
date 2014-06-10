@@ -112,7 +112,7 @@ app.get('/template_standard', routes.template_standard);
 app.get('/manage_profile', routes.manage_profile);
 app.get('/public_information', routes.public_information);
 app.get('/public_informations', routes.public_informations);
-
+app.get('/building', routes.building);
 
 
 
