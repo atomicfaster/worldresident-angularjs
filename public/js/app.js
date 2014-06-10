@@ -553,6 +553,14 @@ var MD5 = function (string) {
      .when('/template_standard', {
       templateUrl: '/template/template_user/template_standard.html',
       controller: 'ChapterController'
+    })
+     .when('/manage_pofile', {
+      templateUrl: '/template/manage/pofile/manage_pofile.html',
+      controller: 'ChapterController'
+    })
+     .when('/public_information', {
+      templateUrl: '/template/manage/public_information/public_information.html',
+      controller: 'ChapterController'
     });
 
 

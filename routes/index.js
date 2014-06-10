@@ -192,8 +192,12 @@ exports.register = function(req, res){
 exports.template_standard = function(req, res){
   res.sendfile('./public/template/template_user/template_standard.html');
 };
-
-
+exports.manage_pofile = function(req, res){
+  res.sendfile('./public/template/manage/pofile/manage_pofile.html');
+};
+exports.public_information = function(req, res){
+  res.sendfile('./public/template/manage/public_information/public_information.html');
+};
 
 
 
