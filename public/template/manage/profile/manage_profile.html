@@ -1,0 +1,78 @@
+ <script type="text/javascript">   
+  var tid = setInterval( function () {
+    if ( document.readyState !== 'complete' ) return;
+    else
+    {
+       if(window.location.pathname!="/manage")
+    window.location.pathname="/manage";
+    clearInterval( tid );       
+   
+}
+}, 100 );
+  
+  </script><div class="main_content">
+<div class="main_content_head"><form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" style="margin-top:2em;">
+  <tr>
+    <td colspan="2" align="center"><h6>Edit Document header</h6><h5>Information will be place on top of document.</h5></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr>
+    <td width="30%" align="right"><h6>Company Name :</h6></td>
+    <td width="70%" align="left"><input type="text" placeholder="Company Co.,Ltd" ng-model="document.comp_name" required /></td>
+  </tr>
+  <tr>
+    <td align="right"><h6>Address :</h6></td>
+    <td align="left"><textarea rows="6" required="required" placeholder="" ng-model="document.comp_address"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Amphures :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_aumphures" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>District :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_district" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Provice :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_province" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Postcode :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_postcode" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Tel. :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_tel" required /></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Mobile :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_mobile" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Fax :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_fax" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Web site :</h6></td>
+    <td align="left"><input type="text" placeholder="" ng-model="document.comp_site" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Logo :</h6></td>
+    <td align="left">
+      <input type="file" ng-model="document.comp_logo" required></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr>
+   
+     <td colspan="2" align="center"><button ng-click="reset()">Reset</button><button ng-click="save()">Save</button>
+        </td>
+  </tr>
+  
+</table></form>
+
+</div>
+</div>

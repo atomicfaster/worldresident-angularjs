@@ -192,13 +192,15 @@ exports.register = function(req, res){
 exports.template_standard = function(req, res){
   res.sendfile('./public/template/template_user/template_standard.html');
 };
-exports.manage_pofile = function(req, res){
-  res.sendfile('./public/template/manage/pofile/manage_pofile.html');
+exports.manage_profile = function(req, res){
+  res.sendfile('./public/template/manage/profile/manage_profile.html');
 };
 exports.public_information = function(req, res){
   res.sendfile('./public/template/manage/public_information/public_information.html');
 };
-
+exports.public_informations = function(req, res){
+  res.sendfile('./public/template/first_step/public_information.html');
+};
 
 
 exports.partials = function (req, res) {

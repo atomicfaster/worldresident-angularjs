@@ -1,0 +1,35 @@
+
+<form novalidate class="css-form">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
+  <tr>
+    <td colspan="2" align="center"><h6>Cost of utilities</h6><h5>detail</h5></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr>
+    <td width="30%" align="right"><h6>Head banner :</h6></td>
+    <td><input type="file" name="up_head_banner" id="up_head_banner" /></td>
+  </tr>
+  <tr>
+    <td align="right"><h6>Apartment Detail : </h6></td>
+    <td align="left" valign="top"><textarea  rows="6" required="required" ng-model="pub_info.aprt_detail"></textarea></td>
+  </tr>
+  
+  <tr>
+    <td width="30%" align="right"><h6>Custom link : </h6></td>
+    <td><div ng-repeat="item in items1">
+        <input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_name" required> url : 
+<input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_href" required>
+      </div>
+      <button ng-click="add1()">New Item</button></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><button ng-click="back()">Back</button><button ng-click="submit()">Submit</button></td>
+    </tr>
+  
+</table>
+</form>
+
+ 
+  

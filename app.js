@@ -109,8 +109,9 @@ app.get('/sms_credit_history', routes.sms_credit_history);
 app.get('/calendar', routes.calendar);
 app.get('/register', routes.register);
 app.get('/template_standard', routes.template_standard);
-app.get('/manage_pofile', routes.manage_pofile);
+app.get('/manage_profile', routes.manage_profile);
 app.get('/public_information', routes.public_information);
+app.get('/public_informations', routes.public_informations);
 
 
 

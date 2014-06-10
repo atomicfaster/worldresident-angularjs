@@ -105,6 +105,7 @@
   #tablecreate input, #tablecreate select {
     margin: 0.5em;
     border-radius: 4px;
+    border: 1px solid #79bd9a;
     color: #000;
     width: 50%;
     height: 2em; }
@@ -120,6 +121,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 4px;
+    border: 1px solid #79bd9a;
     color: #000;
     width: 60%;
     margin: 0.5em 0 0.5em 0.5em;
@@ -209,7 +211,7 @@
     display: none; }
   #tablecreate select::-webkit-expand {
     display: none; }
-  #tablecreate input[type=submit], #tablecreate select[type=submit], #tablecreate input[type=file], #tablecreate select[type=file], #tablecreate input[type=reset], #tablecreate select[type=reset] {
+  #tablecreate button, #tablecreate input[type=file], #tablecreate select[type=file], #tablecreate input[type=reset], #tablecreate select[type=reset] {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -225,10 +227,10 @@
     border-color: #79bd9a;
     margin: 1em 0 1em 0; }
     @media screen and (min-width: 1024px) {
-      #tablecreate input[type=submit], #tablecreate select[type=submit], #tablecreate input[type=file], #tablecreate select[type=file], #tablecreate input[type=reset], #tablecreate select[type=reset] {
+      #tablecreate button, #tablecreate input[type=file], #tablecreate select[type=file], #tablecreate input[type=reset], #tablecreate select[type=reset] {
         height: 2em;
         margin: 0.5em 0 0.5em 0; } }
-    #tablecreate input[type=submit]:hover, #tablecreate select[type=submit]:hover, #tablecreate input[type=file]:hover, #tablecreate select[type=file]:hover, #tablecreate input[type=reset]:hover, #tablecreate select[type=reset]:hover {
+    #tablecreate button:hover, #tablecreate input[type=file]:hover, #tablecreate select[type=file]:hover, #tablecreate input[type=reset]:hover, #tablecreate select[type=reset]:hover {
       background-color: rgba(0, 0, 0, 0.2);
       color: #FFF; }
 

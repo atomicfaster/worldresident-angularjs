@@ -554,12 +554,16 @@ var MD5 = function (string) {
       templateUrl: '/template/template_user/template_standard.html',
       controller: 'ChapterController'
     })
-     .when('/manage_pofile', {
-      templateUrl: '/template/manage/pofile/manage_pofile.html',
+     .when('/manage_profile', {
+      templateUrl: '/template/manage/profile/manage_profile.html',
       controller: 'ChapterController'
     })
      .when('/public_information', {
       templateUrl: '/template/manage/public_information/public_information.html',
+      controller: 'ChapterController'
+    })
+     .when('/public_informations', {
+      templateUrl: '/template/first_step/public_information.html',
       controller: 'ChapterController'
     });
 

@@ -1,19 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
-
+<html>
 <body>
 
-<form action="http://image2.niyay.com/upload" method="post">
-  <p>
-    <input name="" type="file" />
-  </p>
-  <p>
-    <input type="submit" name="btn_submit" id="btn_submit" value="Submit" />
-  </p>
+<form action="/upload_file.php" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file"><br>
+<input type="submit" name="submit" value="Submit">
 </form>
+
 </body>
 </html>
