@@ -12,52 +12,29 @@
   
   </script><div class="main_content">
 <div class="main_content_head"><a href="/public_information">Public information</a></div>
-<div class="main_content_inner1"><form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" >
+<div class="main_content_inner1"><form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="tbr_public_pofile">
   <tr>
-    <td width="30%" align="right">Head banner : </td>
+    <td width="30%" align="right" valign="top">Head banner : </td>
     <td width="70%">
       <input type="file" name="up_head_banner" id="up_head_banner" /></td>
   </tr>
   <tr>
-    <td align="right">Apartment Detail : </td>
+    <td align="right" valign="top">Apartment Detail : </td>
     <td><textarea  rows="6" ng-model="pub_info.aprt_detail" required ></textarea>
     </td>
   </tr>
   <tr>
-    <td align="right">Custom link : </td>
+    <td align="right" valign="top">Custom link : </td>
     <td><div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_name">
-     
+        <input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_name" required> url : 
+<input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_href" required>
       </div>
       <button ng-click="add1()">New Item</button></td>
   </tr>
   <tr>
-    <td>4</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>&nbsp;</td>
+    <td align="right" valign="top"></td>
+    <td>
+      <button ng-click="submit()">Submit</button><button ng-click="reset()">Reset</button></td>
   </tr>
 </table>
 </form></div>
