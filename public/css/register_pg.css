@@ -283,12 +283,22 @@ p.register_pg {
   transition: all linear 0.5s;
   background-color: rgba(250, 120, 126, 0.2); }
 
-.css-form input.ng-invalid.ng-dirty, .css-form #tableregister select.ng-invalid.ng-dirty, #tableregister .css-form select.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
+.css-form input.ng-invalid.ng-dirty, .css-form #tableregister select.ng-invalid.ng-dirty, #tableregister .css-form select.ng-invalid.ng-dirty {
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
   background-color: rgba(250, 120, 126, 0.2); }
 
-.css-form input.ng-valid.ng-dirty, .css-form #tableregister select.ng-valid.ng-dirty, #tableregister .css-form select.ng-valid.ng-dirty, textarea.ng-invalid.ng-dirty {
+.css-form input.ng-valid.ng-dirty, .css-form #tableregister select.ng-valid.ng-dirty, #tableregister .css-form select.ng-valid.ng-dirty {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  background-color: rgba(120, 250, 137, 0.2); }
+
+.css-form textarea.ng-invalid.ng-dirty {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  background-color: rgba(250, 120, 126, 0.2); }
+
+.css-form textarea.ng-valid.ng-dirty {
   -webkit-transition: all linear 0.5s;
   transition: all linear 0.5s;
   background-color: rgba(120, 250, 137, 0.2); }

@@ -353,18 +353,28 @@ width: 90%;
   background-color: transparentize(#FA787E,0.8);
  }
 
-.css-form input.ng-invalid.ng-dirty,textarea.ng-invalid.ng-dirty {
+.css-form input.ng-invalid.ng-dirty{
   -webkit-transition:all linear 0.5s;
     transition:all linear 0.5s; 
     background-color: transparentize(#FA787E,0.8);
   }
 
-  .css-form input.ng-valid.ng-dirty,textarea.ng-invalid.ng-dirty {
+  .css-form input.ng-valid.ng-dirty{
     -webkit-transition:all linear 0.5s;
     transition:all linear 0.5s; 
     background-color: transparentize(#78FA89,0.8);
   }
-        
+
+.css-form textarea.ng-invalid.ng-dirty {
+  -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s; 
+    background-color: transparentize(#FA787E,0.8);
+  }
+      .css-form textarea.ng-valid.ng-dirty {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s; 
+    background-color: transparentize(#78FA89,0.8);
+  }    
 //----------------------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------------------
