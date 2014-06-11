@@ -133,10 +133,10 @@
              <div ng-repeat="item in items1">
              {{item}}
              </div>
-        <input type="text" placeholder="" ng-model="std_user.tel" required>
+        <input type="number" placeholder="" ng-model="std_user.tel" required>
      
       
-      <button ng-click="adds1(std_user.tel)">New Item</button></td></tr></table></td>
+      <button ng-click="adds1(std_user.tel)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
@@ -146,8 +146,8 @@
         
              {{item}}
              </div>
-        <input type="text" placeholder="" ng-model="std_user.mobile" required>
-  <button ng-click="adds2(std_user.mobile)">New Item</button></td></tr></table></td>
+        <input type="number" placeholder="" ng-model="std_user.mobile" required>
+  <button ng-click="adds2(std_user.mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
@@ -157,8 +157,8 @@
         
              {{item}}
              </div>
-        <input type="text" placeholder="" ng-model="std_user.fax" required>
-  <button ng-click="adds3(std_user.fax)">New Item</button></td>
+        <input type="number" placeholder="" ng-model="std_user.fax" required>
+  <button ng-click="adds3(std_user.fax)">Add</button></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -273,32 +273,36 @@
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
-              <div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_userb.tel" required>
+            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
+             <div ng-repeat="item in items1">
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="std_user.tel" required>
      
-      </div>
-      <button ng-click="add1()">New Item</button></td></tr></table></td>
+      
+      <button ng-click="adds1(std_user.tel)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_userb.mobile" required>
-     
-      </div>
-      <button ng-click="add2()">New Item</button></td></tr></table></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="std_user.mobile" required>
+  <button ng-click="adds2(std_user.mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_userb.fax" required>
-     
-      </div>
-      <button ng-click="add3()">New Item</button></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="std_user.fax" required>
+  <button ng-click="adds3(std_user.fax)">Add</button></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -444,31 +448,36 @@
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_usera.tel" required>
+            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
+             <div ng-repeat="item in items1">
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="std_user.tel" required>
      
-      </div>
-      <button ng-click="add1()">New Item</button></td></tr></table></td>
+      
+      <button ng-click="adds1(std_user.tel)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_usera.mobile" required>
-     
-      </div>
-      <button ng-click="add2()">New Item</button></td></tr></table></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="std_user.mobile" required>
+  <button ng-click="adds2(std_user.mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_usera.fax" required>
-     
-      </div>
-      <button ng-click="add3()">New Item</button></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="std_user.fax" required>
+  <button ng-click="adds3(std_user.fax)">Add</button></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
