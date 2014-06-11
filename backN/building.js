@@ -37,8 +37,6 @@ exports.add = function(req,res){
    console.log(user);
 
 
-
-
    var newUser = new User(user);
                     newUser.save(function (err) {
                       if (err) {
