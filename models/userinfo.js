@@ -48,7 +48,7 @@ var userinfo = new Schema({
 	head_banner :String,
 apartment_Detail :String,
 custom_link :String
-});
+}); 
 
 
 module.exports = mongoose.model('userinfo', userinfo);
