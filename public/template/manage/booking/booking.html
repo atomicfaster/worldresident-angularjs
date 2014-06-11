@@ -85,9 +85,7 @@
       <input type="radio" ng-model="book_room.payment_type" value="rdo_credit"> <p>Credit</p><br />
       <input type="radio" ng-model="book_room.payment_type" value="rdo_other"> <p>Other</p></td>
   </tr>
-      <tr >
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
+   
   <tr >
     <td align="right"><h6>Cash amount :</h6></td>
     <td><input type="text" size="20" maxlength="100" ng-model="book_room.payment_cash_amount" required  placeholder="ID"></td>
@@ -97,13 +95,25 @@
     <td><textarea cols="20" rows="6" required="required" placeholder="ID" ng-model="book_room.payment_remark"></textarea></td>
   </tr>
   <tr >
-    <td align="right"><h6>Remark :</h6></td>
-    <td><input type="date" id="exampleInput" name="input" ng-model="value"
+    <td align="right"><h6>Date Payment :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val1"
        placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
    <span class="error" ng-show="myForm.input.$error.required">
        Required!</span>
    <span class="error" ng-show="myForm.input.$error.date">
        Not a valid date!</span></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Date Transection :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val2"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required">
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span></td>
+  </tr>
+     <tr >
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
   </tr>
   <tr>
    
