@@ -280,6 +280,7 @@ var MD5 = function (string) {
       ,{"roomno" : "11","stat": "no"},{"roomno" : "12","stat": "no"}];
       
       this.myDropDown  = 'zero';
+       $scope.value = new Date();
    })
 
   .config(function($routeProvider, $locationProvider) {
