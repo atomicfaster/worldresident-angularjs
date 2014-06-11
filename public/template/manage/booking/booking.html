@@ -13,7 +13,7 @@
   </script><div class="main_content">
  <div class="main_content_head"><a href="/book_infomation">Booking infomation</a> | <a href="/booking">Booking</a></div>
 <div class="main_content_inner1">
-   <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
+   <form novalidate class="css-form" name="myForm"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
   <tr>
     <td colspan="2" align="center"><h6>Add Booking</h6>
       <h5>สำหรับลูกค้าเข้ามาจองห้องว่าง</h5></td>
@@ -87,6 +87,23 @@
   </tr>
       <tr >
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Cash amount :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.payment_cash_amount" required  placeholder="ID"></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Remark :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="ID" ng-model="book_room.payment_remark"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Remark :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="value"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required">
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span></td>
   </tr>
   <tr>
    
