@@ -25,7 +25,7 @@
   <tr >
     <td width="30%" align="right"><h6>Building :</h6></td>
     <td width="70%">
-      <select ng-model="charter_new_book.select_building" required >
+      <select ng-model="select_building" required >
         <option>Chose</option>
         <option>ตึก1</option>
         <option>ตึก2</option>
@@ -33,7 +33,7 @@
   </tr>
   <tr >
     <td align="right"><h6>room NO. :</h6></td>
-    <td><select ng-model="charter_new_book.select_room" required >
+    <td><select ng-model="select_room" required >
         <option>Chose</option>
         <option>ห้อง1</option>
         <option>ห้อง2</option>
@@ -41,43 +41,43 @@
   </tr>
  <tr >
     <td align="right"><h6>Charter no. :</h6></td>
-    <td><input type="text" disabled="disabled"  placeholder="auto" style="background-color:#FFF;" size="20" maxlength="100" ng-model="charter_new_book.charter_no" required /></td>
+    <td><input type="text" disabled="disabled"  placeholder="auto" style="background-color:#FFF;" size="20" maxlength="100" ng-model="charter_no" required /></td>
   </tr>
    <tr >
     <td align="right"><h6>Customer Name :</h6></td>
-    <td><input type="text" disabled="disabled"  placeholder="auto" style="background-color:#FFF;" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_name" required /></td>
+    <td><input type="text"  placeholder="auto" size="20" maxlength="100" ng-model="charter_customer_name" required /></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer ID :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_id" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_id" required  placeholder=""></td>
   </tr>
    <tr >
     <td align="right"><h6>Customer address :</h6></td>
-    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="charter_new_book.charter_customer_address"></textarea></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="charter_customer_address"></textarea></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Province :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_province" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_province" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer post code :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_post_code" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_post_code" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Country :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_country" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_country" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Mobile no. :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_mobile" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_mobile" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Email :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_email" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_email" required  placeholder=""></td>
   </tr>
    <tr >
     <td align="right"><h6>Customer Picture :</h6></td>
-    <td><input type="file" ng-model="charter_new_book.customer_pic" required></td>
+    <td><input type="file" ng-model="customer_pic" required></td>
   </tr>
   <tr>
     <td colspan="2" align="center" bgcolor="#00CC66" height="10px">Payment</td>
@@ -105,39 +105,39 @@
  <tr>
     <td align="right"><h6>Payment type :</h6></td>
     <td valign="middle">
-      <input type="radio" ng-model="charter_new_book.payment_type" ng-value="rdo_cash"> <p>Cash</p>
-      <input type="radio" ng-model="charter_new_book.payment_type" ng-value="rdo_Bank"> <p>Bank Transfer</p>
-      <input type="radio" ng-model="charter_new_book.payment_type" ng-value="rdo_credit"> <p>Credit</p><br />
-      <input type="radio" ng-model="charter_new_book.payment_type" ng-value="rdo_other"> <p>Other</p></td>
+      <input type="radio" ng-model="payment_type" value="rdo_cash"> <p>Cash</p>
+      <input type="radio" ng-model="payment_type" value="rdo_Bank"> <p>Bank Transfer</p>
+      <input type="radio" ng-model="payment_type" value="rdo_credit"> <p>Credit</p><br />
+      <input type="radio" ng-model="payment_type" value="rdo_other"> <p>Other</p></td>
   </tr>
    
   <tr >
     <td align="right"><h6>1. Insurance amount :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_insurance_amount" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_insurance_amount" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>2.1 Pre rent :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_pre_rent_amount" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_pre_rent_amount" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>2.2 Pre furniture rent :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_pre_furniture_rent_amount" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_pre_furniture_rent_amount" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>2.3 Pre central rent :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_pre_central_rent_amount" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_pre_central_rent_amount" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>3. other :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_other_amount" required  placeholder=""></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_other_amount" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>sum of rent :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_sum_amount" required  placeholder=""></td>
+    <td>{{total_sum(payment_insurance_amount,payment_pre_rent_amount,payment_pre_furniture_rent_amount,payment_pre_central_rent_amount,payment_other_amount)}}</td>
   </tr>
   <tr >
     <td align="right"><h6>Remark :</h6></td>
-    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="charter_new_book.payment_remark"></textarea></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="payment_remark"></textarea></td>
   </tr>
   
    <tr>
