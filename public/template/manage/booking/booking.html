@@ -98,10 +98,11 @@
     <td align="right"><h6>Date Payment :</h6></td>
     <td><input type="date" id="exampleInput" name="input" ng-model="date_val1"
        placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
-   <span class="error" ng-show="myForm.input.$error.required">
+   <span class="error" ng-show="myForm.input.$error.required" >
        Required!</span>
-   <span class="error" ng-show="myForm.input.$error.date">
-       Not a valid date!</span></td>
+   <span class="error" ng-show="myForm.input.$error.date" ng-model="date_val1">
+       Not a valid date!</span><br />
+       <p>{{date_val1 | date: "dd-MM-yyyy"}}</p></td>
   </tr>
    <tr >
     <td align="right"><h6>Date Transection :</h6></td>
@@ -110,7 +111,8 @@
    <span class="error" ng-show="myForm.input.$error.required">
        Required!</span>
    <span class="error" ng-show="myForm.input.$error.date">
-       Not a valid date!</span></td>
+       Not a valid date!</span><br />
+       <p>{{date_val2 | date: "dd-MM-yyyy"}}</p></td>
   </tr>
    <tr>
     <td colspan="2" align="center" bgcolor="#FF6B0D" height="10px"></td>
