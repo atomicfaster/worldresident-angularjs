@@ -28,3 +28,6 @@ input#search {
   width: 50%;
   height: 2em;
   vertical-align: middle; }
+
+p.roommg_head {
+  font-size: 1em; }
