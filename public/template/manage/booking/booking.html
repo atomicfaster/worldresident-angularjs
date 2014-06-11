@@ -13,7 +13,7 @@
   </script><div class="main_content">
  <div class="main_content_head"><a href="/book_infomation">Booking infomation</a> | <a href="/booking">Booking</a></div>
 <div class="main_content_inner1">
-   <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
+   <form novalidate class="css-form" name="myForm"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
   <tr>
     <td colspan="2" align="center"><h6>Add Booking</h6>
       <h5>สำหรับลูกค้าเข้ามาจองห้องว่าง</h5></td>
@@ -40,35 +40,35 @@
   </tr>
  <tr >
     <td align="right"><h6>Customer Name :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_name" required  placeholder="Name"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_name" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer ID :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_id" required  placeholder="ID"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_id" required  placeholder=""></td>
   </tr>
    <tr >
     <td align="right"><h6>Customer address :</h6></td>
-    <td><textarea cols="20" rows="6" required="required" placeholder="Address" ng-model="book_room.customer_address"></textarea></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="book_room.customer_address"></textarea></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Province :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_province" required  placeholder="ID"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_province" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer post code :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_post_code" required  placeholder="ID"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_post_code" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Country :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_country" required  placeholder="ID"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_country" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Mobile no. :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_mobile" required  placeholder="ID"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_mobile" required  placeholder=""></td>
   </tr>
   <tr >
     <td align="right"><h6>Customer Email :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_email" required  placeholder="ID"></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_email" required  placeholder=""></td>
   </tr>
    <tr >
     <td align="right"><h6>Customer Picture :</h6></td>
@@ -85,8 +85,37 @@
       <input type="radio" ng-model="book_room.payment_type" value="rdo_credit"> <p>Credit</p><br />
       <input type="radio" ng-model="book_room.payment_type" value="rdo_other"> <p>Other</p></td>
   </tr>
-      <tr >
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+   
+  <tr >
+    <td align="right"><h6>Cash amount :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.payment_cash_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Remark :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="book_room.payment_remark"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Date Payment :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val1"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required" >
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date" ng-model="date_val1">
+       Not a valid date!</span><br />
+       <p>{{date_val1 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Date Transection :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val2"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required">
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span><br />
+       <p>{{date_val2 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+   <tr>
+    <td colspan="2" align="center" bgcolor="#FF6B0D" height="10px"></td>
   </tr>
   <tr>
    

@@ -14,9 +14,10 @@
   </script><div class="main_content">
   <div class="main_content_head"><a href="/charter_information">Charter infomation</a> | <a href="/charter_booking">Booking</a> | <a href="/charter_new_booking">New booking</a></div>
 <div class="main_content_inner1">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
+    <form novalidate class="css-form" name="myForm"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
   <tr>
-    <td colspan="2" align="center"><h6>Add room</h6><h5>detail</h5></td>
+    <td colspan="2" align="center"><h6>Add Booking</h6>
+      <h5>สำหรับลูกค้าเข้ามาจองห้องว่าง</h5></td>
     </tr>
     <tr>
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
@@ -24,7 +25,7 @@
   <tr >
     <td width="30%" align="right"><h6>Building :</h6></td>
     <td width="70%">
-      <select name="sel_building" id="sel_building" ng-model="val0">
+      <select ng-model="charter_new_book.select_building" required >
         <option>Chose</option>
         <option>ตึก1</option>
         <option>ตึก2</option>
@@ -32,86 +33,101 @@
   </tr>
   <tr >
     <td align="right"><h6>room NO. :</h6></td>
-    <td><input name="txt_room_no" type="text" size="20" maxlength="100" width="80%" ng-model="val1" ng-pattern="/^null+$/" class="my-input" placeholder="123, 457"></td>
+    <td><select ng-model="charter_new_book.select_room" required >
+        <option>Chose</option>
+        <option>ห้อง1</option>
+        <option>ห้อง2</option>
+      </select></td>
   </tr>
  <tr >
-    <td align="right"><h6>room Name :</h6></td>
-    <td><input name="txt_room_name" type="text" size="20" maxlength="100" width="80%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="exclusive"></td>
+    <td align="right"><h6>Charter no. :</h6></td>
+    <td><input type="text" disabled="disabled"  placeholder="auto" style="background-color:#FFF;" size="20" maxlength="100" ng-model="charter_new_book.charter_no" required /></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer Name :</h6></td>
+    <td><input type="text" disabled="disabled"  placeholder="auto" style="background-color:#FFF;" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_name" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer ID :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.charter_customer_id" required  placeholder=""></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer address :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="charter_new_book.customer_address"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Province :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.customer_province" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer post code :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.customer_post_code" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Country :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.customer_country" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Mobile no. :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.customer_mobile" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Email :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.customer_email" required  placeholder=""></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer Picture :</h6></td>
+    <td><input type="file" ng-model="charter_new_book.customer_pic" required></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" bgcolor="#FF6B0D" height="10px">Payment</td>
   </tr>
  <tr>
-    <td align="right"><h6>status :</h6></td>
+    <td align="right"><h6>Payment type :</h6></td>
     <td valign="middle">
-      <input type="radio" name="radio_sta" id="rdo_ava" value="rdo_ava"> <p>Available</p>
-      <input type="radio" name="radio_sta" id="rdo_un_ava" value="rdo_un_ava">
-      <p>Unvailable</p></td>
+      <input type="radio" ng-model="charter_new_book.payment_type" value="rdo_cash"> <p>Cash</p>
+      <input type="radio" ng-model="charter_new_book.payment_type" value="rdo_Bank"> <p>Bank Transfer</p>
+      <input type="radio" ng-model="charter_new_book.payment_type" value="rdo_credit"> <p>Credit</p><br />
+      <input type="radio" ng-model="charter_new_book.payment_type" value="rdo_other"> <p>Other</p></td>
+  </tr>
+   
+  <tr >
+    <td align="right"><h6>Cash amount :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_new_book.payment_cash_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Remark :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="charter_new_book.payment_remark"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Date Payment :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val1"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required" >
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date" ng-model="date_val1">
+       Not a valid date!</span><br />
+       <p>{{date_val1 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Date Transection :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val2"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required">
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span><br />
+       <p>{{date_val2 | date: "dd-MM-yyyy"}}</p></td>
   </tr>
    <tr>
-    <td align="right"><h6>Invoice :</h6></td>
-    <td valign="middle">
-      <input type="checkbox" name="ch_sep" id="ch_sep" ng-model="checked" ng-init="checked=true"/>
-        <p>not separate</p>
-      </td>  
-      </tr>
-  <tr>
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
-<tr>
-    <td align="right"><h6>rate :</h6></td>
-    <td ><input name="txt_room_rate" type="text" size="20" maxlength="100" width="80%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="3,000, 5,000"><input name="txt_room_rate_vat" type="text" maxlength="100" width="10%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="Vat %"></td>
-  </tr>
-  <tr ng-if="checked" class="animate-if">
-    <td colspan="2" align="center"><img src="image/icon/plus-icon.gif"  width="7%"/></td>
-    </tr>
-  <tr >
-    <td align="right"><h6>Furniture :</h6></td>
-    <td ><input name="txt_room_fur" type="text" size="20" maxlength="100" width="80%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="3,000, 5,000">
-      <input name="txt_room_fur_vat" type="text" maxlength="100" width="10%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="Vat %" /></td>
-  </tr>
-  <tr ng-if="checked" class="animate-if">
-    <td colspan="2" align="center"><img src="image/icon/plus-icon.gif"  width="7%"/></td>
-    </tr>
-  <tr>
-    <td align="right"><h6>Public utility :</h6></td>
-    <td ><input name="txt_room_pub_uti" type="text" size="20" maxlength="100" width="80%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="3,000, 5,000">
-      <input name="txt_room_pub_uti_vat" type="text" maxlength="100" width="10%" ng-model="val2" ng-pattern="/^null+$/" class="my-input" placeholder="Vat %" /></td>
-  </tr>
- <tr >
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
-  <tr>
-    <td align="right"><h6>water bill & energy bill :</h6></td>
-    <td > <input type="checkbox" name="ch_int_wat_bil" id="ch_internal_water_bill" checked="checked"/>
-        <p>Internal water bill</p>
-        <input type="checkbox" name="ch_ext_wat_bill" id="ch_external_water_bill"/>
-        <p>External water bill</p>
-        <input type="checkbox" name="ch_int_eng_bil" id="ch_internal_energy_bill" checked="checked"/>
-        <p>Internal energy bill</p>
-        <input type="checkbox" name="ch_ext_eng_bil" id="ch_external_energy_bill"/>
-        <p>External energy bill</p></td>
-  </tr>
-  <tr>
-    <td align="right"><h6>Service :</h6></td>
-    <td valign="middle">
-      <input type="checkbox" name="ch_service" id="ch_sep" ng-model="checked"/>
-        <p>{-{-service-}-}</p>
-      </td> 
-      </tr>
-      <tr>
-    <td align="right"><h6>Furniture include :</h6></td>
-    <td valign="middle">
-      <input type="checkbox" name="ch_furniture" id="ch_sep" ng-model="checked"/>
-        <p>{-{-Furniture-}-}</p>
-      </td> 
-      </tr>
-      <tr >
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+    <td colspan="2" align="center" bgcolor="#FF6B0D" height="10px"></td>
   </tr>
   <tr>
    
-     <td colspan="2" align="center"><input type="reset" name="btn_cancle" class="btn_cancle" value="Back"><input type="submit" name="btn_next" class="btn_submit" value="Add">
+     <td colspan="2" align="center"><button ng-click="reset()">Reset</button><button ng-click="save()">Save</button>
         </td>
   </tr>
   
-</table>
+</table></form>
 </div>
 </div>
