@@ -6,4 +6,10 @@
 .tbr_customers {
   width: 98%;
   height: auto;
-  margin: 0 1% 1em 1%; }
+  margin: 0 1% 1em 1%;
+  border: 1px solid rgba(121, 189, 154, 0.5);
+  border-bottom: 0px;
+  border-right: 0px; }
+  .tbr_customers tr td {
+    border-bottom: 1px solid rgba(121, 189, 154, 0.5);
+    border-right: 1px solid rgba(121, 189, 154, 0.5); }
