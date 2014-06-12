@@ -322,6 +322,8 @@ for (var prop in $scope.items3) {
       this.myDropDown  = 'zero';
        $scope.date_val2 = new Date();
        $scope.date_val1 = new Date();
+       $scope.user = {
+    email: 'email@example.com'};
 
        $scope.colors = [
     {name:'Template1', shade:'dark'},
