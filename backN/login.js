@@ -49,6 +49,7 @@ exports.add = function(req,res){
   user.amphure=req.query.amphure;
   user.district=req.query.district;
   user.province=req.query.provinces;
+  
   user.tel  = [];
   user.tel=req.query.tel.split(',');
   user.mobile  = [];
