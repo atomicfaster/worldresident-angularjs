@@ -132,7 +132,7 @@
               <h6></td>
             <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
              <div ng-repeat="item in items1">
-             {{item}}<button ng-click="del_tel($item)"></button>
+             {{item}}<button ng-click="del_tel($item)">delete</button>
              </div>
         <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="tel" required>
      
@@ -145,7 +145,7 @@
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
         
-             {{item}}<button ng-click="del_moblie($item)"></button>
+             {{item}}<button ng-click="del_moblie($item)">delete</button>
              </div>
         <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="mobile" required>
   <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
@@ -156,7 +156,7 @@
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
         
-             {{item}}<button ng-click="del_fax($item)"></button>
+             {{item}}<button ng-click="del_fax($item)">delete</button>
              </div>
         <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="fax" required>
   <button ng-click="adds3(fax)">Add</button></td>
