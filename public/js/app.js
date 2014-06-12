@@ -323,6 +323,15 @@ for (var prop in $scope.items3) {
        $scope.date_val2 = new Date();
        $scope.date_val1 = new Date();
 
+       $scope.colors = [
+    {name:'Template1', shade:'dark'},
+    {name:'Template2', shade:'light'},
+    {name:'Template3', shade:'dark'},
+    {name:'Template4', shade:'dark'},
+    {name:'Template5', shade:'light'}
+        ];
+        $scope.myColor = $scope.colors[2];
+
        $scope.total_sum = function(s1,s2,s3,s4,s5){
 
      if(s1===undefined){s1=0;}if(s2===undefined){s2=0;}if(s3===undefined){s3=0;}if(s4===undefined){s4=0;}if(s5===undefined){s5=0;}
