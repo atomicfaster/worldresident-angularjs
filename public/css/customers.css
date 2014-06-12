@@ -24,7 +24,7 @@
     display: block;
     max-width: 100%;
     max-height: auto; }
-  .modal input[type="checkbox"] {
+  .modal input.modal-state {
     display: none; }
   .modal .btn {
     font-size: 1em;
