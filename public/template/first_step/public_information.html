@@ -13,14 +13,14 @@
   </tr>
   <tr>
     <td align="right"><h6>Apartment Detail : </h6></td>
-    <td align="left" valign="top"><textarea  rows="6" required="required" ng-model="pub_info.aprt_detail"></textarea></td>
+    <td align="left" valign="top"><textarea  rows="6" required="required" name="aprt_detail" ng-model="aprt_detail"></textarea></td>
   </tr>
   
   <tr>
     <td width="30%" align="right"><h6>Custom link : </h6></td>
     <td><div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_name" required> url : 
-<input type="text" placeholder="{{item.num}}" ng-model="pub_info.part_link_href" required>
+        <input type="text" placeholder="{{item.num}}" name="part_link_name" ng-model="part_link_name" required> url : 
+<input type="text" placeholder="{{item.num}}" name="part_link_href" ng-model="part_link_href" required>
       </div>
       <button ng-click="add1()">New Item</button></td>
   </tr>
