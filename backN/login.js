@@ -12,6 +12,7 @@ exports.check = function(req,res)
 
 exports.login = function(req,res)
 {
+  try{
 console.log(req.query.pass);
 User.findOne({username:req.query.user}).exec(function(err,result)
 {
@@ -26,7 +27,15 @@ else
 res.send("");
 }
 }
-)};
+)}
+catch(ex){
+
+
+  alert("please refresh ");
+}
+
+
+};
 
 exports.add = function(req,res){
   var data;
@@ -49,7 +58,7 @@ exports.add = function(req,res){
   user.amphure=req.query.amphure;
   user.district=req.query.district;
   user.province=req.query.provinces;
-  
+
   user.tel  = [];
   user.tel=req.query.tel.split(',');
   user.mobile  = [];
