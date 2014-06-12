@@ -12,11 +12,12 @@ exports.check = function(req,res)
 
 exports.login = function(req,res)
 {
-  try{
+  
 console.log(req.query.pass);
 User.findOne({username:req.query.user}).exec(function(err,result)
 {
 console.log(result);
+try{
 if(result.passwd==req.query.pass)
 {
 console.log(result);
@@ -27,13 +28,12 @@ else
 res.send("");
 }
 }
-)}
 catch(ex){
-
-
-  alert("please refresh ");
+console.log("error");
 }
 
+}
+)
 
 };
 
