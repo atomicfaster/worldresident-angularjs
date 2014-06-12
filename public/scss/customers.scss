@@ -54,9 +54,10 @@ tr td{
   }
 
   .btn {
-		    @include button(simple, $base-body-color);
+		    //@include button(simple, $base-body-color);
 		    font-size: $base-font-size;
 		    //margin-bottom: $base-line-height;
+		    margin: 0.2em;
 	  }
 
   .modal-open 	{
