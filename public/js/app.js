@@ -295,9 +295,18 @@ for (var prop in $scope.items3) {
        
 
      
-        console.log(params);
+        console.log(data);
 
-       $http.post('/registed?'+data, data).success(successCallback);
+       $http.post('/registed?'+data, data).success(function(data, status, headers, config){
+
+        if(status==200)
+        {
+            alert("Your Account Activated");
+            $window.location.pathname="/first_step";
+        }
+        else
+            alert("please check your information");
+               });
      };
 
        $scope.login = function(user,pass)
@@ -307,10 +316,8 @@ for (var prop in $scope.items3) {
             
      if(data != "")
       $window.location.pathname="/first_step";
-    else{
-     alert("Please Check your login");
-     window.location.pathname= "/homes";   
-    }
+    else
+      console.log(data);
     });
 
          
