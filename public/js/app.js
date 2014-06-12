@@ -291,12 +291,9 @@ for (var prop in $scope.items3) {
 }
 
 
-    var data = "username="+params.username+"&passwd="+MD5(this.password)+"&name="+params.fname+"&lastname="+params.lname+"&email="+params.email+"&address="+params.address+"&zipcode="+params.post_code+"&amphure="+params.amphures+"&district="+params.district+"&province="+params.provinces+"&tel="+tel+"&mobile="+mobile+"&fax="+fax;
+    var data = "username="+params.username+"&passwd="+MD5(this.password)+"&name="+params.fname+"&lastname="+params.lname+"&email="+params.email+"&address="+params.address+"&zipcode="+params.post_code+"&amphure="+params.amphures+"&district="+params.district+"&provinces="+params.provinces+"&tel="+tel+"&mobile="+mobile+"&fax="+fax;
        
 
-        console.log($scope.items1);
-        console.log($scope.items2);
-        console.log($scope.items3);
      
         console.log(params);
 
