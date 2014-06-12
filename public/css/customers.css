@@ -27,56 +27,8 @@
   .modal input[type="checkbox"] {
     display: none; }
   .modal .btn {
-    border: 1px solid #dbdbdb;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 0 0 white;
-    color: #333333;
-    display: inline-block;
-    font-size: inherit;
-    font-weight: bold;
-    background-color: white;
-    background-image: -webkit-linear-gradient(white, #e3e3e3);
-    background-image: linear-gradient(white, #e3e3e3);
-    padding: 7px 18px;
-    text-decoration: none;
-    text-shadow: 0 1px 0 white;
-    background-clip: padding-box;
-    border: 1px solid #dfd8d8;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 0 0 white;
-    color: #333333;
-    display: inline-block;
-    font-size: inherit;
-    font-weight: bold;
-    background-color: white;
-    background-image: -webkit-linear-gradient(white, #e5e0e0);
-    background-image: linear-gradient(white, #e5e0e0);
-    padding: 7px 18px;
-    text-decoration: none;
-    text-shadow: 0 1px 0 white;
-    background-clip: padding-box;
-    font-size: 1em; }
-    .modal .btn:hover:not(:disabled) {
-      box-shadow: inset 0 1px 0 0 white;
-      cursor: pointer;
-      background-color: #f2f2f2;
-      background-image: -webkit-linear-gradient(#f2f2f2, #dbdbdb);
-      background-image: linear-gradient(#f2f2f2, #dbdbdb); }
-    .modal .btn:active:not(:disabled), .modal .btn:focus:not(:disabled) {
-      border: 1px solid #dbdbdb;
-      box-shadow: inset 0 0 8px 4px #d4d4d4, inset 0 0 8px 4px #d4d4d4; }
-    .modal .btn:hover:not(:disabled) {
-      box-shadow: inset 0 1px 0 0 white;
-      cursor: pointer;
-      background-color: #f2f2f2;
-      background-image: -webkit-linear-gradient(#f2f2f2, #ded8d8);
-      background-image: linear-gradient(#f2f2f2, #ded8d8); }
-    .modal .btn:active:not(:disabled), .modal .btn:focus:not(:disabled) {
-      border: 1px solid #dfd8d8;
-      box-shadow: inset 0 0 8px 4px #d7d1d1, inset 0 0 8px 4px #d7d1d1; }
-    .modal .btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed; }
+    font-size: 1em;
+    margin: 0.2em; }
   .modal .modal-open {
     overflow: hidden; }
   .modal .modal-window {
