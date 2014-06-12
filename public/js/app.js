@@ -332,6 +332,17 @@ for (var prop in $scope.items3) {
       this.myDropDown  = 'zero';
        $scope.date_val2 = new Date();
        $scope.date_val1 = new Date();
+       $scope.user = {
+    email: 'email@example.com'};
+
+       $scope.colors = [
+    {name:'Template1', shade:'dark'},
+    {name:'Template2', shade:'light'},
+    {name:'Template3', shade:'dark'},
+    {name:'Template4', shade:'dark'},
+    {name:'Template5', shade:'light'}
+        ];
+        $scope.myColor = $scope.colors[2];
 
        $scope.total_sum = function(s1,s2,s3,s4,s5){
 

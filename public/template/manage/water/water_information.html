@@ -12,82 +12,256 @@
   
   </script><div class="main_content">
    <div class="main_content_head"><a href="/water_information">Water information</a> | <a href="/water_record">Record</a></div>
-<div class="main_content_inner1">
-   <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
+   
+  
+     
+   
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+       <td width="20%" align="right"><p id="roommg_head">Water search</p></td>
+       <td width="60%" align="left"><input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""></td>
+       <td width="20%" align="right"><div class="modal" style="height: 100%;float: right;margin: 0em;">
+              <label for="modal-13">
+              <div class="btn js-btn"><img src="image/icon/plus.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-13" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-13"></label>
+                  <h1>Create Room</h1>
+                  <p class="intro">Add room</p>
+                  <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" style="width:100%; margin:0;">
   <tr>
-    <td width="30%">Building</td>
-    <td width="20%" >Room no.</td>
-    <td width="20%" colspan="2" style="text-align:center;">May</td>
-    <td width="5%" colspan="2" style="text-align:center;">June</td>
-    <td width="5%" colspan="2" style="text-align:center;">July</td>
+    <td colspan="2" align="center"><h6>Add room</h6><h5>detail</h5></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr >
+    <td width="30%" align="right"><h6>Building :</h6></td>
+    <td width="70%">
+      <select ng-model="add_room.sel_building" required >
+        <option>Chose</option>
+        <option>ตึก1</option>
+        <option>ตึก2</option>
+      </select></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>room NO. :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="add_room.room_no" required  placeholder="123, 457"></td>
+  </tr>
+ <tr >
+    <td align="right"><h6>room Name :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="add_room.room_name" required  placeholder="123, 457"></td>
+  </tr>
+ <tr>
+    <td align="right"><h6>status :</h6></td>
+    <td valign="middle">
+      <input type="radio" ng-model="add_room.room_roo_status" value="rdo_ava"> <p>Available</p>
+      <input type="radio" ng-model="add_room.room_roo_status" value="rdo_un_ava">
+      <p>Unvailable</p></td>
+  </tr>
+   <tr>
+    <td align="right"><h6>Invoice :</h6></td>
+    <td valign="middle">
+      <input type="checkbox" name="ch_sep" id="ch_sep" ng-model="separate" ng-init="checked=true"/>
+        <p>not separate</p>
+      </td>  
+      </tr>
+  <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+<tr>
+    <td align="right"><h6>rate :</h6></td>
+    <td ><input type="text" size="20" maxlength="100" ng-model="add_room.room_rate" required  placeholder="123, 457"><input type="text" size="20" maxlength="100" ng-model="add_room.room_rate_vat" required  placeholder="Vat %"></td>
+  </tr>
+  <tr ng-if="separate" class="animate-if">
+    <td colspan="2" align="center"><img src="image/icon/plus-icon.gif"  width="7%"/></td>
+    </tr>
+  <tr >
+    <td align="right"><h6>Furniture :</h6></td>
+    <td ><input type="text" size="20" maxlength="100" ng-model="add_room.room_fur" required  placeholder="123, 457">
+      <input type="text" size="20" maxlength="100" ng-model="add_room.room_fur_vat" required  placeholder="Vat %"></td>
+  </tr>
+  <tr ng-if="separate" class="animate-if">
+    <td colspan="2" align="center"><img src="image/icon/plus-icon.gif"  width="7%"/></td>
     </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>start</td>
-    <td>end</td>
-    <td>start</td>
-    <td>end</td>
-    <td>start</td>
-    <td>end</td>
-    </tr>
+    <td align="right"><h6>Public utility :</h6></td>
+    <td ><input type="text" size="20" maxlength="100" ng-model="add_room.room_pub_uti" required  placeholder="123, 457">
+      <input type="text" size="20" maxlength="100" ng-model="add_room.room_pub_uti_vat" required  placeholder="Vat %"></td>
+  </tr>
+ <tr >
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
   <tr>
-    <td>Building01</td>
-    <td>543</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
+    <td align="right"><h6>water bill & energy bill :</h6></td>
+    <td > <input type="checkbox" ng-model="add_room.room_ch_internal_water_bill" checked="checked"/>
+        <p>Internal water bill</p>
+        <input type="checkbox" ng-model="add_room.room_ch_external_water_bill"/>
+        <p>External water bill</p>
+        <input type="checkbox" ng-model="add_room.room_ch_internal_energy_bill" checked="checked"/>
+        <p>Internal energy bill</p>
+        <input type="checkbox" ng-model="add_room.room_ch_external_energy_bill"/>
+        <p>External energy bill</p></td>
+  </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
+    <td align="right"><h6>Service :</h6></td>
+    <td valign="middle">
+      <input type="checkbox" ng-model="add_room.room_select_service"/>
+        <p>{-{-service-}-}</p>
+      </td> 
+      </tr>
+      <tr>
+    <td align="right"><h6>Furniture include :</h6></td>
+    <td valign="middle">
+      <input type="checkbox" ng-model="add_room.room_select_furniture_include"/>
+        <p>{-{-Furniture-}-}</p>
+      </td> 
+      </tr>
+      <tr >
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-</table>
+   
+     <td colspan="2" align="center"><button ng-click="reset()">Reset</button><button ng-click="save()">Save</button>
+        </td>
+  </tr>
+  
+</table></form></td>
+     </tr>
+   </table>
+   <!------------------------------------------------------------------>
 
+<!----------------------------------------------------------------->
+<div class="main_content_inner1" style="margin-top:0em;">
+  <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="15%" align="center" bgcolor="#79BD9A"><img src="image/icon/arrow-left.png" style="width: 18px;"/></td>
+      <td width="15%" align="center" bgcolor="#79BD9A" ><img src="image/icon/arrow-right.png" style="width: 18px;"/></td>
+      <td width="23%" colspan="2" align="center" style="text-align:center;">May</td>
+      <td width="23%" colspan="2" align="center" bgcolor="#3366FF" style="text-align:center;">June</td>
+      <td width="23%" colspan="2" align="center" style="text-align:center;">July</td>
+    </tr>
+    <tr>
+      <td align="center">Building</td>
+      <td align="center">Room no.</td>
+      <td align="center">start</td>
+      <td align="center">end</td>
+      <td align="center">start</td>
+      <td align="center">end</td>
+      <td align="center">start</td>
+      <td align="center">end</td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">543</td>
+      <td align="center" bgcolor="#99FF66">12
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">24
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">12
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">24
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">24
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6600">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+  </table>
 </div>
 </div>
