@@ -13,43 +13,52 @@ exports.check = function(req,res)
 exports.login = function(req,res)
 {
   
-console.log(req.query.pass);
-User.findOne({username:req.query.user}).exec(function(err,result)
-{
-console.log(result);
-try{
-if(result.passwd==req.query.pass)
-{
-console.log(result);
-res.send(result);
-}
-else
-{
-res.send("");
-}
-}
-catch(ex){
-console.log("error");
-}
+  console.log(req.query.pass);
+  User.findOne({username:req.query.user}).exec
+  (
+        function(err,result)
+          {
+              console.log(result);
+              try
+              {
+                  if(result.passwd==req.query.pass)
+                  {
+                    console.log(result);
+                    res.send(result);
+                  }
+                  else
+                  {
+                    res.send("");
+                  }
+              }
+              catch(ex)
+              {
+                  res.send("");
+              }
 
-}
-)
+          }
+  )
 
 };
 
-exports.add = function(req,res){
-  var data;
+exports.add = function(req,res)
+{
+ 
 
 
 
- console.log(req.query);
+
       var user = {}
       var ObjectId = mongoose.Types.ObjectId; 
       var newId = new ObjectId();
       user._id = newId;
    	  user.username=req.query.username;
   user.passwd=req.query.passwd;
+  if(user.type==undefined)
+    user.type=0;
+  else
   user.type= req.query.type;
+
   user.name= req.query.name;
   user.lastname=req.query.lastname;
   user.email= req.query.email;
@@ -66,22 +75,33 @@ exports.add = function(req,res){
   user.fax = [];
   user.fax = req.query.fax.split(',');
   user.active=0;
-  user.company=req.query.company,
-  user.regisnum=req.query.regisnum,
-  user.capital=req.query.capital,
-  user.companyname=req.query.companyname,
+  if(req.query.company!=undefined)
+  user.company=req.query.company;
+else
+   user.company=0;
 
+ if(req.query.regisnum!=undefined)
+  user.regisnum=req.query.regisnum;
+else
+   user.regisnum=0;
+
+ if(req.query.capital!=undefined)
+  user.capital=req.query.capital;
+else
+   user.capital=0;
+
+ if(req.query.companyname!=undefined)
+  user.companyname=req.query.companyname;
+else
+ user.companyname=0;
    console.log(user);
 
-
-
-
-   var newUser = new User(user);
+var newUser = new User(user);
                     newUser.save(function (err) {
                       if (err) {
-                        res.send(200, err);
+                        res.send(201, "error" + err);
                         return;
-                      };
+                      }
                       res.send(200, newUser);
                       return;
                     });
