@@ -45,21 +45,21 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" name="username" ng-model="username" ng-pattern="/^\s*\w*\s*$/" required/>
+            <td><input type="text" name="username" ng-model="reg.username" ng-pattern="/^\s*\w*\s*$/" required/>
              </td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input name="password" type="password" ng-pattern="/^\s*\w*\s*$/" ng-model="password" required />
+            <td><input name="password" type="password" ng-change="passupdate()"  ng-model="password" required />
             </td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" ng-model="repassword" required /></td>
+            <td><input type="password" name="repassword"  ng-change="passupdate()" ng-pattern="patternupdate()" ng-model="repassword" required /></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -71,40 +71,40 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" ng-model="name" required /></td>
+            <td width="70%"><input type="text" name="name" ng-model="reg.fname" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td>
-              <input type="text" ng-model="lname" required /></td>
+              <input type="text" ng-model="reg.lname" name="lname" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="email" ng-model="email" required /></td>
+              <input type="email" ng-model="reg.email" name="email" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
             <td>
-              <textarea rows="4" ng-model="address" required /></textarea></td>
+              <textarea rows="4" ng-model="reg.address" name="address" required /></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" ng-model="post_code" required></td>
+            <td><input type="text" ng-model="reg.post_code" name="post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" ng-model="amphures" required disabled>
+            <td><input type="text" ng-model="reg.amphures" name = "amphures" required >
               <p> Edit : </p>
               <select ng-model="amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
@@ -114,7 +114,7 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" ng-model="district" required  disabled>
+            <td><input type="text" ng-model="reg.district" name= "district" required  >
               <p> Edit : </p>
               <select ng-model="distruct_plus" required style="width:20%;">
                 <option>...</option>
@@ -124,7 +124,7 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" ng-model="provices" required disabled></td>
+            <td><input type="text" ng-model="reg.provices" name="provinces" required ></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
@@ -132,9 +132,9 @@
               <h6></td>
             <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
              <div ng-repeat="item in items1">
-             {{item}}
+             {{item}}<button ng-click="del_tel($item)"></button>
              </div>
-        <input type="number" placeholder="" ng-model="tel" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="tel" required>
      
       
       <button ng-click="adds1(tel)">Add</button></td></tr></table></td>
@@ -145,9 +145,9 @@
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
         
-             {{item}}
+             {{item}}<button ng-click="del_moblie($item)"></button>
              </div>
-        <input type="number" placeholder="" ng-model="mobile" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="mobile" required>
   <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
@@ -156,9 +156,9 @@
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
         
-             {{item}}
+             {{item}}<button ng-click="del_fax($item)"></button>
              </div>
-        <input type="number" placeholder="" ng-model="fax" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="fax" required>
   <button ng-click="adds3(fax)">Add</button></td>
           </tr>
           <tr height="2" >
@@ -168,7 +168,7 @@
           <tr>
             <td>&nbsp;</td>
             <td><button ng-click="reset()">RESET</button>
-    <button ng-click="update(std_user);">SAVE</button></td>
+    <button ng-click="update(reg);">SAVE</button></td>
           </tr>
         </table></form>
       </div>
@@ -190,20 +190,20 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" ng-model="username" required>
+            <td><input type="text" ng-model="reg.username" name ="username" required>
               <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" ng-model="password" required></td>
+            <td><input type="password" ng-model="reg.password" name="password" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" ng-model="repassword" required></td>
+            <td><input type="password" ng-model="reg.repassword" name="repassword" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -215,40 +215,40 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" ng-model="name" required></td>
+            <td width="70%"><input type="text" ng-model="reg.fname" name ="fname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td><label for="txt_lastname"></label>
-              <input type="text" ng-model="lname" required></td>
+              <input type="text" ng-model="reg.lname" name = "lname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="email" ng-model="email" required></td>
+              <input type="email" ng-model="reg.email" name= "email" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
             <td>
-              <textarea rows="4" ng-model="address" required></textarea></td>
+              <textarea rows="4" ng-model="reg.address" name="address" required></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" ng-model="post_code" required></td>
+            <td><input type="text" ng-model="reg.post_code" name="post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" ng-model="amphures" required disabled>
+            <td><input type="text" ng-model="reg.amphures" name="amphures" required >
               <p> Edit : </p>
               <select ng-model="amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
@@ -258,7 +258,7 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" ng-model="district" required disabled>
+            <td><input type="text" ng-model="reg.district" name = "district" required >
               <p> Edit : </p>
               <select ng-model="district_plus" required style="width:20%;">
                 <option>...</option>
@@ -268,7 +268,7 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" ng-model="provices" required disabled></td>
+            <td><input type="text" ng-model="reg.provices" name = "provinces" required ></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
@@ -278,7 +278,7 @@
              <div ng-repeat="item in items1">
              {{item}}
              </div>
-        <input type="number" placeholder="" ng-model="tel" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="tel" required>
      
       
       <button ng-click="adds1(tel)">Add</button></td></tr></table></td>
@@ -291,7 +291,7 @@
         
              {{item}}
              </div>
-        <input type="number" placeholder="" ng-model="mobile" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="mobile" required>
   <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
@@ -302,7 +302,7 @@
         
              {{item}}
              </div>
-        <input type="number" placeholder="" ng-model="fax" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="fax" required>
   <button ng-click="adds3(fax)">Add</button></td>
           </tr>
           <tr height="2" >
@@ -315,14 +315,14 @@
             <td height="2" align="right"><h6>
               Type :
               <h6></td>
-            <td height="2"><input type="radio" ng-model="type" value="rdo_store">
+            <td height="2"><input type="radio" ng-model="reg.type" value="rdo_store">
               <p>Store</p>
-              <input type="radio" ng-model="type" value="rdo_company" >
+              <input type="radio" ng-model="reg.type" value="rdo_company" >
               <p>Company</p>
-              <input type="radio" ng-model="type" value="rdo_limitedpartnership" >
+              <input type="radio" ng-model="reg.type" value="rdo_limitedpartnership" >
               <p>limited partnership</p>
               <br>
-              <input type="radio" ng-model="type" value="rdo_registeredpartnership"  />
+              <input type="radio" ng-model="reg.type" value="rdo_registeredpartnership"  />
               <p>Registered partnership</p></td>
           </tr>
           <tr height="2" >
@@ -330,7 +330,7 @@
               Registration <br>
               number :
               <h6></td>
-            <td height="2" ><input  type="text" ng-model="registration_no" required maxlength="13"></td>
+            <td height="2" ><input  type="text" ng-model="reg.registration_no" required maxlength="13"></td>
           </tr>
           <tr height="2" >
             <td height="2" align="right" ><h6>
@@ -345,7 +345,7 @@
           <tr>
             <td>&nbsp;</td>
             <td><button ng-click="reset();">RESET</button>
-    <button ng-click="update(onw_userb);">SAVE</button></td>
+    <button ng-click="update(reg);">SAVE</button></td>
           </tr>
         </table></form>
       </div>
@@ -365,20 +365,20 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" ng-model="username" required>
+            <td><input type="text" ng-model="reg.username" name ="username" required>
               <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" ng-model="password" required></td>
+            <td><input type="password" ng-model="reg.password" name="password" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" ng-model="repassword" required></td>
+            <td><input type="password" ng-model="reg.repassword" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -390,40 +390,40 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" ng-model="name" required></td>
+            <td width="70%"><input type="text" ng-model="reg.fname" name ="fname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td><label for="txt_lastname"></label>
-              <input type="text" ng-model="lname" required></td>
+              <input type="text" ng-model="reg.lname" name="lname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="email" ng-model="email" required></td>
+              <input type="email" ng-model="reg.email" name="email" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
             <td>
-              <textarea name="txt_address" rows="4" ng-model="address" required></textarea></td>
+              <textarea name="txt_address" rows="4" ng-model="reg.address" name="address" required></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" ng-model="post_code" required></td>
+            <td><input type="text" ng-model="reg.post_code" name="post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" ng-model="amphures" required disabled>
+            <td><input type="text" ng-model="reg.amphures" name="amphures" required >
               <p> Edit : </p>
               <select ng-model="amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
@@ -433,7 +433,7 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" ng-model="district" required disabled>
+            <td><input type="text" ng-model="reg.district" name="district" required >
               <p> Edit : </p>
               <select ng-model="district_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
@@ -443,7 +443,7 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" ng-model="provice" required disabled></td>
+            <td><input type="text" ng-model="reg.provices" name="provinces" required ></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
@@ -453,7 +453,7 @@
              <div ng-repeat="item in items1">
              {{item}}
              </div>
-        <input type="number" placeholder="" ng-model="tel" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="tel" required>
      
       
       <button ng-click="adds1(tel)">Add</button></td></tr></table></td>
@@ -466,7 +466,7 @@
         
              {{item}}
              </div>
-        <input type="number" placeholder="" ng-model="mobile" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="mobile" required>
   <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
@@ -477,7 +477,7 @@
         
              {{item}}
              </div>
-        <input type="number" placeholder="" ng-model="fax" required>
+        <input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="fax" required>
   <button ng-click="adds3(fax)">Add</button></td>
           </tr>
           <tr height="2" >
@@ -489,7 +489,7 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td valign="middle"><input  type="text" ng-model="comp_name" required maxlength="100"></td>
+            <td valign="middle"><input  type="text" ng-model="reg.comp_name" required maxlength="100"></td>
           </tr>
             </tr>
           
@@ -500,7 +500,7 @@
           <tr>
             <td>&nbsp;</td>
             <td><button ng-click="reset();">RESET</button>
-    <button ng-click="update(onw_usera);">SAVE</button></td>
+    <button ng-click="update(reg);">SAVE</button></td>
           </tr>
         </table></form>
       </div></div>
