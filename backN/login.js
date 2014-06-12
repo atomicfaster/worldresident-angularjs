@@ -29,7 +29,7 @@ res.send("");
 }
 }
 catch(ex){
-console.log("error");
+res.send("");
 }
 
 }

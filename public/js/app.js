@@ -304,10 +304,13 @@ for (var prop in $scope.items3) {
       {
 	
          $http.get('/checklogin?user='+user+'&&pass='+MD5(pass)).success(function(data, status, headers) {
+            
      if(data != "")
       $window.location.pathname="/first_step";
-    else
-      console.log(data);
+    else{
+     alert("Please Check your login");
+     window.location.pathname= "/homes";   
+    }
     });
 
          
