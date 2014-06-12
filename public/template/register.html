@@ -26,7 +26,7 @@
     <div ng-show="myDropDown=='zero'" style="text-align:center;color:red;"></div>         
 <!--Box1------------------------------------------>
                          <div id="box1" ng-show="myDropDown=='one'">
-       <form novalidate class="css-form"> <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+       <form novalidate name="register" class="css-form"> <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
           <tr>
             <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกทั่วไป</h6></td>
           </tr>
@@ -45,20 +45,21 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" ng-model="std_user.username" required />
-              <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
+            <td><input type="text" name="username" ng-model="username" ng-pattern="/^\s*\w*\s*$/" required/>
+             </td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" ng-model="std_user.password" required /></td>
+            <td><input name="password" type="password" ng-pattern="/^\s*\w*\s*$/" ng-model="password" required />
+            </td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" ng-model="std_user.repassword" required /></td>
+            <td><input type="password" ng-model="repassword" required /></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -70,42 +71,42 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" ng-model="std_user.name" required /></td>
+            <td width="70%"><input type="text" ng-model="name" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td>
-              <input type="text" ng-model="std_user.lname" required /></td>
+              <input type="text" ng-model="lname" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="email" ng-model="std_user.email" required /></td>
+              <input type="email" ng-model="email" required /></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
             <td>
-              <textarea rows="4" ng-model="std_user.address" required /></textarea></td>
+              <textarea rows="4" ng-model="address" required /></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" ng-model="std_user.post_code" required></td>
+            <td><input type="text" ng-model="post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" ng-model="std_user.amphures" required disabled>
+            <td><input type="text" ng-model="amphures" required disabled>
               <p> Edit : </p>
-              <select ng-model="std_user.amphures_plus" required style="width:20%; margin-left:0.5em;">
+              <select ng-model="amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -113,9 +114,9 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" ng-model="std_user.district" required  disabled>
+            <td><input type="text" ng-model="district" required  disabled>
               <p> Edit : </p>
-              <select ng-model="std_user.distruct_plus" required style="width:20%;">
+              <select ng-model="distruct_plus" required style="width:20%;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -123,7 +124,7 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" ng-model="std_user.provices" required disabled></td>
+            <td><input type="text" ng-model="provices" required disabled></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
@@ -131,30 +132,34 @@
               <h6></td>
             <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
              <div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="std_user.tel" required>
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="tel" required>
      
-      </div>
-      <button ng-click="add1()">New Item</button></td></tr></table></td>
+      
+      <button ng-click="adds1(tel)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
-        <input type="text" placeholder="{{item.num}}" ng-model="std_user.mobile" required>
-     
-      </div>
-      <button ng-click="add2()">New Item</button></td></tr></table></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="mobile" required>
+  <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
-        <input type="text" placeholder="{{item.num}}" ng-model="std_user.fax" required>
-     
-      </div>
-      <button ng-click="add3()">New Item</button></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="fax" required>
+  <button ng-click="adds3(fax)">Add</button></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -185,20 +190,20 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" ng-model="onw_userb.username" required>
+            <td><input type="text" ng-model="username" required>
               <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" ng-model="onw_userb.password" required></td>
+            <td><input type="password" ng-model="password" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" ng-model="onw_userb.repassword" required></td>
+            <td><input type="password" ng-model="repassword" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -210,42 +215,42 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" ng-model="onw_userb.name" required></td>
+            <td width="70%"><input type="text" ng-model="name" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td><label for="txt_lastname"></label>
-              <input type="text" ng-model="onw_userb.lname" required></td>
+              <input type="text" ng-model="lname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="email" ng-model="onw_userb.email" required></td>
+              <input type="email" ng-model="email" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
             <td>
-              <textarea rows="4" ng-model="onw_userb.address" required></textarea></td>
+              <textarea rows="4" ng-model="address" required></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" ng-model="onw_userb.post_code" required></td>
+            <td><input type="text" ng-model="post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" ng-model="onw_userb.amphures" required disabled>
+            <td><input type="text" ng-model="amphures" required disabled>
               <p> Edit : </p>
-              <select ng-model="onw_userb.amphures_plus" required style="width:20%; margin-left:0.5em;">
+              <select ng-model="amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -253,9 +258,9 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" ng-model="onw_userb.district" required disabled>
+            <td><input type="text" ng-model="district" required disabled>
               <p> Edit : </p>
-              <select ng-model="onw_userb.district_plus" required style="width:20%;">
+              <select ng-model="district_plus" required style="width:20%;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -263,38 +268,42 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" ng-model="onw_userb.provices" required disabled></td>
+            <td><input type="text" ng-model="provices" required disabled></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
-              <div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_userb.tel" required>
+            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
+             <div ng-repeat="item in items1">
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="tel" required>
      
-      </div>
-      <button ng-click="add1()">New Item</button></td></tr></table></td>
+      
+      <button ng-click="adds1(tel)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_userb.mobile" required>
-     
-      </div>
-      <button ng-click="add2()">New Item</button></td></tr></table></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="mobile" required>
+  <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_userb.fax" required>
-     
-      </div>
-      <button ng-click="add3()">New Item</button></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="fax" required>
+  <button ng-click="adds3(fax)">Add</button></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -306,14 +315,14 @@
             <td height="2" align="right"><h6>
               Type :
               <h6></td>
-            <td height="2"><input type="radio" ng-model="onw_userb.type" value="rdo_store">
+            <td height="2"><input type="radio" ng-model="type" value="rdo_store">
               <p>Store</p>
-              <input type="radio" ng-model="onw_userb.type" value="rdo_company" >
+              <input type="radio" ng-model="type" value="rdo_company" >
               <p>Company</p>
-              <input type="radio" ng-model="onw_userb.type" value="rdo_limitedpartnership" >
+              <input type="radio" ng-model="type" value="rdo_limitedpartnership" >
               <p>limited partnership</p>
               <br>
-              <input type="radio" ng-model="onw_userb.type" value="rdo_registeredpartnership"  />
+              <input type="radio" ng-model="type" value="rdo_registeredpartnership"  />
               <p>Registered partnership</p></td>
           </tr>
           <tr height="2" >
@@ -321,13 +330,13 @@
               Registration <br>
               number :
               <h6></td>
-            <td height="2" ><input  type="text" ng-model="onw_userb.registration_no" required maxlength="13"></td>
+            <td height="2" ><input  type="text" ng-model="registration_no" required maxlength="13"></td>
           </tr>
           <tr height="2" >
             <td height="2" align="right" ><h6>
               Registered Capital :
               <h6></td>
-            <td height="2" ><input type="text" ng-model="onw_userb.registered_cap" required></td>
+            <td height="2" ><input type="text" ng-model="registered_cap" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -356,20 +365,20 @@
             <td align="right"><h6>
               Username :
               <h6></td>
-            <td><input type="text" ng-model="onw_usera.username" required>
+            <td><input type="text" ng-model="username" required>
               <p class="check_user" style="color:red; visibility:hidden;">*</p></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Password :
               <h6></td>
-            <td><input type="password" ng-model="onw_usera.password" required></td>
+            <td><input type="password" ng-model="password" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               RePassword :
               <h6></td>
-            <td><input type="password" ng-model="onw_usera.repassword" required></td>
+            <td><input type="password" ng-model="repassword" required></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -381,42 +390,42 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td width="70%"><input type="text" ng-model="onw_usera.name" required></td>
+            <td width="70%"><input type="text" ng-model="name" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Last Name :
               <h6></td>
             <td><label for="txt_lastname"></label>
-              <input type="text" ng-model="onw_usera.lname" required></td>
+              <input type="text" ng-model="lname" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               E-mail :
               <h6></td>
             <td><label for="txt_email"></label>
-              <input type="email" ng-model="onw_usera.email" required></td>
+              <input type="email" ng-model="email" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Address :
               <h6></td>
             <td>
-              <textarea name="txt_address" rows="4" ng-model="onw_usera.address" required></textarea></td>
+              <textarea name="txt_address" rows="4" ng-model="address" required></textarea></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Post Code :
               <h6></td>
-            <td><input type="text" ng-model="onw_usera.post_code" required></td>
+            <td><input type="text" ng-model="post_code" required></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Amphures :
               <h6></td>
-            <td><input type="text" ng-model="onw_usera.amphures" required disabled>
+            <td><input type="text" ng-model="amphures" required disabled>
               <p> Edit : </p>
-              <select ng-model="onw_usera.amphures_plus" required style="width:20%; margin-left:0.5em;">
+              <select ng-model="amphures_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -424,9 +433,9 @@
             <td align="right"><h6>
               District :
               <h6></td>
-            <td><input type="text" ng-model="onw_usera.district" required disabled>
+            <td><input type="text" ng-model="district" required disabled>
               <p> Edit : </p>
-              <select ng-model="onw_usera.district_plus" required style="width:20%; margin-left:0.5em;">
+              <select ng-model="district_plus" required style="width:20%; margin-left:0.5em;">
                 <option>...</option>
               </select></td>
           </tr>
@@ -434,37 +443,42 @@
             <td align="right"><h6>
               Provinces :
               <h6></td>
-            <td><input type="text" ng-model="onw_usera.provice" required disabled></td>
+            <td><input type="text" ng-model="provice" required disabled></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Tel :
               <h6></td>
-            <td id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td><div ng-repeat="item in items1">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_usera.tel" required>
+            <td valign="middle" id="tel_box"><table width="100%" height="auto" class="tbr_tel"><tr><td>
+             <div ng-repeat="item in items1">
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="tel" required>
      
-      </div>
-      <button ng-click="add1()">New Item</button></td></tr></table></td>
+      
+      <button ng-click="adds1(tel)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right" valign="top"><h6>
               Mobile :
               <h6></td>
             <td class="mobile_box"><table width="100%" height="auto" class="tbr_mobile"><tr><td><div ng-repeat="item in items2">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_usera.mobile" required>
-     
-      </div>
-      <button ng-click="add2()">New Item</button></td></tr></table></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="mobile" required>
+  <button ng-click="adds2(mobile)">Add</button></td></tr></table></td>
           </tr>
           <tr>
             <td align="right"><h6>
               Fax :
               <h6></td>
             <td valign="middle"><div ng-repeat="item in items3">
-        <input type="text" placeholder="{{item.num}}" ng-model="onw_usera.fax" required>
-     
-      </div>
-      <button ng-click="add3()">New Item</button></td>
+        
+             {{item}}
+             </div>
+        <input type="number" placeholder="" ng-model="fax" required>
+  <button ng-click="adds3(fax)">Add</button></td>
           </tr>
           <tr height="2" >
             <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
@@ -475,7 +489,7 @@
             <td align="right"><h6>
               Name :
               <h6></td>
-            <td valign="middle"><input  type="text" ng-model="onw_usera.comp_name" required maxlength="100"></td>
+            <td valign="middle"><input  type="text" ng-model="comp_name" required maxlength="100"></td>
           </tr>
             </tr>
           
