@@ -13,108 +13,395 @@
   </script><div class="main_content">
  <div class="main_content_head"><a href="/book_infomation">Booking infomation</a> | <a href="/booking">Booking</a></div>
 <div class="main_content_inner1">
-   <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <p id="roommg_head">Booking search
+      <input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""></p>
+    <div class="modal" style="width: 6%;float: right;margin: 0 1em 1em 0;">
+              <label for="modal-13">
+              <div class="btn js-btn"><img src="image/icon/plus.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-13" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-13"></label>
+                  <h1>Booking</h1>
+                  <p class="intro">Add Booking</p>
+                  <form novalidate class="css-form" name="myForm"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" style="width:100%; margin:0;">
   <tr>
-    <td width="30%">Detail</td>
-    <td width="20%" >Agreenebt no.</td>
-    <td width="10%" style="text-align:center;">Date</td>
-    <td width="20%" style="text-align:center;">Remark</td>
-    <td width="5%" style="text-align:center;">Co</td>
-    <td width="5%" style="text-align:center;">Vehicle</td>
-    <td width="5%" style="text-align:center;">Key</td>
-    <td width="5%" style="text-align:center;">Scan</td>
+    <td colspan="2" align="center"><h6>Add Booking</h6>
+      <h5>สำหรับลูกค้าเข้ามาจองห้องว่าง</h5></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr >
+    <td width="30%" align="right"><h6>Building :</h6></td>
+    <td width="70%">
+      <select ng-model="book_room.select_building" required >
+        <option>Chose</option>
+        <option>ตึก1</option>
+        <option>ตึก2</option>
+      </select></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>room NO. :</h6></td>
+    <td><select ng-model="book_room.select_room" required >
+        <option>Chose</option>
+        <option>ห้อง1</option>
+        <option>ห้อง2</option>
+      </select></td>
+  </tr>
+ <tr >
+    <td align="right"><h6>Customer Name :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_name" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer ID :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_id" required  placeholder=""></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer address :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="book_room.customer_address"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Province :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_province" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer post code :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_post_code" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Country :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_country" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Mobile no. :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_mobile" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Email :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.customer_email" required  placeholder=""></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer Picture :</h6></td>
+    <td><input type="file" ng-model="book_room.customer_pic" required></td>
   </tr>
   <tr>
-    <td>{-{-Customer Detail-}-}</td>
-    <td>{-{-Agreenebt no.-}-}</td>
-    <td>{-{-Date-}-}</td>
-    <td>{-{-Remark-}-}</td>
-    <td>{-{-Co-}-}</td>
-    <td>{-{-Vehicle-}-}</td>
-    <td>{-{-Key-}-}</td>
-    <td>{-{-Scan-}-}</td>
+    <td colspan="2" align="center" bgcolor="#FF6B0D" height="10px">Payment</td>
+  </tr>
+ <tr>
+    <td align="right"><h6>Payment type :</h6></td>
+    <td valign="middle">
+      <input type="radio" ng-model="book_room.payment_type" value="rdo_cash"> <p>Cash</p>
+      <input type="radio" ng-model="book_room.payment_type" value="rdo_Bank"> <p>Bank Transfer</p>
+      <input type="radio" ng-model="book_room.payment_type" value="rdo_credit"> <p>Credit</p><br />
+      <input type="radio" ng-model="book_room.payment_type" value="rdo_other"> <p>Other</p></td>
+  </tr>
+   
+  <tr >
+    <td align="right"><h6>Cash amount :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="book_room.payment_cash_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Remark :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="book_room.payment_remark"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Date Payment :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val1"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required" >
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date" ng-model="date_val1">
+       Not a valid date!</span><br />
+       <p>{{date_val1 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Date Transection :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val2"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required">
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span><br />
+       <p>{{date_val2 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+   <tr>
+    <td colspan="2" align="center" bgcolor="#FF6B0D" height="10px"></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+   
+     <td colspan="2" align="center"><button ng-click="reset()">Reset</button><button ng-click="save()">Save</button>
+        </td>
   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+  
+</table></form>
+                  
+                </div>
+              </div>
+            </div>
+    <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <td width="5%" align="center">No.</td>
+          <td width="10%" align="center" >Booking no.</td>
+          <td width="10%" align="center" style="text-align:center;">Date of book</td>
+          <td width="25%" style="text-align:center;">Detail</td>
+          <td width="10%" style="text-align:center;">Building</td>
+          <td width="10%" style="text-align:center;">Room</td>
+          <td width="10%" style="text-align:center;">Cash</td>
+          <td width="10%" style="text-align:center;">Remark</td>
+          <td width="10%" style="text-align:center;">tools</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="center">1</td>
+          <td align="center">อาคาร1</td>
+          <td align="center">543</td>
+          <td>นาย ฟหกด</td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-1">
+              <div class="btn js-btn"><img src="image/icon/users.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-1" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-1"></label>
+                  <h1>ผู้พักร่วม</h1>
+                  <p class="intro">ห้อง543</p>
+                  <p class="body">
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0" class="tbr_inbox">
+                    <tr>
+                      <td align="right">Name : </td>
+                      <td><input type="text" />
+                        </td>
+                    <tr>
+                      <td align="right">Tel : </td>
+                      <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Picture : </td>
+                      <td><input type="file" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right"></td>
+                      <td><button>Add</button></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-12">
+              <div class="btn js-btn"><img src="image/icon/truck.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-12" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-12"></label>
+                  <h1>ยานพาหะนะ</h1>
+                  <p class="intro">ห้อง543</p>
+                 <p class="body">
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0" class="tbr_inbox">
+                    <tr>
+                      <td align="right">กท : </td>
+                      <td><input type="text" />
+                        </td>
+                    <tr>
+                      <td align="right">color : </td>
+                      <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Pic : </td>
+                      <td><input type="file" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right"></td>
+                      <td><button>Add</button></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-13">
+              <div class="btn js-btn"><img src="image/icon/key2.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-13" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-13"></label>
+                  <h1>คีย์การ์ด</h1>
+                  <p class="intro">ห้อง543</p>
+                  <p class="body">รหัส คีย์การ์ด <br />
+                    <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0" class="tbr_inbox">
+                    <tr>
+                      <td align="right">Key code : </td>
+                      <td><input type="text" /><button>Add</button>
+                        </td>
+                    </tr>
+                  </table>
+                  </p>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-14">
+              <div class="btn js-btn"><img src="image/icon/stack.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-14" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-14"></label>
+                  <h1>ไฟล์แสกน</h1>
+                  <p class="intro">ห้อง543</p>
+                  <p class="body">Download Sacn File <br />
+                    Download Charter Files</p>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">2</td>
+          <td align="center">อาคาร1</td>
+          <td align="center">544</td>
+          <td>นาย ่าสว</td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-2">
+              <div class="btn js-btn"><img src="image/icon/users.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-2" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-2"></label>
+                  <h1>ผู้พักร่วม</h1>
+                  <p class="intro">ห้อง 544</p>
+                  <p class="body">นาย 123 ปลาฉลามขึ้นบก <br />
+                    เพิ่มผู้พักร่วม
+                    <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0" class="tbr_inbox">
+                    <tr>
+                      <td align="right">Name : </td>
+                      <td><input type="text" />
+                        </td>
+                    <tr>
+                      <td align="right">Tel : </td>
+                      <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Picture : </td>
+                      <td><input type="file" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right"></td>
+                      <td><button>Add</button></td>
+                    </tr>
+                  </table>
+                  </p>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-22">
+              <div class="btn js-btn"><img src="image/icon/truck.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-22" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-22"></label>
+                  <h1>ยานพาหะนะ</h1>
+                  <p class="intro">ห้อง544</p>
+                  <p class="body">ทะเบียน กท-8888 <br />
+                    เพิ่มยานพาหะนะ
+                    <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0" class="tbr_inbox">
+                    <tr>
+                      <td align="right">กท : </td>
+                      <td><input type="text" />
+                        </td>
+                    <tr>
+                      <td align="right">color : </td>
+                      <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Pic : </td>
+                      <td><input type="file" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right"></td>
+                      <td><button>Add</button></td>
+                    </tr>
+                  </table>
+                  </p>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-23">
+              <div class="btn js-btn"><img src="image/icon/key2.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-23" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-23"></label>
+                  <h1>คีย์การ์ด</h1>
+                  <p class="intro">ห้อง544</p>
+                  <p class="body">รหัส คีย์การ์ด <br />
+                    เพิ่มรหัสคีย์การ์ด
+                    <table width="100%" height="auto" border="0" cellspacing="0" cellpadding="0" class="tbr_inbox">
+                    <tr>
+                      <td align="right">Key code : </td>
+                      <td><input type="text" /><button>Add</button>
+                        </td>
+                    </tr>
+                  </table>
+                  </p>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle"><div class="modal">
+              <label for="modal-44">
+              <div class="btn js-btn"><img src="image/icon/stack.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-44" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-44"></label>
+                  <h1>ไฟล์แสกน</h1>
+                  <p class="intro">ห้อง544</p>
+                  <p class="body">Download Sacn File <br />
+                    Download Charter Files</p>
+                </div>
+              </div>
+            </div></td>
+          <td align="center" valign="middle">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
 
 </div>
 </div>
