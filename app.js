@@ -45,6 +45,7 @@ if (env === 'production') {
  */
 
 // serve index and view partials
+app.post('/registed',chk.add);
 app.get("/logins",chk.logins);
 app.get("/checklogin",chk.login);
 app.get('/', routes.index);

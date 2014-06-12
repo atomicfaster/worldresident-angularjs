@@ -209,7 +209,6 @@ var MD5 = function (string) {
 
 
  angular.module('ngRouteExample', ['ngRoute', 'ngAnimate'])
-
    .controller('MainController', function($scope, $route, $routeParams, $location) {
        $scope.$route = $route;
        $scope.$location = $location;
@@ -234,30 +233,74 @@ var MD5 = function (string) {
         $scope.items1 = [];
         $scope.items2 = [];
         $scope.items3 = [];
+        $scope.password = "";
 
-        $scope.add1 = function () {
-          $scope.items1.push({ 
-             num:"Tel-Number"
-           
-          });
+      
+     $scope.del_tel = function(txt){
+        var index = $scope.items1.indexOf(txt);
+        if (index > -1) {
+    $scope.items1.splice(index, 1);
+}
+     };
+     $scope.del_mobile = function(txt){
+ var index = $scope.items2.indexOf(txt);
+
+        if (index > -1) {
+    $scope.items2.splice(index, 1);
+}
+     };
+     $scope.del_fax = function(txt){
+      var index = $scope.items3.indexOf(txt);
+
+        if (index > -1) {
+    $scope.items3.splice(index, 1);
+}};
+
+        $scope.passupdate=function(txt){
+console.log(this.password);
+$scope.password = this.password;
         };
-         $scope.add2 = function () {
-          $scope.items2.push({ 
-             num:"Mobile-Number"
-           
-          });
-        };
-         $scope.add3 = function () {
-          $scope.items3.push({ 
-             num:"Fax-Number"
-           
-          });
-        };
+    $scope.patternupdate = function(){
+        
+        var re = new RegExp("^"+$scope.password+"$", "");
+        return re;
+
+    };
 
      $scope.update = function(params)
      {
 
+var tel="";
+var fax="";
+var mobile="";
+
+        for (var prop in $scope.items1) {
+              if ( $scope.items1.hasOwnProperty(prop)) { 
+    tel = tel+$scope.items1[prop]+",";
+}
+}
+for (var prop in $scope.items2) {
+     if ( $scope.items2.hasOwnProperty(prop)) { 
+      mobile = tel+$scope.items2[prop]+",";
+  }
+}
+for (var prop in $scope.items3) {
+     if ( $scope.items3.hasOwnProperty(prop)) { 
+      fax = tel+$scope.items3[prop]+",";
+  }
+}
+
+
+    var data = "username="+params.username+"&passwd="+MD5(this.password)+"&name="+params.fname+"&lastname="+params.lname+"&email="+params.email+"&address="+params.address+"&zipcode="+params.post_code+"&amphure="+params.amphures+"&district="+params.district+"&province="+params.provinces+"&tel="+tel+"&mobile="+mobile+"&fax="+fax;
+       
+
+        console.log($scope.items1);
+        console.log($scope.items2);
+        console.log($scope.items3);
+     
         console.log(params);
+
+       $http.post('/registed?'+data, data).success(successCallback);
      };
 
        $scope.login = function(user,pass)
@@ -293,16 +336,19 @@ var MD5 = function (string) {
         };
 
         $scope.adds1 = function(txt){
-            if(!$scope.items1.contains(txt))
+            if(!$scope.items1.contains(txt)&&txt!="")
             $scope.items1.push(txt);
+        this.tel="";
         }
         $scope.adds2 = function(txt){
-           if(!$scope.items2.contains(txt))
+           if(!$scope.items2.contains(txt)&&txt!="")
             $scope.items2.push(txt);
+        this.mobile="";
         }
         $scope.adds3 = function(txt){
-            if(!$scope.items3.contains(txt))
+            if(!$scope.items3.contains(txt)&&txt!="")
             $scope.items3.push(txt);
+        this.fax="";
         }
    })
 

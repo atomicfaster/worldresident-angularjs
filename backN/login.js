@@ -32,13 +32,14 @@ exports.add = function(req,res){
   var data;
 
 
- 
+
+ console.log(req.query);
       var user = {}
       var ObjectId = mongoose.Types.ObjectId; 
       var newId = new ObjectId();
       user._id = newId;
    	  user.username=req.query.username;
-  user.passwd=req.query.psswd ;
+  user.passwd=req.query.passwd;
   user.type= req.query.type;
   user.name= req.query.name;
   user.lastname=req.query.lastname;
@@ -47,16 +48,18 @@ exports.add = function(req,res){
   user.zipcode= req.query.zipcode;
   user.amphure=req.query.amphure;
   user.district=req.query.district;
-  user.province=req.query.province;
+  user.province=req.query.provinces;
   user.tel  = [];
   user.tel=req.query.tel.split(',');
+  user.mobile  = [];
   user.mobile = req.query.mobile.split(',');
-  user.fax = req.query.fax;
+  user.fax = [];
+  user.fax = req.query.fax.split(',');
   user.active=0;
-  user.company=req.query.fax,
-  user.regisnum=req.query.fax,
-  user.capital=req.query.fax,
-  user.companyname=req.query.fax,
+  user.company=req.query.company,
+  user.regisnum=req.query.regisnum,
+  user.capital=req.query.capital,
+  user.companyname=req.query.companyname,
 
    console.log(user);
 
