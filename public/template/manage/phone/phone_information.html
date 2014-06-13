@@ -26,105 +26,94 @@
                   <label class="modal-close" for="modal-13"></label>
                   <h1>Create Room</h1>
                   <p class="intro">Add room</p>
-                  <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" style="width:100%; margin:0;">
-  <tr>
-    <td colspan="2" align="center"><h6>Add room</h6><h5>detail</h5></td>
-    </tr>
-    <tr>
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
-  <tr >
-    <td width="30%" align="right"><h6>Building :</h6></td>
-    <td width="70%">
-      <select ng-model="add_room.sel_building" required >
-        <option>Chose</option>
-        <option>ตึก1</option>
-        <option>ตึก2</option>
-      </select></td>
-  </tr>
-  <tr >
-    <td align="right"><h6>room NO. :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="add_room.room_no" required  placeholder="123, 457"></td>
-  </tr>
- <tr >
-    <td align="right"><h6>room Name :</h6></td>
-    <td><input type="text" size="20" maxlength="100" ng-model="add_room.room_name" required  placeholder="123, 457"></td>
-  </tr>
- <tr>
-    <td align="right"><h6>status :</h6></td>
-    <td valign="middle">
-      <input type="radio" ng-model="add_room.room_roo_status" value="rdo_ava"> <p>Available</p>
-      <input type="radio" ng-model="add_room.room_roo_status" value="rdo_un_ava">
-      <p>Unvailable</p></td>
-  </tr>
-   <tr>
-    <td align="right"><h6>Invoice :</h6></td>
-    <td valign="middle">
-      <input type="checkbox" name="ch_sep" id="ch_sep" ng-model="separate" ng-init="checked=true"/>
-        <p>not separate</p>
-      </td>  
-      </tr>
-  <tr>
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
-<tr>
-    <td align="right"><h6>rate :</h6></td>
-    <td ><input type="text" size="20" maxlength="100" ng-model="add_room.room_rate" required  placeholder="123, 457"><input type="text" size="20" maxlength="100" ng-model="add_room.room_rate_vat" required  placeholder="Vat %"></td>
-  </tr>
-  <tr ng-if="separate" class="animate-if">
-    <td colspan="2" align="center"><img src="image/icon/plus-icon.gif"  width="7%"/></td>
-    </tr>
-  <tr >
-    <td align="right"><h6>Furniture :</h6></td>
-    <td ><input type="text" size="20" maxlength="100" ng-model="add_room.room_fur" required  placeholder="123, 457">
-      <input type="text" size="20" maxlength="100" ng-model="add_room.room_fur_vat" required  placeholder="Vat %"></td>
-  </tr>
-  <tr ng-if="separate" class="animate-if">
-    <td colspan="2" align="center"><img src="image/icon/plus-icon.gif"  width="7%"/></td>
-    </tr>
-  <tr>
-    <td align="right"><h6>Public utility :</h6></td>
-    <td ><input type="text" size="20" maxlength="100" ng-model="add_room.room_pub_uti" required  placeholder="123, 457">
-      <input type="text" size="20" maxlength="100" ng-model="add_room.room_pub_uti_vat" required  placeholder="Vat %"></td>
-  </tr>
- <tr >
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
-  <tr>
-    <td align="right"><h6>water bill & energy bill :</h6></td>
-    <td > <input type="checkbox" ng-model="add_room.room_ch_internal_water_bill" checked="checked"/>
-        <p>Internal water bill</p>
-        <input type="checkbox" ng-model="add_room.room_ch_external_water_bill"/>
-        <p>External water bill</p>
-        <input type="checkbox" ng-model="add_room.room_ch_internal_energy_bill" checked="checked"/>
-        <p>Internal energy bill</p>
-        <input type="checkbox" ng-model="add_room.room_ch_external_energy_bill"/>
-        <p>External energy bill</p></td>
-  </tr>
-  <tr>
-    <td align="right"><h6>Service :</h6></td>
-    <td valign="middle">
-      <input type="checkbox" ng-model="add_room.room_select_service"/>
-        <p>{-{-service-}-}</p>
-      </td> 
-      </tr>
-      <tr>
-    <td align="right"><h6>Furniture include :</h6></td>
-    <td valign="middle">
-      <input type="checkbox" ng-model="add_room.room_select_furniture_include"/>
-        <p>{-{-Furniture-}-}</p>
-      </td> 
-      </tr>
-      <tr >
-    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
-  </tr>
-  <tr>
-   
-     <td colspan="2" align="center"><button ng-click="reset()">Reset</button><button ng-click="save()">Save</button>
-        </td>
-  </tr>
-  
-</table></form></td>
+                   <form novalidate class="css-form" name="myForm">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_option_manager" >
+              <tr>
+                <td colspan="2" align="center"><h6>Add Phone Bills</h6>
+                  <h5>บันทึกค่าโทรศัพท์</h5></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td width="30%" align="right"><h6>Building :</h6></td>
+                <td width="70%"><select ng-model="select_building" required >
+                    <option>Chose</option>
+                    <option>ตึก1</option>
+                    <option>ตึก2</option>
+                  </select></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Date of record:</h6></td>
+                <td><input type="date" id="exampleInput" name="input" ng-model="date_rec"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2099-12-31" required />
+                  <span class="error" ng-show="myForm.input.$error.required"> Required!</span> <span class="error" ng-show="myForm.input.$error.date"> Not a valid date!</span><br />
+                  <p>{{date_rec | date: "dd-MM-yyyy"}}</p></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Date of period:</h6></td>
+                <td><input type="date" id="exampleInput" name="input" ng-model="date_period"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2099-12-31" required />
+                  <span class="error" ng-show="myForm.input.$error.required"> Required!</span> <span class="error" ng-show="myForm.input.$error.date"> Not a valid date!</span><br />
+                  <p>{{date_period | date: "dd-MM-yyyy"}}</p></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start1" required  placeholder="" style="width:10%;"> 
+                           <button ng-click="save_this()">Save now</button></td>
+     </tr>
+              
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start2" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start3" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+             
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start4" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center"><button ng-click="reset()">Reset All</button>
+                <button ng-click="save()">Save All</button></td>
+              </tr>
+            </table>
+        </form></td>
      </tr>
    </table>
    <!------------------------------------------------------------------>
@@ -155,7 +144,7 @@
       <td colspan="2" align="center" bgcolor="#99FF66">24
         <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
       <td colspan="2" align="center" bgcolor="#3399CC">
-        <a href="#" editable-text="user.email">{{ user.email || 'empty' }}</a>
+        29
         <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
       <td colspan="2" align="center" bgcolor="#99FF66">24
         <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
