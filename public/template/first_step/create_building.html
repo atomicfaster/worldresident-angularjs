@@ -15,11 +15,11 @@
   </tr>
   <tr>
     <td align="right"><h6>Tel. :</h6></td>
-    <td><input type="text" name="building_tel" ng-model="building_tel" required /></td>
+    <td><input type="text" name="building_tel" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-model="building_tel" required /></td>
   </tr>
   <tr>
     <td align="right"><h6>Fax. :</h6></td>
-    <td><input type="text" name="building_fax" ng-model="building_fax" required /></td>
+    <td><input type="text" name="building_fax" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-model="building_fax" required /></td>
   </tr>
   <tr>
     <td align="right"><h6>Detail :</h6></td>
