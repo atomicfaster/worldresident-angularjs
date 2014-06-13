@@ -80,7 +80,7 @@ tr td{
   				}
 
   .modal-close {
-				    @include position(absolute, ($modal-padding /2) 0 0 90% );
+				    @include position(absolute, ($modal-padding /2) 0 0 95% );
 				    @include size(1.5em);
 				    cursor: pointer;
 				    background: $modal-background;
