@@ -36,10 +36,8 @@ a:active {color: $link-color;
 				@include media($large-screen) {
 				@include span-columns(4);
 				height: $layout-top-height;
-				margin: 0 1em 1em 0;
+				margin: 0 1em 1em 0.3em;
 				}
-				margin: 0 0 1em 0;			
-				height: auto;
 
 				p{
 					@include media($large-screen) {
@@ -146,11 +144,11 @@ a:active {color: $link-color;
 			.layout-left-bot{
 				@include media($large-screen) {
 				@include span-columns(2);
-				margin: 0 1em 1em 0;
+				margin: 0 1em 1em 0.3em;
 				
 				}
 
-				margin: 0 0em 1em 0;
+				
 				height: $layout-bot-height;
 				background-color:#F2F2F2;
 				border: 1px dotted $default-line;
