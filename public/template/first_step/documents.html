@@ -1,4 +1,7 @@
-<form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
+<form 
+      enctype="multipart/form-data"
+      action="{{ actionUrl }}"
+      method="post" novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
   <tr>
     <td colspan="2" align="center"><h6>Document</h6><h5>Information will be place on top of document.</h5></td>
     </tr>
@@ -22,7 +25,7 @@
     <td><input type="text" placeholder="" ng-model="document.comp_district" required /></td>
   </tr>
   <tr class="document_province">
-    <td align="right"><h6>Provice :</h6></td>
+    <td align="right"><h6>Province :</h6></td>
     <td><input type="text" placeholder="" ng-model="document.comp_province" required /></td>
   </tr>
   <tr class="document_postcode">
@@ -48,15 +51,17 @@
   <tr class="document_logo">
     <td align="right"><h6>Logo :</h6></td>
     <td>
-      <input type="file" ng-model="document.comp_logo" required></td>
+      <input name ="file" type="file" ng-model="document.comp_logo" required></td>
   </tr>
   <tr>
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
   </tr>
   <tr>
    
-     <td colspan="2" align="center"><button ng-click="back()">Back</button><button ng-click="next()">Next</button>
+     <td colspan="2" align="center"><button ng-click="back()">Back</button><button type="submit" ng-click="docupdate(document,document.getElementsByTagName('input')[9].files[0].name)">Next</button>
         </td>
   </tr>
-  
+
+ 
+
 </table></form>

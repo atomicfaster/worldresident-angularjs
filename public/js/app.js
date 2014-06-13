@@ -234,7 +234,7 @@ var MD5 = function (string) {
         $scope.items2 = [];
         $scope.items3 = [];
         $scope.password = "";
-
+       
       
      $scope.del_tel = function(txt){
         var index = $scope.items1.indexOf(txt);
@@ -261,417 +261,484 @@ console.log(this.password);
 $scope.password = this.password;
         };
     $scope.patternupdate = function(){
-        
+       
+
         var re = new RegExp("^"+$scope.password+"$", "");
         return re;
 
     };
+$scope.actionUrl = '/logosave?_id='+localStorage.getItem('UUID');
 
-     $scope.update = function(params)
+
+
+    $scope.fine = function(params){
+        var data = "fine_date="+params.date_no+"&fine_cost="+params.fine_cost+"&_id="+localStorage.getItem("building_id");
+        $http.post('/fineupdate?'+data).success(function(data, status, headers, config){
+
+            if(status==200)
+            {
+               
+                alert("building updated"+localStorage.getItem("building_id"));
+                           }
+            else
+                alert("please check your information");
+                   });
+
+
+    };
+
+    $scope.docupdate = function(params,logo)
+    { 
+        console.log(params+":     "+ logo);
+       var file= document.getElementsByTagName('input')[9].files[0].name;
+
+        var data = "company_address="+params.comp_address+"&amphures="+params.comp_aumphures+"&district="+params.comp_district+"&province="+params.comp_province+"&postcode="+params.comp_postcode+"&tel_doc="+params.comp_tel+"&mobile_doc="+params.comp_mobile+"&fax_doc="+params.comp_fax+"&web_site="+params.comp_site+"&company_name="+params.comp_name+"&_id="+localStorage.getItem('building_id')+"&logo="+file;
+$http.post('/docupdate?'+data).success(function(data, status, headers, config){
+
+            if(status==200)
+            {
+                
+                alert("building updated"+localStorage.getItem("building_id"));
+                           }
+            else
+                alert("please check your information");
+                   });
+
+
+
+
+                   
+
+    };
+
+    $scope.create = function(params)
+    {
+
+
+       var data =  "userid="+localStorage.getItem("UUID")+"&building="+params.building_name+"&address="+params.building_address+"&tel="+params.building_tel+"&fax="+params.building_fax+"&detail="+params.building_detail;
+$http.post('/createbuilding?'+data).success(function(data, status, headers, config){
+
+            if(status==200)
+            {
+                localStorage.setItem("building_id",data._id);
+                alert("building created"+localStorage.getItem("building_id"));
+                           }
+            else
+                alert("please check your information");
+                   });
+
+
+    };
+$scope.update = function(params)
      {
 
-var tel="";
-var fax="";
-var mobile="";
+    var tel="";
+    var fax="";
+    var mobile="";
 
-        for (var prop in $scope.items1) {
-              if ( $scope.items1.hasOwnProperty(prop)) { 
-    tel = tel+$scope.items1[prop]+",";
-}
-}
-for (var prop in $scope.items2) {
-     if ( $scope.items2.hasOwnProperty(prop)) { 
-      mobile = tel+$scope.items2[prop]+",";
-  }
-}
-for (var prop in $scope.items3) {
-     if ( $scope.items3.hasOwnProperty(prop)) { 
-      fax = tel+$scope.items3[prop]+",";
-  }
-}
+    /*for (var prop in $scope.items1) {
+                  if ( $scope.items1.hasOwnProperty(prop)) { 
+        tel = tel+$scope.items1[prop]+",";
+    }
+    }
+    for (var prop in $scope.items2) {
+         if ( $scope.items2.hasOwnProperty(prop)) { 
+          mobile = tel+$scope.items2[prop]+",";
+      }
+    }
+    for (var prop in $scope.items3) {
+         if ( $scope.items3.hasOwnProperty(prop)) { 
+          fax = tel+$scope.items3[prop]+",";
+      }
+    }
+    */
 
-
-    var data = "username="+params.username+"&passwd="+MD5(this.password)+"&name="+params.fname+"&lastname="+params.lname+"&email="+params.email+"&address="+params.address+"&zipcode="+params.post_code+"&amphure="+params.amphures+"&district="+params.district+"&provinces="+params.provinces+"&tel="+tel+"&mobile="+mobile+"&fax="+fax;
-       
-
-     
-        console.log(data);
-
-       $http.post('/registed?'+data, data).success(function(data, status, headers, config){
-
-        if(status==200)
-        {
-            alert("Your Account Activated");
-            $window.location.pathname="/first_step";
-        }
-        else
-            alert("please check your information");
-               });
-     };
-
-       $scope.login = function(user,pass)
-      {
-	
-         $http.get('/checklogin?user='+user+'&&pass='+MD5(pass)).success(function(data, status, headers) {
-            
-     if(data != "")
-      $window.location.pathname="/first_step";
-    else
-      console.log(data);
-    });
+        var data = "username="+params.username+"&passwd="+MD5(this.password)+"&name="+params.fname+"&lastname="+params.lname+"&email="+params.email+"&address="+params.address+"&zipcode="+params.post_code+"&amphure="+params.amphures+"&district="+params.district+"&provinces="+params.provinces+"&tel="+tel+"&mobile="+mobile+"&fax="+fax;
+           
 
          
-      };
-      this.room=[{"roomno" : "1","stat": "yes"},{"roomno" : "2","stat": "no"},
-      {"roomno" : "3","stat": "yes"},{"roomno" : "4","stat": "no"},
-      {"roomno" : "5","stat": "yes"},{"roomno" : "6","stat": "yes"},
-      {"roomno" : "7","stat": "no"},{"roomno" : "8","stat": "no"},
-      {"roomno" : "9","stat": "yes"},{"roomno" : "10","stat": "yes"}
-      ,{"roomno" : "11","stat": "no"},{"roomno" : "12","stat": "no"}];
-      
-      this.myDropDown  = 'zero';
-       $scope.date_val2 = new Date();
-       $scope.date_val1 = new Date();
+            console.log(data);
 
-       $scope.total_sum = function(s1,s2,s3,s4,s5){
+           $http.post('/registed?'+data, data).success(function(data, status, headers, config){
 
-     if(s1===undefined){s1=0;}if(s2===undefined){s2=0;}if(s3===undefined){s3=0;}if(s4===undefined){s4=0;}if(s5===undefined){s5=0;}
+            if(status==200)
+            {
+                alert("Your Account Activated");
+                $window.location.pathname="/first_step";
+            }
+            else
+                alert("please check your information");
+                   });
+         };
 
-     
-        return ( parseInt(s1)+ parseInt(s2)+ parseInt(s3)+ parseInt(s4)+ parseInt(s5));
-        
-        };
-
-        $scope.adds1 = function(txt){
-            if(!$scope.items1.contains(txt)&&txt!="")
-            $scope.items1.push(txt);
-        this.tel="";
+           $scope.login = function(user,pass)
+          {
+    	
+             $http.get('/checklogin?user='+user+'&&pass='+MD5(pass)).success(function(data, status, headers) {
+                
+         if(data != "")
+         {
+            localStorage.setItem('UUID',data._id);
+            alert(localStorage.getItem('UUID'));
+          $window.location.pathname="/first_step";
         }
-        $scope.adds2 = function(txt){
-           if(!$scope.items2.contains(txt)&&txt!="")
-            $scope.items2.push(txt);
-        this.mobile="";
-        }
-        $scope.adds3 = function(txt){
-            if(!$scope.items3.contains(txt)&&txt!="")
-            $scope.items3.push(txt);
-        this.fax="";
-        }
+        else
+          console.log(data);
+        });
+
+             
+          };
+          this.room=[{"roomno" : "1","stat": "yes"},{"roomno" : "2","stat": "no"},
+          {"roomno" : "3","stat": "yes"},{"roomno" : "4","stat": "no"},
+          {"roomno" : "5","stat": "yes"},{"roomno" : "6","stat": "yes"},
+          {"roomno" : "7","stat": "no"},{"roomno" : "8","stat": "no"},
+          {"roomno" : "9","stat": "yes"},{"roomno" : "10","stat": "yes"}
+          ,{"roomno" : "11","stat": "no"},{"roomno" : "12","stat": "no"}];
+          
+          this.myDropDown  = 'zero';
+           $scope.date_val2 = new Date();
+           $scope.date_val1 = new Date();
+
+           $scope.total_sum = function(s1,s2,s3,s4,s5){
+
+         if(s1===undefined){s1=0;}if(s2===undefined){s2=0;}if(s3===undefined){s3=0;}if(s4===undefined){s4=0;}if(s5===undefined){s5=0;}
+
+         
+            return ( parseInt(s1)+ parseInt(s2)+ parseInt(s3)+ parseInt(s4)+ parseInt(s5));
+            
+            };
+
+            $scope.adds1 = function(txt){
+                if(!$scope.items1.contains(txt)&&txt!="")
+                $scope.items1.push(txt);
+            this.tel="";
+            }
+            $scope.adds2 = function(txt){
+               if(!$scope.items2.contains(txt)&&txt!="")
+                $scope.items2.push(txt);
+            this.mobile="";
+            }
+            $scope.adds3 = function(txt){
+                if(!$scope.items3.contains(txt)&&txt!="")
+                $scope.items3.push(txt);
+            this.fax="";
+            }
    })
 
-  .config(function($routeProvider, $locationProvider) {
-    $routeProvider
-     .when('/homes', {
-      templateUrl: '/template/home.html',
-      controller: 'BookController'
-      
-     
-    })
-      .when('/aboutme', {
-      templateUrl: '/template/aboutme.html',
-      controller: 'BookController'
-      
-     
-    })
-       .when('/contactme', {
-      templateUrl: '/template/contactme.html',
-      controller: 'BookController'
-      
-     
-    })
-        .when('/faq', {
-      templateUrl: '/template/faq.html',
-      controller: 'BookController'
-      
-     
-    })
-    .when('/login', {
-      templateUrl: '/template/login.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/first_step', {
-      templateUrl: '/template/first_step/create_building.html',
-      controller: 'ChapterController'
-       
-    })
+  .config(function($routeProvider, $locationProvider) 
+  {
+        $routeProvider
+         .when('/homes', {
+          templateUrl: '/template/home.html',
+          controller: 'BookController'
+          
+         
+        })
+          .when('/aboutme', {
+          templateUrl: '/template/aboutme.html',
+          controller: 'BookController'
+          
+         
+        })
+           .when('/contactme', {
+          templateUrl: '/template/contactme.html',
+          controller: 'BookController'
+          
+         
+        })
+            .when('/faq', {
+          templateUrl: '/template/faq.html',
+          controller: 'BookController'
+          
+         
+        })
+        .when('/login', {
+          templateUrl: '/template/login.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/first_step', {
+          templateUrl: '/template/first_step/create_building.html',
+          controller: 'ChapterController'
+           
+        })
 
-    .when('/fine', {
-      templateUrl: '/template/first_step/fine.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/create_building', {
-      templateUrl: '/template/first_step/create_building.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/cost_of_utilities', {
-      templateUrl: '/template/first_step/cost_of_utilities.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/service', {
-      templateUrl: '/template/first_step/service.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/roomsmg', {
-      templateUrl: '/template/manage/rooms/roomsmg.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/rooms_head_include', {
-      templateUrl: '/template/manage/rooms/rooms_head_include.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/add_rooms', {
-      templateUrl: '/template/manage/rooms/add_rooms.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/customers', {
-      templateUrl: '/template/manage/customer/customers.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/customers_checkout', {
-      templateUrl: '/template/manage/customer/checkout.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/documents', {
-      templateUrl: '/template/first_step/documents.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/customers_vehicle_checkout', {
-      templateUrl: '/template/manage/customer/customers_vehicle_checkout.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/customers_keycard', {
-      templateUrl: '/template/manage/customer/customers_keycard.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/book_infomation', {
-      templateUrl: '/template/manage/booking/book_infomation.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/booking', {
-      templateUrl: '/template/manage/booking/booking.html',
-      controller: 'ChapterController'
-       
-    })
-    .when('/customers_vehicle', {
-      templateUrl: '/template/manage/customer/customers_vehicle.html',
-      controller: 'ChapterController'
-    })
-    .when('/charter_information', {
-      templateUrl: '/template/manage/charter/charter_information.html',
-      controller: 'ChapterController'
-    })
-    .when('/charter_booking', {
-      templateUrl: '/template/manage/charter/charter_booking.html',
-      controller: 'ChapterController'
-    })
-    .when('/charter_new_booking', {
-      templateUrl: '/template/manage/charter/charter_new_booking.html',
-      controller: 'ChapterController'
-    })
-    .when('/water_information', {
-      templateUrl: '/template/manage/water/water_information.html',
-      controller: 'ChapterController'
-    })
-    .when('/water_record', {
-      templateUrl: '/template/manage/water/water_record.html',
-      controller: 'ChapterController'
-    })
-    .when('/energy_information', {
-      templateUrl: '/template/manage/energy/energy_information.html',
-      controller: 'ChapterController'
-    })
-    .when('/energy_record', {
-      templateUrl: '/template/manage/energy/energy_record.html',
-      controller: 'ChapterController'
-    })
-    .when('/phone_information', {
-      templateUrl: '/template/manage/phone/phone_information.html',
-      controller: 'ChapterController'
-    })
+        .when('/fine', {
+          templateUrl: '/template/first_step/fine.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/create_building', {
+          templateUrl: '/template/first_step/create_building.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/cost_of_utilities', {
+          templateUrl: '/template/first_step/cost_of_utilities.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/service', {
+          templateUrl: '/template/first_step/service.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/roomsmg', {
+          templateUrl: '/template/manage/rooms/roomsmg.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/rooms_head_include', {
+          templateUrl: '/template/manage/rooms/rooms_head_include.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/add_rooms', {
+          templateUrl: '/template/manage/rooms/add_rooms.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/customers', {
+          templateUrl: '/template/manage/customer/customers.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/customers_checkout', {
+          templateUrl: '/template/manage/customer/checkout.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/documents', {
+          templateUrl: '/template/first_step/documents.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/customers_vehicle_checkout', {
+          templateUrl: '/template/manage/customer/customers_vehicle_checkout.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/customers_keycard', {
+          templateUrl: '/template/manage/customer/customers_keycard.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/book_infomation', {
+          templateUrl: '/template/manage/booking/book_infomation.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/booking', {
+          templateUrl: '/template/manage/booking/booking.html',
+          controller: 'ChapterController'
+           
+        })
+        .when('/customers_vehicle', {
+          templateUrl: '/template/manage/customer/customers_vehicle.html',
+          controller: 'ChapterController'
+        })
+        .when('/charter_information', {
+          templateUrl: '/template/manage/charter/charter_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/charter_booking', {
+          templateUrl: '/template/manage/charter/charter_booking.html',
+          controller: 'ChapterController'
+        })
+        .when('/charter_new_booking', {
+          templateUrl: '/template/manage/charter/charter_new_booking.html',
+          controller: 'ChapterController'
+        })
+        .when('/water_information', {
+          templateUrl: '/template/manage/water/water_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/water_record', {
+          templateUrl: '/template/manage/water/water_record.html',
+          controller: 'ChapterController'
+        })
+        .when('/energy_information', {
+          templateUrl: '/template/manage/energy/energy_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/energy_record', {
+          templateUrl: '/template/manage/energy/energy_record.html',
+          controller: 'ChapterController'
+        })
+        .when('/phone_information', {
+          templateUrl: '/template/manage/phone/phone_information.html',
+          controller: 'ChapterController'
+        })
 
-    .when('/phone_record', {
-      templateUrl: '/template/manage/phone/phone_record.html',
-      controller: 'ChapterController'
-    })
-    .when('/invoice_information', {
-      templateUrl: '/template/manage/invoice/invoice_information.html',
-      controller: 'ChapterController'
-    })
-    .when('/invoice_export', {
-      templateUrl: '/template/manage/invoice/invoice_export.html',
-      controller: 'ChapterController'
-    })
-    .when('/invoice_print', {
-      templateUrl: '/template/manage/invoice/invoice_print.html',
-      controller: 'ChapterController'
-    })
-    .when('/receipt_information', {
-      templateUrl: '/template/manage/receipt/receipt_information.html',
-      controller: 'ChapterController'
-    })
-    .when('/receipt_invoice', {
-      templateUrl: '/template/manage/receipt/receipt_invoice.html',
-      controller: 'ChapterController'
-    })
-    .when('/receipt_information_by_detail', {
-      templateUrl: '/template/manage/receipt/receipt_information_by_detail.html',
-      controller: 'ChapterController'
-    })
-    .when('/receipt_print', {
-      templateUrl: '/template/manage/receipt/receipt_print.html',
-      controller: 'ChapterController'
-    })
-    .when('/receipt_cancle', {
-      templateUrl: '/template/manage/receipt/receipt_cancle.html',
-      controller: 'ChapterController'
-    })
-    .when('/receipt_export_barcode', {
-      templateUrl: '/template/manage/receipt/receipt_export_barcode.html',
-      controller: 'ChapterController'
-    })
-    .when('/common_receipt_export', {
-      templateUrl: '/template/manage/common_receipt/common_receipt_export.html',
-      controller: 'ChapterController'
-    })
-    .when('/common_receipt_export_day', {
-      templateUrl: '/template/manage/common_receipt/common_receipt_export_day.html',
-      controller: 'ChapterController'
-    })
-    .when('/common_information', {
-      templateUrl: '/template/manage/common_receipt/common_information.html',
-      controller: 'ChapterController'
-    })
-.when('/common_information_other', {
-      templateUrl: '/template/manage/common_receipt/common_information_other.html',
-      controller: 'ChapterController'
-    })
-.when('/check_out_report', {
-      templateUrl: '/template/manage/check_out/check_out_report.html',
-      controller: 'ChapterController'
-    })
-.when('/check_out_report_information', {
-      templateUrl: '/template/manage/check_out/check_out_report_information.html',
-      controller: 'ChapterController'
-    })
-    .when('/check_out_report_other', {
-      templateUrl: '/template/manage/check_out/check_out_report_other.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_income', {
-      templateUrl: '/template/manage/report/report_income.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_book', {
-      templateUrl: '/template/manage/report/report_book.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_confiscate', {
-      templateUrl: '/template/manage/report/report_confiscate.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_charter', {
-      templateUrl: '/template/manage/report/report_charter.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_income_booking', {
-      templateUrl: '/template/manage/report/report_income_booking.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_other_receipt', {
-      templateUrl: '/template/manage/report/report_other_receipt.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_unpaid_booking', {
-      templateUrl: '/template/manage/report/report_unpaid_booking.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_charter_finish', {
-      templateUrl: '/template/manage/report/report_charter_finish.html',
-      controller: 'ChapterController'
-    })
-     .when('/report_room_adjust', {
-      templateUrl: '/template/manage/report/report_room_adjust.html',
-      controller: 'ChapterController'
-    })
-     .when('/sms_send', {
-      templateUrl: '/template/manage/sms/sms_send.html',
-      controller: 'ChapterController'
-    })
-     .when('/sms_send_report', {
-      templateUrl: '/template/manage/sms/sms_send_report.html',
-      controller: 'ChapterController'
-    })
-     .when('/sms_credit_history', {
-      templateUrl: '/template/manage/sms/sms_credit_history.html',
-      controller: 'ChapterController'
-    })
-     .when('/calendar', {
-      templateUrl: '/template/manage/calendar/calendar.html',
-      controller: 'ChapterController'
-    })
-     .when('/register', {
-      templateUrl: '/template/register.html',
-      controller: 'ChapterController'
-    })
-     .when('/template_standard', {
-      templateUrl: '/template/template_user/template_standard.html',
-      controller: 'ChapterController'
-    })
-     .when('/manage_profile', {
-      templateUrl: '/template/manage/profile/manage_profile.html',
-      controller: 'ChapterController'
-    })
-     .when('/public_information', {
-      templateUrl: '/template/manage/public_information/public_information.html',
-      controller: 'ChapterController'
-    })
-     .when('/public_informations', {
-      templateUrl: '/template/first_step/public_information.html',
-      controller: 'ChapterController'
-    })
-     .when('/building', {
-      templateUrl: '/template/manage/building/building.html',
-      controller: 'ChapterController'
-    })
-     .when('/cost_of_uti', {
-      templateUrl: '/template/manage/cost_of_uti/cost_of_uti.html',
-      controller: 'ChapterController'
-    })
-     .when('/information_service', {
-      templateUrl: '/template/manage/service/information_service.html',
-      controller: 'ChapterController'
-    })
-     .when('/add_service', {
-      templateUrl: '/template/manage/service/add_service.html',
-      controller: 'ChapterController'
-    })
-     .when('/edit_fine', {
-      templateUrl: '/template/manage/fine/edit_fine.html',
-      controller: 'ChapterController'
+        .when('/phone_record', {
+          templateUrl: '/template/manage/phone/phone_record.html',
+          controller: 'ChapterController'
+        })
+        .when('/invoice_information', {
+          templateUrl: '/template/manage/invoice/invoice_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/invoice_export', {
+          templateUrl: '/template/manage/invoice/invoice_export.html',
+          controller: 'ChapterController'
+        })
+        .when('/invoice_print', {
+          templateUrl: '/template/manage/invoice/invoice_print.html',
+          controller: 'ChapterController'
+        })
+        .when('/receipt_information', {
+          templateUrl: '/template/manage/receipt/receipt_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/receipt_invoice', {
+          templateUrl: '/template/manage/receipt/receipt_invoice.html',
+          controller: 'ChapterController'
+        })
+        .when('/receipt_information_by_detail', {
+          templateUrl: '/template/manage/receipt/receipt_information_by_detail.html',
+          controller: 'ChapterController'
+        })
+        .when('/receipt_print', {
+          templateUrl: '/template/manage/receipt/receipt_print.html',
+          controller: 'ChapterController'
+        })
+        .when('/receipt_cancle', {
+          templateUrl: '/template/manage/receipt/receipt_cancle.html',
+          controller: 'ChapterController'
+        })
+        .when('/receipt_export_barcode', {
+          templateUrl: '/template/manage/receipt/receipt_export_barcode.html',
+          controller: 'ChapterController'
+        })
+        .when('/common_receipt_export', {
+          templateUrl: '/template/manage/common_receipt/common_receipt_export.html',
+          controller: 'ChapterController'
+        })
+        .when('/common_receipt_export_day', {
+          templateUrl: '/template/manage/common_receipt/common_receipt_export_day.html',
+          controller: 'ChapterController'
+        })
+        .when('/common_information', {
+          templateUrl: '/template/manage/common_receipt/common_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/common_information_other', {
+              templateUrl: '/template/manage/common_receipt/common_information_other.html',
+              controller: 'ChapterController'
+            })
+        .when('/check_out_report', {
+              templateUrl: '/template/manage/check_out/check_out_report.html',
+              controller: 'ChapterController'
+            })
+        .when('/check_out_report_information', {
+          templateUrl: '/template/manage/check_out/check_out_report_information.html',
+          controller: 'ChapterController'
+        })
+        .when('/check_out_report_other', {
+          templateUrl: '/template/manage/check_out/check_out_report_other.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_income', {
+          templateUrl: '/template/manage/report/report_income.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_book', {
+          templateUrl: '/template/manage/report/report_book.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_confiscate', {
+          templateUrl: '/template/manage/report/report_confiscate.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_charter', {
+          templateUrl: '/template/manage/report/report_charter.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_income_booking', {
+          templateUrl: '/template/manage/report/report_income_booking.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_other_receipt', {
+          templateUrl: '/template/manage/report/report_other_receipt.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_unpaid_booking', {
+          templateUrl: '/template/manage/report/report_unpaid_booking.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_charter_finish', {
+          templateUrl: '/template/manage/report/report_charter_finish.html',
+          controller: 'ChapterController'
+        })
+         .when('/report_room_adjust', {
+          templateUrl: '/template/manage/report/report_room_adjust.html',
+          controller: 'ChapterController'
+        })
+         .when('/sms_send', {
+          templateUrl: '/template/manage/sms/sms_send.html',
+          controller: 'ChapterController'
+        })
+         .when('/sms_send_report', {
+          templateUrl: '/template/manage/sms/sms_send_report.html',
+          controller: 'ChapterController'
+        })
+         .when('/sms_credit_history', {
+          templateUrl: '/template/manage/sms/sms_credit_history.html',
+          controller: 'ChapterController'
+        })
+         .when('/calendar', {
+          templateUrl: '/template/manage/calendar/calendar.html',
+          controller: 'ChapterController'
+        })
+         .when('/register', {
+          templateUrl: '/template/register.html',
+          controller: 'ChapterController'
+        })
+         .when('/template_standard', {
+          templateUrl: '/template/template_user/template_standard.html',
+          controller: 'ChapterController'
+        })
+         .when('/manage_profile', {
+          templateUrl: '/template/manage/profile/manage_profile.html',
+          controller: 'ChapterController'
+        })
+         .when('/public_information', {
+          templateUrl: '/template/manage/public_information/public_information.html',
+          controller: 'ChapterController'
+        })
+         .when('/public_informations', {
+          templateUrl: '/template/first_step/public_information.html',
+          controller: 'ChapterController'
+        })
+         .when('/building', {
+          templateUrl: '/template/manage/building/building.html',
+          controller: 'ChapterController'
+        })
+         .when('/cost_of_uti', {
+          templateUrl: '/template/manage/cost_of_uti/cost_of_uti.html',
+          controller: 'ChapterController'
+        })
+         .when('/information_service', {
+          templateUrl: '/template/manage/service/information_service.html',
+          controller: 'ChapterController'
+        })
+         .when('/add_service', {
+          templateUrl: '/template/manage/service/add_service.html',
+          controller: 'ChapterController'
+        })
+         .when('/edit_fine', {
+          templateUrl: '/template/manage/fine/edit_fine.html',
+          controller: 'ChapterController'
+        });
+
+
+        
+        // configure html5 to get links working on jsfiddle
+        $locationProvider.html5Mode(true);
     });
 
 
-    
-    // configure html5 to get links working on jsfiddle
-    $locationProvider.html5Mode(true);
-  });
 
-
-
-Array.prototype.contains = function(element){
-    return this.indexOf(element) > -1;
+    Array.prototype.contains = function(element){
+        return this.indexOf(element) > -1;
 };
