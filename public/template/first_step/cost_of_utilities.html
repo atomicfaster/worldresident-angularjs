@@ -7,31 +7,31 @@
   </tr>
   <tr>
     <td width="30%" align="right"><h6>Water bills :</h6></td>
-    <td><input  type="text" size="20" maxlength="100" placeholder="per unit" ng-model="cost_of_uti.water_bills" required/></td>
+    <td><input  type="text" size="20" maxlength="100" placeholder="per unit" name="water_bills" ng-model="water_bills" required/></td>
   </tr>
   <tr>
     <td align="right"><h6>Vat :</h6></td>
     <td valign="middle">
-      <input type="radio" ng-model="cost_of_uti.rdo_wat_vat" value="rdo_include_water_vat"> <p>No</p>
-      <input type="radio" ng-model="cost_of_uti.rdo_wat_vat" value="rdo_notinclude_water_vat">
-      <p>Yes :</p><input type="text" ng-model="cost_of_uti.wat_vat" required placeholder="0"></td>
+      <input type="radio" name="rdo_wat_vat" ng-model="rdo_wat_vat" value="rdo_include_water_vat"> <p>No</p>
+      <input type="radio" name="rdo_wat_vat" ng-model="rdo_wat_vat" value="rdo_notinclude_water_vat">
+      <p>Yes :</p><input type="text" name="wat_vat" ng-model="wat_vat" required placeholder="0"></td>
   </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><input ng-model="cost_of_uti.chk_min"  type="checkbox" value="" checked>
+    <td align="left" valign="top"><input name="chk_min" ng-model="chk_min"  type="checkbox" value="" checked>
             <p>1.1 Minimum Bills</p></td>
   </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><p>minimum : </p>      <input ng-model="cost_of_uti.min_wat_bill" required type="text" placeholder="unit"></td>
+    <td align="left" valign="top"><p>minimum : </p>      <input name="min_wat_bill" ng-model="min_wat_bill" required type="text" placeholder="unit"></td>
     </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><p>pay : </p>      <input  type="text" ng-model="cost_of_uti.min_wat_bill_pay" required placeholder="baht"></td>
+    <td align="left" valign="top"><p>pay : </p>      <input  type="text" name="min_wat_bill_pay" ng-model="min_wat_bill_pay" required placeholder="baht"></td>
     </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><input ng-model="cost_of_uti.wat_pack" required type="checkbox" value="">
+    <td align="left" valign="top"><input name="wat_pack" ng-model="wat_pack" required type="checkbox" value="">
 <p>1.2 Package</p></td>
     </tr>
   <tr>
@@ -39,30 +39,30 @@
   </tr>
   <tr>
     <td width="30%" align="right"><h6>Energy bills :</h6></td>
-    <td><input type="text" size="20"  placeholder="per unit" ng-model="cost_of_uti.ener_bill" required /></td>
+    <td><input type="text" size="20"  placeholder="per unit" name="ener_bill" ng-model="ener_bill" required /></td>
   </tr>
   <tr>
     <td width="30%" align="right"><h6>Vat :</h6></td>
-    <td><input type="radio" ng-model="cost_of_uti.ener_bill_no_vat" required value="rdo_include_energy_vat"> <p>No</p>
-      <input type="radio" ng-model="cost_of_uti.ener_bill_vat" required value="rdo_notinclude_energy_vat">
-      <p>Yes :</p><input type="text" ng-model="cost_of_uti.ener_vat" required placeholder="0"></td>
+    <td><input type="radio" name="ener_bill_no_vat" ng-model="ener_bill_no_vat" required value="rdo_include_energy_vat"> <p>No</p>
+      <input type="radio" name="ener_bill_vat" ng-model="ener_bill_vat" required value="rdo_notinclude_energy_vat">
+      <p>Yes :</p><input type="text" name="ener_vat" ng-model="ener_vat" required placeholder="0"></td>
   </tr>
    <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><input ng-model="cost_of_uti.ener_min_bill" required type="checkbox" value="" checked>
+    <td align="left" valign="top"><input name="ener_min_bill" ng-model="ener_min_bill" required type="checkbox" value="" checked>
             <p>1.1 Minimum Bills</p></td>
   </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><p>minimum : </p>      <input type="text" ng-model="cost_of_uti.ener_min_unit" required placeholder="unit"></td>
+    <td align="left" valign="top"><p>minimum : </p>      <input type="text" name="ener_min_unit" ng-model="ener_min_unit" required placeholder="unit"></td>
     </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><p>pay : </p><input  type="text" ng-model="cost_of_uti.ener_min_unit_pay" required placeholder="baht"></td>
+    <td align="left" valign="top"><p>pay : </p><input  type="text" name="ener_min_unit_pay" ng-model="ener_min_unit_pay" required placeholder="baht"></td>
     </tr>
   <tr>
     <td align="right"></td>
-    <td align="left" valign="top"><input ng-model="cost_of_uti.ener_pack" required type="checkbox" value="">
+    <td align="left" valign="top"><input name="ener_pack" ng-model="ener_pack" required type="checkbox" value="">
 <p>1.2 Package</p></td>
     </tr>
     <tr>
@@ -70,9 +70,9 @@
   </tr>
     <tr>
     <td width="30%" align="right"><h6>Telephone Vat :</h6></td>
-    <td><input type="radio" ng-model="cost_of_uti.phone_vat"  value="rdo_include_tel_vat"> <p>No</p>
-      <input type="radio" ng-model="cost_of_uti.phone_vat" value="rdo_notinclude_tel_vat">
-      <p>Yes :</p><input type="text" ng-model="cost_of_uti.phone_vat_pay" required placeholder="0"></td>
+    <td><input type="radio" name="phone_vat" ng-model="phone_vat"  value="rdo_include_tel_vat"> <p>No</p>
+      <input type="radio" name="phone_vat" ng-model="phone_vat" value="rdo_notinclude_tel_vat">
+      <p>Yes :</p><input type="text" name="phone_vat_pay" ng-model="phone_vat_pay" required placeholder="0"></td>
   </tr>
   <tr>
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>

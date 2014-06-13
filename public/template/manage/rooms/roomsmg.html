@@ -15,28 +15,13 @@
 <div class="main_content">
 <!--div ng-include="rooms_head_include.html"></div-->
  <div class="main_content_head"><a href="/roomsmg">View room</a> | <a href="/add_rooms">Add room</a></div>
-<div class="main_content_inner1">
+<div class="main_content_inner1" style="margin:0em;">
     
-    
-   <p id="roommg_head">Rooms search <input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""><br />
-      <input type="checkbox" name="ch_ava" ng-model="search" id="ch_ava" ng-true-value="yes" ng-false-value=""/>
-     <label for="ch_ava">Available</label>
-     <input type="checkbox" ng-model="search"  name="ch_unava" ng-true-value="no" ng-false-value="" id="ch_unava" />
-     <label for="ch_unava">Unavailable</label>
-     <input type="checkbox" ng-model="search"  name="ch_mainta" ng-true-value="maintenance" ng-false-value="" id="ch_mainta" />
-     <label for="ch_mainta">Maintenance</label>
-   </p>
-    
-      
-    <div class="pin_rooms" ng-repeat="nlist in lists.room | filter:search">
-			<img src="image/icon/3.png" />
-			<p>
-				Room : {{nlist.roomno}}<br />
-                
-	  </p>
-		</div>
-<br />
-       <div class="modal" style="width: 6%;float: right;margin: 0 1em 1em 0;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="20%" align="right"><p id="roommg_head">Rooms search</p></td>
+    <td width="60%" align="left"><input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""></td>
+    <td rowspan="2" width="20%" align="right"> <div class="modal" style="height: 100%;float: right;margin: 0 1em 1em 0;">
               <label for="modal-13">
               <div class="btn js-btn"><img src="image/icon/plus.png" /></div>
               </label>
@@ -46,7 +31,7 @@
                   <label class="modal-close" for="modal-13"></label>
                   <h1>Create Room</h1>
                   <p class="intro">Add room</p>
-                  <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" style="width:100%; margin:0;">
+                  <form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_option_manager">
   <tr>
     <td colspan="2" align="center"><h6>Add room</h6><h5>detail</h5></td>
     </tr>
@@ -144,7 +129,33 @@
         </td>
   </tr>
   
-</table></form>
+</table></form></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div style="margin-left:1em;"><input type="checkbox" name="ch_ava" ng-model="search" id="ch_ava" ng-true-value="yes" ng-false-value=""/>
+      <label for="ch_ava">Available</label>
+      <input type="checkbox" ng-model="search"  name="ch_unava" ng-true-value="no" ng-false-value="" id="ch_unava" />
+      <label for="ch_unava">Unavailable</label>
+      <input type="checkbox" ng-model="search"  name="ch_mainta" ng-true-value="maintenance" ng-false-value="" id="ch_mainta" />
+      <label for="ch_mainta">Maintenance</label></div></td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>
+
+    
+      
+  
+    
+      
+    <div class="pin_rooms" ng-repeat="nlist in lists.room | filter:search">
+			<img src="image/icon/3.png" />
+			<p>
+				Room : {{nlist.roomno}}<br />
+                
+	  </p>
+	</div>
+<br />
+      
 </div>
   </div>
 

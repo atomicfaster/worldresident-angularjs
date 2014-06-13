@@ -36,10 +36,8 @@ a:active {color: $link-color;
 				@include media($large-screen) {
 				@include span-columns(4);
 				height: $layout-top-height;
-				margin: 0 1em 1em 0;
+				margin: 0 1em 1em 0.3em;
 				}
-				margin: 0 0 1em 0;			
-				height: auto;
 
 				p{
 					@include media($large-screen) {
@@ -146,11 +144,11 @@ a:active {color: $link-color;
 			.layout-left-bot{
 				@include media($large-screen) {
 				@include span-columns(2);
-				margin: 0 1em 1em 0;
+				margin: 0 1em 1em 0.3em;
 				
 				}
 
-				margin: 0 0em 1em 0;
+				
 				height: $layout-bot-height;
 				background-color:#F2F2F2;
 				border: 1px dotted $default-line;
@@ -253,7 +251,196 @@ a:active {color: $link-color;
 	}
 
 }
+#table_option_manager{
+       
+        border:0px;
+		width: 100%;
+        margin: 0 0 0 0;
+          #bullet_left{
+                text-align: right;
+            }
 
+        td{
+          border-bottom: 1px dotted $default-line;
+
+        }
+        p{
+          margin: 0.5em 0em 0.5em 0.5em;
+		@include media($large-screen) {
+					font-size: 1em;
+					width: 1em;
+					margin: 0em;
+					display: inline;
+					}
+					
+        }
+        h6{
+        	@include media($large-screen) {
+        	font-size: 1em;
+        	color: transparent(#000,0.7);
+        	margin: 0.5em;
+        		}
+        	
+
+        }
+        h5{
+        	@extend h6;
+        	color: red;
+        	@include media($large-screen) {
+        		font-size: 0.8em;
+        	}
+        	
+        }
+        
+
+        	input {
+        		margin: 0.5em;
+              border-radius: 4px;
+              border: 1px solid $default-line;
+              color: #000;
+        		@include media($large-screen) {
+              @include box-sizing(border-box);
+              
+              width: 40%;
+              height: 2em;
+          		}
+            
+
+              
+            }
+            textarea{
+
+            	@include box-sizing(border-box);
+              
+              border-radius: 4px;
+              border: 1px solid $default-line;
+              color: #000;
+              width: 60%;
+              margin: 0.5em 0 0.5em 0.5em;
+              @include media($large-screen) {
+		              font-size: 1em;
+		              font-style: italic;
+		          		padding: 0em 0.8em 0em 0.4em;
+		          	}
+             
+            }
+            input[type=text] {
+              @include appearance(none);
+              
+		              @include media($large-screen) {
+		              font-size: 0.8em;
+		              font-style: italic;
+		          		padding: 0em 0.8em 0em 0.4em;
+		          	}
+            
+
+            }
+            input[type=radio] {
+              padding: 0em 0.8em 0em 0.4em;
+              font-size: .8em;
+              font-style: italic;
+              @include media($large-screen) {
+                    height: 1em;
+                    width: 1em;
+                    }
+            
+
+              label{
+                @include media($large-screen) {
+                    font-size: 1em;
+                    }
+               
+              }
+              
+            }
+            input[type=checkbox] {
+              padding: 0em 0.8em 0em 0.4em;
+              font-size: .8em;
+              font-style: italic;
+              @include media($large-screen) {
+                    height: 1em;
+                    width: 1em;
+                    }
+           
+
+              label{
+                @include media($large-screen) {
+                    font-size: 1em;
+                    }
+              
+              }
+              
+            }
+            input[type=password] {
+              @include appearance(none);
+              padding: 0em 0.8em 0em 0.4em;
+              font-size: .8em;
+              font-style: italic;
+             
+              
+            }
+            select{
+              
+              @extend input;
+              padding: 0em 0.8em 0em 0.4em;
+              border: 1px solid $default-line;
+              font-style: italic;
+              @include media($large-screen) {
+		              font-size: 0.8em;
+		              font-style: italic;
+		          		padding: 0em 0.8em 0em 0.4em;
+		          		width: 50%;
+		          	}
+
+              -moz-appearance: none;
+              -webkit-appearance:none;
+              -ms-appearance:none;
+                text-indent: 0.01px;
+                text-overflow: '';
+          		}
+          		
+
+
+            
+                select::-ms-expand {
+                display: none;
+                }
+                select::-moz-expand {
+                display: none;
+                }
+                select::-webkit-expand {
+                display: none;
+                }
+                button {
+              @include appearance(none);
+              padding: 0em 0.8em 0em 0.4em;
+              font-size: .8em;
+              font-style: italic;
+              text-align: center;
+              background-color: #FFF;
+              @include media($large-screen) {
+                    height: 2em;
+                    margin: 0.5em 0 0.5em 0;
+                    }
+		              width: 20em;  
+		              border-width:1px;
+		              border-color:$default-line;
+		              &:hover{
+		              	background-color:transparentize($default-line,0.8);
+		              	color:#000;
+		              }
+            	}
+            	input[type=file]{
+            		@extend button;
+            	}
+            	input[type=number]{
+            		@extend input[type=text];
+            	}
+            	input[type=reset] {
+            		@extend button; 
+            	}
+            
+}
 
 
 //----------------------------------------------------------------------------------------------------------

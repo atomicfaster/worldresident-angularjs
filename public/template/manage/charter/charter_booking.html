@@ -13,10 +13,161 @@
   
   </script><div class="main_content">
  <div class="main_content_head"><a href="/charter_information">Charter infomation</a> | <a href="/charter_booking">Booking</a> | <a href="/charter_new_booking">New booking</a></div>
- 
-<div class="main_content_inner1"> <p id="roommg_head">Booking<br />Charter search 
-    <input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder="">
-  </p>
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" align="right"><p id="roommg_head">Water search</p></td>
+        <td width="60%" align="left"><input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder="" /></td>
+        <td width="20%" align="right"><div class="modal" style="height: 100%;float: right;">
+          <label for="modal-13">
+          <div class="btn js-btn"><img src="image/icon/plus.png" /></div>
+          </label>
+          <input class="modal-state" id="modal-13" type="checkbox" />
+          <div class="modal-window">
+          <div class="modal-inner">
+          <label class="modal-close" for="modal-13"></label>
+          <h1>Booking</h1>
+          <p class="intro">Add Booking</p>
+          <form novalidate class="css-form" name="myForm">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_option_manager">
+  <tr>
+    <td colspan="2" align="center"><h6>Add Booking</h6>
+      <h5>สำหรับลูกค้าเข้ามาจองห้องว่าง</h5></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+  </tr>
+  <tr >
+    <td width="30%" align="right"><h6>Building :</h6></td>
+    <td width="70%">
+      <select ng-model="select_building" required >
+        <option>Chose</option>
+        <option>ตึก1</option>
+        <option>ตึก2</option>
+      </select></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>room NO. :</h6></td>
+    <td><select ng-model="select_room" required >
+        <option>Chose</option>
+        <option>ห้อง1</option>
+        <option>ห้อง2</option>
+      </select></td>
+  </tr>
+ <tr >
+    <td align="right"><h6>Charter no. :</h6></td>
+    <td><input type="text" disabled="disabled"  placeholder="auto" style="background-color:#FFF;" size="20" maxlength="100" ng-model="charter_no" required /></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer Name :</h6></td>
+    <td><input type="text"  placeholder="auto" size="20" maxlength="100" ng-model="charter_customer_name" required /></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer ID :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_id" required  placeholder=""></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer address :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="charter_customer_address"></textarea></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Province :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_province" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer post code :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_post_code" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Country :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_country" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Mobile no. :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_mobile" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Customer Email :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="charter_customer_email" required  placeholder=""></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Customer Picture :</h6></td>
+    <td><input type="file" ng-model="customer_pic" required></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" bgcolor="#00CC66" height="10px">Payment</td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Charter start date :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val1"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required" >
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date" ng-model="date_val1">
+       Not a valid date!</span><br />
+       <p>{{date_val1 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+   <tr >
+    <td align="right"><h6>Charter End date :</h6></td>
+    <td><input type="date" id="exampleInput" name="input" ng-model="date_val2"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2020-12-31" required />
+   <span class="error" ng-show="myForm.input.$error.required">
+       Required!</span>
+   <span class="error" ng-show="myForm.input.$error.date">
+       Not a valid date!</span><br />
+       <p>{{date_val2 | date: "dd-MM-yyyy"}}</p></td>
+  </tr>
+ <tr>
+    <td align="right"><h6>Payment type :</h6></td>
+    <td valign="middle">
+      <input type="radio" ng-model="payment_type" value="rdo_cash"> <p>Cash</p>
+      <input type="radio" ng-model="payment_type" value="rdo_Bank"> <p>Bank Transfer</p>
+      <input type="radio" ng-model="payment_type" value="rdo_credit"> <p>Credit</p><br />
+      <input type="radio" ng-model="payment_type" value="rdo_other"> <p>Other</p></td>
+  </tr>
+   
+  <tr >
+    <td align="right"><h6>1. Insurance amount :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_insurance_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>2.1 Pre rent :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_pre_rent_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>2.2 Pre furniture rent :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_pre_furniture_rent_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>2.3 Pre central rent :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_pre_central_rent_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>3. other :</h6></td>
+    <td><input type="text" size="20" maxlength="100" ng-model="payment_other_amount" required  placeholder=""></td>
+  </tr>
+  <tr >
+    <td align="right"><h6>sum of rent :</h6></td>
+    <td>{{total_sum(payment_insurance_amount,payment_pre_rent_amount,payment_pre_furniture_rent_amount,payment_pre_central_rent_amount,payment_other_amount)}}</td>
+  </tr>
+  <tr >
+    <td align="right"><h6>Remark :</h6></td>
+    <td><textarea cols="20" rows="6" required="required" placeholder="" ng-model="payment_remark"></textarea></td>
+  </tr>
+  
+   <tr>
+    <td colspan="2" align="center" bgcolor="#00CC66" height="10px"></td>
+  </tr>
+  <tr>
+   
+     <td colspan="2" align="center"><button ng-click="reset()">Reset</button><button ng-click="save()">Save</button>
+        </td>
+  </tr>
+  
+</table>
+        </form></td>
+      </tr>
+    </table>
+<div class="main_content_inner1" style="margin:0em;">
 <table class="tbr_customers" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="5%" align="center">No.</td>
@@ -38,7 +189,7 @@
     <td>Mr. Mr.</td>
     <td>remark</td>
     <td align="center"><img src="image/icon/image2.png" /></td>
-    <td>checkout</td>
+    <td align="center"><img src="image/icon/enter.png" /><img src="image/icon/remove.png" /></td>
   </tr>
    <tr>
     <td align="center">2</td>
@@ -49,7 +200,7 @@
     <td>Mr. Mr.</td>
     <td>remark</td>
     <td align="center"><img src="image/icon/image2.png" /></td>
-    <td>checkout</td>
+    <td align="center"><img src="image/icon/enter.png" /><img src="image/icon/remove.png" /></td>
   </tr>
   <tr>
     <td align="center">2</td>
@@ -60,7 +211,7 @@
     <td>Mr. Mr.</td>
     <td>remark</td>
     <td align="center"><img src="image/icon/image2.png" /></td>
-    <td>checkout</td>
+    <td align="center"><img src="image/icon/enter.png" /><img src="image/icon/remove.png" /></td>
   </tr>
   <tr>
     <td align="center">2</td>
@@ -71,7 +222,7 @@
     <td>Mr. Mr.</td>
     <td>remark</td>
     <td align="center"><img src="image/icon/image2.png" /></td>
-    <td>checkout</td>
+    <td align="center"><img src="image/icon/enter.png" /><img src="image/icon/remove.png" /></td>
   </tr>
   <tr>
     <td align="center">2</td>
@@ -82,7 +233,7 @@
     <td>Mr. Mr.</td>
     <td>remark</td>
     <td align="center"><img src="image/icon/image2.png" /></td>
-    <td>checkout</td>
+    <td align="center"><img src="image/icon/enter.png" /><img src="image/icon/remove.png" /></td>
   </tr>
  
 </table></div>

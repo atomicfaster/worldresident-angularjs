@@ -15,7 +15,7 @@
     border-right: 1px solid rgba(121, 189, 154, 0.5); }
 
 .modal {
-  width: 100%;
+  width: 39px;
   height: auto; }
   .modal label {
     cursor: pointer;
@@ -57,7 +57,7 @@
     top: 1em;
     right: 0;
     bottom: 0;
-    left: 90%;
+    left: 95%;
     height: 1.5em;
     width: 1.5em;
     cursor: pointer;

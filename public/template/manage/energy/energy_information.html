@@ -10,111 +10,244 @@
 }
 }, 100 );
   
-  </script><div class="main_content">
+  </script>
+  <div class="main_content">
  <div class="main_content_head"><a href="/energy_information">Energy information</a> | <a href="/energy_record">Record</a></div>
-<div class="main_content_inner1">
-   <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="30%">Detail</td>
-    <td width="20%" >Agreenebt no.</td>
-    <td width="10%" style="text-align:center;">Date</td>
-    <td width="20%" style="text-align:center;">Remark</td>
-    <td width="5%" style="text-align:center;">Co</td>
-    <td width="5%" style="text-align:center;">Vehicle</td>
-    <td width="5%" style="text-align:center;">Key</td>
-    <td width="5%" style="text-align:center;">Scan</td>
-  </tr>
-  <tr>
-    <td>{-{-Customer Detail-}-}</td>
-    <td>{-{-Agreenebt no.-}-}</td>
-    <td>{-{-Date-}-}</td>
-    <td>{-{-Remark-}-}</td>
-    <td>{-{-Co-}-}</td>
-    <td>{-{-Vehicle-}-}</td>
-    <td>{-{-Key-}-}</td>
-    <td>{-{-Scan-}-}</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+       <td width="20%" align="right"><p id="roommg_head">Water search</p></td>
+       <td width="60%" align="left"><input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""></td>
+       <td width="20%" align="right"><div class="modal" style="height: 100%;float: right;margin: 0em;">
+              <label for="modal-13">
+              <div class="btn js-btn"><img src="image/icon/plus.png" /></div>
+              </label>
+              <input class="modal-state" id="modal-13" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-13"></label>
+                  <h1>Create Room</h1>
+                  <p class="intro">Add room</p>
+                  <form novalidate class="css-form" name="myForm">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_option_manager" >
+              <tr>
+                <td colspan="2" align="center"><h6>Add Energy Bills</h6>
+                  <h5>บันทึกค่าไฟ</h5></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td width="30%" align="right"><h6>Building :</h6></td>
+                <td width="70%"><select ng-model="select_building" required >
+                    <option>Chose</option>
+                    <option>ตึก1</option>
+                    <option>ตึก2</option>
+                  </select></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Date of record:</h6></td>
+                <td><input type="date" id="exampleInput" name="input" ng-model="date_rec"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2099-12-31" required />
+                  <span class="error" ng-show="myForm.input.$error.required"> Required!</span> <span class="error" ng-show="myForm.input.$error.date"> Not a valid date!</span><br />
+                  <p>{{date_rec | date: "dd-MM-yyyy"}}</p></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Date of period:</h6></td>
+                <td><input type="date" id="exampleInput" name="input" ng-model="date_period"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2099-12-31" required />
+                  <span class="error" ng-show="myForm.input.$error.required"> Required!</span> <span class="error" ng-show="myForm.input.$error.date"> Not a valid date!</span><br />
+                  <p>{{date_period | date: "dd-MM-yyyy"}}</p></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Meter :</h6></td>
+                         <td>Start : <input type="number" size="6" maxlength="6" ng-model="water_meter_start1" required  placeholder="" style="width:10%;"> End : <input type="number" size="6" maxlength="6" ng-model="water_meter_end1" required  placeholder="" style="width:10%;">
+                           <button ng-click="save_this()">Save now</button></td>
+     </tr>
+              
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Meter :</h6></td>
+                         <td>Start : <input type="number" size="6" maxlength="6" ng-model="water_meter_start2" required  placeholder="" style="width:10%;"> End : <input type="number" size="6" maxlength="6" ng-model="water_meter_end2" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Meter :</h6></td>
+                         <td>Start : <input type="number" size="6" maxlength="6" ng-model="water_meter_start3" required  placeholder="" style="width:10%;"> End : <input type="number" size="6" maxlength="6" ng-model="water_meter_end3" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+             
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Meter :</h6></td>
+                         <td>Start : <input type="number" size="6" maxlength="6" ng-model="water_meter_start4" required  placeholder="" style="width:10%;"> End : <input type="number" size="6" maxlength="6" ng-model="water_meter_end4" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center"><button ng-click="reset()">Reset All</button>
+                <button ng-click="save()">Save All</button></td>
+              </tr>
+            </table>
+        </form></td>
+     </tr>
+   </table>
+   <!------------------------------------------------------------------>
 
+<!----------------------------------------------------------------->
+<div class="main_content_inner1" style="margin-top:0em;">
+  <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="15%" align="center" bgcolor="#79BD9A"><img src="image/icon/arrow-left.png" style="width: 18px;"/></td>
+      <td width="15%" align="center" bgcolor="#79BD9A" ><img src="image/icon/arrow-right.png" style="width: 18px;"/></td>
+      <td width="23%" colspan="2" align="center" style="text-align:center;">May</td>
+      <td width="23%" colspan="2" align="center" bgcolor="#3366FF" style="text-align:center;">June</td>
+      <td width="23%" colspan="2" align="center" style="text-align:center;">July</td>
+    </tr>
+    <tr>
+      <td align="center">Building</td>
+      <td align="center">Room no.</td>
+      <td align="center">start</td>
+      <td align="center">end</td>
+      <td align="center">start</td>
+      <td align="center">end</td>
+      <td align="center">start</td>
+      <td align="center">end</td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">543</td>
+      <td align="center" bgcolor="#99FF66">12
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">24
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">12
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">24
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">24
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">Building01</td>
+      <td align="center">544</td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+      <td align="center" bgcolor="#99FF66">16
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">1/06/14</p></td>
+      <td align="center" bgcolor="#FF6677">29
+        <p style="font-size:0.8em; padding:0em; margin:0em; border-top:1px solid #79BD9A;">30/06/14</p></td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+      <td colspan="2" align="center">&nbsp;</td>
+    </tr>
+  </table>
 </div>
 </div>

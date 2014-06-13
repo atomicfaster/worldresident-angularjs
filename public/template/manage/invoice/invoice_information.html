@@ -13,107 +13,69 @@
   </script><div class="main_content">
  <div class="main_content_head"><a href="/invoice_information">Invoice information</a> | <a href="/invoice_export">Export</a> | <a href="/invoice_print">Print</a>
    </div>
-<div class="main_content_inner1">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" align="right"><p id="roommg_head">Invoice search</p></td>
+        <td width="60%" align="left"><input type="text" id="search" ng-model="search" class="search-query"  name="txt_search" placeholder=""></td>
+        <td width="20%" align="right"><img src="image/icon/print.png" style="width:39px; margin-right:1em;" />
+         </td>
+      </tr>
+    </table>
+<div class="main_content_inner1" style="margin:0em;">
    <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="30%">Detail</td>
-    <td width="20%" >Agreenebt no.</td>
-    <td width="10%" style="text-align:center;">Date</td>
-    <td width="20%" style="text-align:center;">Remark</td>
-    <td width="5%" style="text-align:center;">Co</td>
-    <td width="5%" style="text-align:center;">Vehicle</td>
-    <td width="5%" style="text-align:center;">Key</td>
-    <td width="5%" style="text-align:center;">Scan</td>
+    <td width="5%" align="center">No.</td>
+    <td width="10%" align="center" >Period</td>
+    <td width="10%" align="center" style="text-align:center;">Reciept no.</td>
+    <td width="10%" align="center" style="text-align:center;">Building</td>
+    <td width="10%" align="center" style="text-align:center;">Room No.</td>
+    <td width="10%" align="center" style="text-align:center;">Name</td>
+    <td width="8%" align="center" style="text-align:center;">Fine</td>
+    <td width="8%" align="center" style="text-align:center;">Amount</td>
+    <td width="9%" align="center" style="text-align:center;">Total</td>
+    <td width="9%" align="center" style="text-align:center;">Date</td>
+    <td width="10%" align="center" style="text-align:center;">Tools</td>
   </tr>
   <tr>
-    <td>{-{-Customer Detail-}-}</td>
-    <td>{-{-Agreenebt no.-}-}</td>
-    <td>{-{-Date-}-}</td>
-    <td>{-{-Remark-}-}</td>
-    <td>{-{-Co-}-}</td>
-    <td>{-{-Vehicle-}-}</td>
-    <td>{-{-Key-}-}</td>
-    <td>{-{-Scan-}-}</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td align="center">1</td>
+    <td align="center">06/57</td>
+    <td align="center">Rec-00003<br />
+      Inv-00004</td>
+    <td align="center">Building</td>
+    <td align="center">543</td>
+    <td align="center">จอง แล้ว</td>
+    <td align="center">3000</td>
+    <td align="center">6000</td>
+    <td align="center">6300</td>
+    <td align="center">13/06/57</td>
+    <td align="center"><img src="image/icon/print.png" width="30%" /></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td align="center">2</td>
+    <td align="center">06/57</td>
+    <td align="center">Rec-00003<br />
+      Inv-00004</td>
+    <td align="center">Building</td>
+    <td align="center">544</td>
+    <td align="center">จอง ยังไม่แล้ว</td>
+    <td align="center">3000</td>
+    <td align="center">6000</td>
+    <td align="center">6300</td>
+    <td align="center">13/06/57</td>
+    <td align="center"><img src="image/icon/print.png" width="30%" /></td>
   </tr>
 </table>
 

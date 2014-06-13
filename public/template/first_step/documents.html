@@ -3,56 +3,61 @@
       action="{{ actionUrl }}"
       method="post" novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
   <tr>
-    <td colspan="2" align="center"><h6>Document</h6><h5>Information will be place on top of document.</h5></td>
+    <td colspan="2" align="center"><h6>Document</h6><h5>Information will be place on top of </h5></td>
     </tr>
     <tr>
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
   </tr>
   <tr class="documant_company_name">
     <td width="30%" align="right"><h6>Company Name :</h6></td>
-    <td width="70%"><input type="text" placeholder="Company Co.,Ltd" ng-model="document.comp_name" required /></td>
+    <td width="70%"><input type="text" placeholder="Company Co.,Ltd" name="comp_name" ng-model="comp_name" required /></td>
   </tr>
   <tr class="document_address">
     <td align="right"><h6>Address :</h6></td>
-    <td><textarea rows="6" required="required" placeholder="" ng-model="document.comp_address"></textarea></td>
+    <td><textarea rows="6" required="required" placeholder="" name="comp_address" ng-model="comp_address"></textarea></td>
   </tr>
   <tr class="document_amphures">
     <td align="right"><h6>Amphures :</h6></td>
-    <td><input type="text" placeholder="" ng-model="document.comp_aumphures" required /></td>
+    <td><input type="text" placeholder="" name="comp_aumphures" ng-model="comp_aumphures" required /></td>
   </tr>
   <tr class="document_district">
     <td align="right"><h6>District :</h6></td>
-    <td><input type="text" placeholder="" ng-model="document.comp_district" required /></td>
+    <td><input type="text" placeholder="" name="comp_district" ng-model="comp_district" required /></td>
   </tr>
   <tr class="document_province">
+
     <td align="right"><h6>Province :</h6></td>
     <td><input type="text" placeholder="" ng-model="document.comp_province" required /></td>
+
   </tr>
   <tr class="document_postcode">
     <td align="right"><h6>Postcode :</h6></td>
-    <td><input type="text" placeholder="" ng-model="document.comp_postcode" required /></td>
+    <td><input type="text" placeholder="" name="comp_postcode" ng-model="comp_postcode" required /></td>
   </tr>
   <tr class="document_tel">
     <td align="right"><h6>Tel. :</h6></td>
-    <td><input type="text" placeholder="" ng-model="document.comp_tel" required /></td>
+    <td><input type="text" placeholder="" name="comp_tel" ng-model="comp_tel" required /></td>
   </tr>
    <tr class="document_mobile">
     <td align="right"><h6>Mobile :</h6></td>
-    <td><input type="text" placeholder="" ng-model="document.comp_mobile" required /></td>
+    <td><input type="text" placeholder="" name="comp_mobile" ng-model="comp_mobile" required /></td>
   </tr>
   <tr class="document_fax">
     <td align="right"><h6>Fax :</h6></td>
-    <td><input type="text" placeholder="" ng-model="document.comp_fax" required /></td>
+    <td><input type="text" placeholder="" name="comp_fax" ng-model="comp_fax" required /></td>
   </tr>
   <tr class="document_web_site">
     <td align="right"><h6>Web site :</h6></td>
+
     <td><input type="text" placeholder="" ng-model="document.comp_site" required /></td>
   </tr>
   <tr class="document_logo">
     <td align="right"><h6>Logo :</h6></td>
     <td>
       <input name ="file" type="file" ng-model="document.comp_logo" required></td>
+
   </tr>
+  
   <tr>
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
   </tr>

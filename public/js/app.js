@@ -306,7 +306,6 @@ $http.post('/docupdate?'+data).success(function(data, status, headers, config){
 
 
 
-
                    
 
     };

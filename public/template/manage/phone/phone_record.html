@@ -10,111 +10,98 @@
 }
 }, 100 );
   
-  </script><div class="main_content">
+  </script>
+  <div class="main_content">
 <div class="main_content_head"><a href="/phone_information">Phone information</a> | <a href="/phone_record">Record</a></div>
 <div class="main_content_inner1">
-   <table class="tbr_customers" width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="30%">Detail</td>
-    <td width="20%" >Agreenebt no.</td>
-    <td width="10%" style="text-align:center;">Date</td>
-    <td width="20%" style="text-align:center;">Remark</td>
-    <td width="5%" style="text-align:center;">Co</td>
-    <td width="5%" style="text-align:center;">Vehicle</td>
-    <td width="5%" style="text-align:center;">Key</td>
-    <td width="5%" style="text-align:center;">Scan</td>
-  </tr>
-  <tr>
-    <td>{-{-Customer Detail-}-}</td>
-    <td>{-{-Agreenebt no.-}-}</td>
-    <td>{-{-Date-}-}</td>
-    <td>{-{-Remark-}-}</td>
-    <td>{-{-Co-}-}</td>
-    <td>{-{-Vehicle-}-}</td>
-    <td>{-{-Key-}-}</td>
-    <td>{-{-Scan-}-}</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+   <form novalidate class="css-form" name="myForm">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_option_manager" >
+              <tr>
+                <td colspan="2" align="center"><h6>Add Phone Bills</h6>
+                  <h5>บันทึกค่าโทรศัพท์</h5></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td width="30%" align="right"><h6>Building :</h6></td>
+                <td width="70%"><select ng-model="select_building" required >
+                    <option>Chose</option>
+                    <option>ตึก1</option>
+                    <option>ตึก2</option>
+                  </select></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Date of record:</h6></td>
+                <td><input type="date" id="exampleInput" name="input" ng-model="date_rec"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2099-12-31" required />
+                  <span class="error" ng-show="myForm.input.$error.required"> Required!</span> <span class="error" ng-show="myForm.input.$error.date"> Not a valid date!</span><br />
+                  <p>{{date_rec | date: "dd-MM-yyyy"}}</p></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Date of period:</h6></td>
+                <td><input type="date" id="exampleInput" name="input" ng-model="date_period"
+       placeholder="dd-MM-yyyy" min="2014-01-01" max="2099-12-31" required />
+                  <span class="error" ng-show="myForm.input.$error.required"> Required!</span> <span class="error" ng-show="myForm.input.$error.date"> Not a valid date!</span><br />
+                  <p>{{date_period | date: "dd-MM-yyyy"}}</p></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start1" required  placeholder="" style="width:10%;"> 
+                           <button ng-click="save_this()">Save now</button></td>
+     </tr>
+              
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start2" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start3" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+             
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>room NO. :</h6></td>
+                <td><input type="text" size="10" maxlength="100" ng-model="water_room_no" disabled="disabled"  placeholder=""></td>
+              </tr>
+              <tr >
+                <td align="right"><h6>Amount : </h6></td>
+                         <td><input type="number" size="6" maxlength="6" ng-model="water_meter_start4" required  placeholder="" style="width:10%;"><button ng-click="save_this()">Save now</button></td>
+     </tr>
+              <tr>
+                <td colspan="2" align="center" bgcolor="#E3E3E3" height="10px"></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center"><button ng-click="reset()">Reset All</button>
+                <button ng-click="save()">Save All</button></td>
+              </tr>
+            </table>
+        </form>
 
 </div>
 </div>
