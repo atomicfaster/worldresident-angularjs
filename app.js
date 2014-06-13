@@ -8,7 +8,11 @@ var express = require('express'),
   api = require('./routes/api'),
   http = require('http'),
   path = require('path');
+  var bodyParser = require('body-parser');
+  var multer = require('multer');
+  var  fs = require('fs');
 var chk = require("./backN/login");
+var building = require("./backN/building.js");
 var app = module.exports = express();
 mongoose = require('mongoose');
 
@@ -17,6 +21,9 @@ mongoose = require('mongoose');
  */
 
 // all environments
+
+
+
 app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('databaseIP', 'localhost');
@@ -24,7 +31,7 @@ app.set('databasePort', '27017');
 app.set('databaseName', 'apartment');
 // connect database
 mongoose.connect('mongodb://' + app.get('databaseIP') + ':' + app.get('databasePort') + '/' + app.get('databaseName'));
-
+app.use(bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var env = process.env.NODE_ENV || 'development';
@@ -40,11 +47,54 @@ if (env === 'production') {
 }
 
 
+function getExtension(fn) {
+    return fn.split('.').pop();
+}
+
+function fnAppend(fn, insert) {
+    var arr = fn.split('.');
+    var ext = arr.pop();
+    insert = (insert !== undefined) ? insert : new Date().getTime();
+    return arr + '.' + insert + '.' + ext;
+}
 /**
  * Routes
  */
 
-// serve index and view partials
+
+
+  
+app.use(multer({ dest: './public/'}));
+
+
+app.post('/logosave', function (req, res) {
+    console.log(req.files)
+    fs.mkdir('./public/'+req.query._id);
+    fs.mkdir('./public/'+req.query._id+"/image");
+     var tempPath = req.files.file.path,
+        targetPath = path.resolve('./public/'+req.query._id+"/image/logo.png");
+    if (path.extname(req.files.file.name).toLowerCase() === '.png') {
+        fs.rename(tempPath, targetPath, function(err) {
+            if (err) throw err;
+            console.log("Upload completed!");
+        });
+    } else {
+        fs.unlink(tempPath, function () {
+            if (err) throw err;
+            console.error("Only .png files are allowed!");
+        });
+
+    }
+    res.send("200","Upload complete");
+});
+
+
+
+
+app.post('/docupdate',building.docupdate);
+app.post('/fineupdate',building.fines);
+app.post('/createbuilding',building.create);
+app.post('/registed',chk.add);
 app.get("/logins",chk.logins);
 app.get("/checklogin",chk.login);
 app.get('/', routes.index);

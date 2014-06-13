@@ -1,0 +1,17 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var add_booking = new Schema({
+  _id: Schema.Types.ObjectId,
+  owner_id:String,
+  address:String,
+  tel:Number,
+  fax:Number,
+  detail:String,
+
+  updated: {type: Date, default: Date.now},
+  date: {type: Date, default: Date.now}
+});
+
+
+module.exports = mongoose.model('building', building);
