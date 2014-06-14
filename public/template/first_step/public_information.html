@@ -1,5 +1,7 @@
 
-<form novalidate class="css-form">
+<form  enctype="multipart/form-data"
+      action="{{ actionUrl }}"
+      method="post" novalidate class="css-form">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
   <tr>
     <td colspan="2" align="center"><h6>Cost of utilities</h6><h5>detail</h5></td>
@@ -30,7 +32,7 @@
       <input type="file" name="comp_logo" ng-model="comp_logo" required></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><button ng-click="back()">Back</button><button ng-click="submit()">Submit</button></td>
+    <td colspan="2" align="center"><button type="submit" ng-click="back()">Back</button><button ng-click="submit()">Submit</button></td>
     </tr>
   
 </table>

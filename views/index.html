@@ -6,76 +6,35 @@
   <script src="/js/lib/angular/angular.js"></script>
   <script src="/js/lib/angular/angular-route.js"></script>
   <script src="/js/lib/angular/angular-animate.js"></script>
+  <script src="/components/angular-xeditable/dist/js/xeditable.js"></script>
   <script src="/js/app.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/directives.js"></script>
   <link rel="stylesheet" type="text/css" href="css/aprt_list.css">
   <link rel="stylesheet" type="text/css" href="th_sarabun_new/style.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link rel="stylesheet" type="text/css" href="css/register_pg.css">
-  
-  <script type="text/javascript">
-    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
-  var tid = setInterval( function () {
-    if ( document.readyState !== 'complete' ) return;
-    clearInterval( tid );       
-    if(window.location.pathname!="/homes")
-    window.location.pathname="/homes";
-}, 100 );
-	
-  </script>
-  </head>
+  <link href="/components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+  </head> 
   <body ng-controller="listcontroller as lists">
-<div class="login_bar"><a class="right_position" ng-click="displayCheckBox=!displayCheckBox">Login</a><div ng-show="displayCheckBox" class="login_fm animate-if"><form><input type="text" ng-model="login.username" required placeholder="Username :">
+    <div class="login_bar"><a class="right_position" ng-click="displayCheckBox=!displayCheckBox">Login</a><div ng-show="displayCheckBox" class="login_fm animate-if"><form><input type="text" ng-model="login.username" required placeholder="Username :">
       <input type="password" ng-model="login.password" required placeholder="Password :">
       <button type="submit" ng-click="login(login.username,login.password);">Login</button></form><a class="right_position_link">Forget?</a>
-      <a class="right_position_link" href="/register">Register | </a></div></div>
-<div class="header_box_search" >
-    <div class="outer_box_search">
-    <h4 class="first">world</h4>
-    <h4 class="mid">Resident</h4>
-    <h4 class="end">.net</h4>
-  </div>
-    <div class="inner_box_search">
-    <div >
-        <input type="text" id="txtsearch" ng-model="search" class="search-query"  name="txt_search" placeholder="">
-      </div>
-  </div>
-    <div class="search_bottom_position"> <a class="bottom_right_position" href="/homes">Home |</a><a class="bottom_right_position" href="/contactme">Contact |</a><a class="bottom_right_position" href="/aboutme">About |</a><a class="bottom_right_position" href="/faq">FAQ |</a>
-    <a class="bottom_right_position" target="_blank" href="/first_step">first_step |</a>
-    <a class="bottom_right_position" target="_blank" href="/manage">manage |</a> </div>
-   
-  </div>
-<!--div >
-    <div align="center" ng-repeat="nlist in lists.list | filter:search ">
-    <hr />
-    ห้อง : {{nlist.room}} <br>
-    ขนาด : {{nlist.size}}<br>
-    ราคา : {{nlist.price}}<br>
-    <hr />
-  </div>
-  </div-->
+      <a class="right_position_link" href="#!/register">Register | </a></div>
+    </div>
+  
 
-<div ng-view></div>
-<div style="text-align:center;">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- web.worldresident.a2 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:100px"
-     data-ad-client="ca-pub-6361354298982092"
-     data-ad-slot="8278268408"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>
-<div ng-include="'/footer'"></div>
+  <div ng-view></div>
+  <web-footer></web-footer>
+  <div style="text-align:center;">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- web.worldresident.a2 -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:320px;height:100px"
+       data-ad-client="ca-pub-6361354298982092"
+       data-ad-slot="8278268408"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script></div>
 </body>
 </html>
-<!--<script>
-setInterval(function(){
-	if(document.getElementById("txtsearch").value=="")
-document.getElementById("txtsearch").style.backgroundImage = "url(image/icon/search_icon.png)";
-else
-document.getElementById("txtsearch").style.backgroundImage = "none";
-
-	}, 500);
-
-
-</script>-->

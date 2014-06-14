@@ -10,13 +10,13 @@
 <link rel="stylesheet" type="text/css" href="th_sarabun_new/style.css">
 <link rel="stylesheet" type="text/css" href="css/template_user.css">
 </head>
-<body ng-controller="listcontroller as lists">
+<body ng-controller="Usertemp as user">
 <div class="outer-container">
   <div class="head_content">
     <div class="box1"><h1>{{apartmant name}}</h1></div>
     <div class="box2"><a href="#" class="head_content_link">Home | </a><a href="#">About | </a><a href="#">Contact | </a><a href="#">Gallery</a></div>
   </div>
-  <div class="banner"><img src="image/26.jpg"></div>
+  <div class="banner"><img src="{{ actionUrl }}"></div>
   <div class="temp_main_content">{{main comtent}}</div>
   <div class="temp_main_menu">{{main menu }}</div>
 </div>

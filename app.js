@@ -66,14 +66,31 @@ function fnAppend(fn, insert) {
   
 app.use(multer({ dest: './public/'}));
 
-
 app.post('/logosave', function (req, res) {
+	var exten1 = path.extname(req.files.comp_logo.name).toLowerCase();
+var exten2 = path.extname(req.files.up_head_banner.name).toLowerCase();
     console.log(req.files)
     fs.mkdir('./public/'+req.query._id);
     fs.mkdir('./public/'+req.query._id+"/image");
-     var tempPath = req.files.file.path,
-        targetPath = path.resolve('./public/'+req.query._id+"/image/logo.png");
-    if (path.extname(req.files.file.name).toLowerCase() === '.png') {
+     var tempPath = req.files.comp_logo.path,
+        targetPath = path.resolve('./public/'+req.query._id+"/image/logo"+exten1);
+    if (path.extname(req.files.comp_logo.name).toLowerCase() === '.png'||path.extname(req.files.comp_logo.name).toLowerCase() === '.jpg'||path.extname(req.files.comp_logo.name).toLowerCase() === '.jpeg') {
+        fs.rename(tempPath, targetPath, function(err) {
+            if (err) throw err;
+            console.log("Upload completed!");
+        });
+    } else {
+        fs.unlink(tempPath, function () {
+            if (err) throw err;
+            console.error("Only .png files are allowed!");
+        });
+
+    }
+      fs.mkdir('./public/'+req.query._id);
+    fs.mkdir('./public/'+req.query._id+"/image");
+     var tempPath = req.files.up_head_banner.path,
+        targetPath = path.resolve('./public/'+req.query._id+"/image/head_banner"+exten2);
+    if (path.extname(req.files.up_head_banner.name).toLowerCase() === '.png'||path.extname(req.files.up_head_banner.name).toLowerCase() === '.jpg'||path.extname(req.files.up_head_banner.name).toLowerCase() === '.jpeg') {
         fs.rename(tempPath, targetPath, function(err) {
             if (err) throw err;
             console.log("Upload completed!");
@@ -86,6 +103,7 @@ app.post('/logosave', function (req, res) {
 
     }
     res.send("200","Upload complete");
+    $window.location.pathname="/manage";
 });
 
 
@@ -95,6 +113,7 @@ app.post('/docupdate',building.docupdate);
 app.post('/fineupdate',building.fines);
 app.post('/createbuilding',building.create);
 app.post('/registed',chk.add);
+/*
 app.get("/logins",chk.logins);
 app.get("/checklogin",chk.login);
 app.get('/', routes.index);
@@ -168,7 +187,7 @@ app.get('/information_service', routes.information_service);
 app.get('/add_service', routes.add_service);
 app.get('/edit_fine', routes.edit_fine);
 
-
+*/
 
 
 
@@ -182,7 +201,13 @@ app.get('/partials/:name', routes.partials);
 app.get('/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+//app.get('*', routes.index);
+app.get('/home', function (req, res) {
+	res.sendfile('./views/index.html');
+});
+app.get('/first_step', function (req, res) {
+	res.sendfile('./views/first_step.html');
+});
 
 
 /**

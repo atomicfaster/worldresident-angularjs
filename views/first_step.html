@@ -10,21 +10,15 @@
 <link rel="stylesheet" type="text/css" href="css/register_pg.css"/>
 <link rel="stylesheet" type="text/css" href="th_sarabun_new/style.css">
 <link rel="stylesheet" type="text/css" href="css/firststep.css"/>
+ <script type="text/javascript">
+  
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" /first_step/#!/fine>'));
 
+  </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <title>wRd.net First step page</title>
-<script type="text/javascript">
-    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
-  var tid = setInterval( function () {
-	
-    if ( document.readyState !== 'complete' ) return;
-    clearInterval( tid );       
-    if(window.location.pathname!="/first_step")
-    window.location.pathname="/first_step";
-}, 100 );
-	
-  </script>
+
 </head>
 
 <body ng-controller="listcontroller as lists">
