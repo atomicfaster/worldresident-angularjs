@@ -44,6 +44,7 @@ var building = new Schema({
 		fee:Number,
 		tax:Number,
 		detail:String
+    //comments: [{ userId: { type: Schema.ObjectId, ref: 'User' }, body: String, date: Date }],
 	}],
 	head_banner :String,
 apartment_Detail :String,

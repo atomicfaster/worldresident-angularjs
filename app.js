@@ -4,15 +4,15 @@
  */
 
 var express = require('express'), 
-  routes = require('./routes'),
-  api = require('./routes/api'),
-  http = require('http'),
-  path = require('path');
-  var bodyParser = require('body-parser');
-  var multer = require('multer');
-  var  fs = require('fs');
+routes = require('./routes'),
+api = require('./routes/api'),
+http = require('http'),
+path = require('path');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var  fs = require('fs');
 var chk = require("./backN/login");
-var building = require("./backN/building.js");
+var building = require("./backN/building");
 var app = module.exports = express();
 mongoose = require('mongoose');
 
@@ -113,6 +113,12 @@ app.post('/docupdate',building.docupdate);
 app.post('/fineupdate',building.fines);
 app.post('/createbuilding',building.create);
 app.post('/registed',chk.add);
+
+app.post('/building', building.createBuilding);
+app.get('/building', building.listBuilding);
+
+
+
 /*
 app.get("/logins",chk.logins);
 app.get("/checklogin",chk.login);
@@ -202,6 +208,9 @@ app.get('/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
 //app.get('*', routes.index);
+app.get('/', function (req, res) {
+  res.sendfile('./views/index.html');
+});
 app.get('/home', function (req, res) {
 	res.sendfile('./views/index.html');
 });

@@ -1,4 +1,8 @@
-<form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate">
+
+<ul>
+  <li ng-repeat="building in lists">{{building.building}}</li>
+</ul>
+<form novalidate class="css-form"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablecreate" ng-controller="CreateBuildingCtrl">
  <input type="text" value="" />
   <tr>
     <td colspan="2" align="center"><h6>Create Building</h6><h5>detail</h5></td>
@@ -8,29 +12,29 @@
   </tr>
   <tr>
     <td width="30%" align="right"><h6>Name of Building :</h6></td>
-    <td width="70%"><input type="text" name="" ng-model="building_name" required /></td>
+    <td width="70%"><input type="text" name="" ng-model="building.building" required /></td>
   </tr>
   <tr>
     <td align="right"><h6>Address :</h6></td>
-    <td><textarea rows="6" required name="building_address" ng-model="building_address" /></textarea></td>
+    <td><textarea rows="6" required name="building_address" ng-model="building.address" /></textarea></td>
   </tr>
   <tr>
     <td align="right"><h6>Tel. :</h6></td>
-    <td><input type="text" name="building_tel" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-model="building_tel" required /></td>
+    <td><input type="text" name="building_tel" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-model="building.tel" required /></td>
   </tr>
   <tr>
     <td align="right"><h6>Fax. :</h6></td>
-    <td><input type="text" name="building_fax" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-model="building_fax" required /></td>
+    <td><input type="text" name="building_fax" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-model="building.fax" required /></td>
   </tr>
   <tr>
     <td align="right"><h6>Detail :</h6></td>
-    <td><textarea rows="6" required name="building_detail" ng-model="building_detail" /></textarea></td>
+    <td><textarea rows="6" required name="building_detail" ng-model="building.detail" /></textarea></td>
   </tr>
   <tr>
     <td colspan="2" align="right" bgcolor="#E3E3E3" height="10px"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><button ng-click="cancle()">Cancle</button><button ng-click="create(cre_building)">Next</button></td>
+    <td colspan="2" align="center"><button ng-click="cancel()">Cancel</button><button ng-click="create()">Next</button></td>
     </tr>
   
 </table></form>

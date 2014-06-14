@@ -58,8 +58,29 @@ res.send(200,building);
 
 }
 
+exports.createBuilding = function (req, res) {
+  console.log(req.body.building);
+  var building = new Building(req.body.building);
+  var ObjectId = mongoose.Types.ObjectId; 
+  var newId = new ObjectId();
+  building._id = newId;
+
+  building.save(function (err) {
+    if (err) {
+      console.log(err);
+    };
+    res.send('200', 'OK');
+  });
+};
+
+exports.listBuilding = function (req, res) {
+  Building.find({}, function (err, buildings) {
+    res.send('200', buildings);
+  });
+};
+
 exports.create = function(req,res){
- var data;
+  var data;
 
      var building = {};
      var ObjectId = mongoose.Types.ObjectId; 

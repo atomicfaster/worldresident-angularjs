@@ -8,6 +8,26 @@ angular.module('world.controllers', [])
     //$scope.$location = $location;
     //$scope.$routeParams = $routeParams;
   })
+
+
+  .controller('CreateBuildingCtrl', ['$scope', '$routeParams', 'Building', function($scope, $routeParams, Building) {
+    //$scope.params = $routeParams;
+    $scope.building = {};
+    $scope.lists = Building.query(function (response) {
+      console.log(response);
+    });
+    $scope.create = function () {
+      //console.log($scope.building);
+
+      // Send to backend
+      Building.post({building: $scope.building}, function (response) {
+        console.log(response);
+      });
+    };
+  }])
+
+
+
   .controller('BookController', function($scope, $routeParams) {
     //$scope.params = $routeParams;
   })

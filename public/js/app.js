@@ -203,17 +203,48 @@ var MD5 = function (string) {
     return temp.toLowerCase();
 }
 
-angular.module('ngRouteExample', ['ngRoute', 'ngAnimate', 'xeditable', 'world.controllers', 'world.directives'])  
+angular.module('ngRouteExample', 
+  ['ngRoute', 'ngAnimate', 'xeditable', 'world.controllers', 'world.directives', 'world.services'])  
 
   .config(function($routeProvider, $locationProvider) 
   {
         $routeProvider
+
+        .when('/1234', {
+          templateUrl: '/template/first_step/create_building.html',
+          controller: 'CreateBuildingCtrl'
+          
+         
+        })
+
+
+
+
+
          .when('/homes', {
           templateUrl: '/template/home.html',
           controller: 'BookController'
           
          
         })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           .when('/aboutme', {
           templateUrl: '/template/aboutme.html',
           controller: 'BookController'
@@ -515,7 +546,7 @@ angular.module('ngRouteExample', ['ngRoute', 'ngAnimate', 'xeditable', 'world.co
           controller: 'ChapterController'
         }).
           otherwise({
-            redirectTo: '/homes'
+            redirectTo: '/1234'
           });
 
 
