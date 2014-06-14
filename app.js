@@ -45,7 +45,9 @@ if (env === 'production') {
  */
 
 // serve index and view partials
+
 app.post('/registed',chk.add);
+/*
 app.get("/logins",chk.logins);
 app.get("/checklogin",chk.login);
 app.get('/', routes.index);
@@ -118,7 +120,7 @@ app.get('/cost_of_uti', routes.cost_of_uti);
 app.get('/information_service', routes.information_service);
 app.get('/add_service', routes.add_service);
 app.get('/edit_fine', routes.edit_fine);
-
+*/
 
 
 
@@ -133,7 +135,7 @@ app.get('/partials/:name', routes.partials);
 app.get('/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.get('/', routes.index);
 
 
 /**

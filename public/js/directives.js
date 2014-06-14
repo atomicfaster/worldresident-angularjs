@@ -8,7 +8,9 @@ angular.module('world.directives', []).
     return function(scope, elm, attrs) {
       elm.text(version);
     };
-  }).directive('pwCheck', [function () {
+  })
+
+  /*.directive('pwCheck', [function () {
     return {
         require: 'ngModel',
         link: function (scope, elem, attrs, ctrl) {
@@ -21,4 +23,23 @@ angular.module('world.directives', []).
             });
         }
     }
-}]);
+    }])*/
+
+    .directive('myLogin', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'template/login.html'
+    };
+  })
+    .directive('mySearchbox', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'template/search_box.html'
+    };
+  })
+    .directive('myFooter', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'template/footer.html'
+    };
+  });

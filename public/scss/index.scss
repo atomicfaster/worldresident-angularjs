@@ -29,8 +29,10 @@ a:active {color: $link-color;
   @include span-columns(12);
   @include media($large-screen){
   background-color:transparentize(#000,1);
+  height: 0px;
   }
   background-color:#363636;
+  
   a.right_position{
     
                   @include media($large-screen){
@@ -68,13 +70,14 @@ a:active {color: $link-color;
                   
                  @include media($large-screen){
                   width: 100%;
-                    position:absolute;
+                    position:relative;
                     display: inline;
                     text-align: right;
-                    padding-right:20px;
-                    top:40px;
+                    padding-right:0px;
+                    top:9px;
                    font-size: 1em;
                    color: $link-color;
+                   padding-top: 7px;
                   }
                   float: right;
                   padding-right:10px;
@@ -86,11 +89,11 @@ a:active {color: $link-color;
                   input{
                       @include media($large-screen){
                       margin: 0.1em;
-                      border-radius: 5px;
+                      border-radius: 15px;
                       }
                       margin: 0.2em;
                       border-radius: 5px;
-                      border:1px solid transparentize(#000,0.7);
+                      border:1px solid transparentize(#000,0.9);
                       font-style: italic;
                     }
                     input[type=text]{
@@ -120,12 +123,12 @@ a:active {color: $link-color;
                             text-align: center; 
                             padding-left:0em;
                           }
-                          border-radius: 5px;
-                          border:1px solid transparentize(#000,0.7);
+                          border-radius: 15px;
+                          border:0px;
                           width: 80%;
                           text-align: center;
                           color:#FFF;
-                          @include linear-gradient(#0082D3, #00A5FA);
+                          background-color: #23B4F4;
                           &:hover{
                             opacity: 0.5;
                           }
@@ -139,6 +142,7 @@ a:active {color: $link-color;
   @include outer-container;
   @include media($large-screen){
   height: 18em;
+  border-top: 4px solid #23B4F4;
   }
   height: auto;
       p{
@@ -197,16 +201,17 @@ a:active {color: $link-color;
         input{
           @include media($large-screen){
           margin: 0.1em;
-          border-radius: 5px;
+          border-radius: 30px;
+          box-shadow:0px 1px 6px 0px rgba(197, 197, 197, 1) inset;  
           }
           margin: 0.2em;
           border-radius: 5px;
-          border:1px solid transparentize(#000,0.7);
+          border:0px solid transparentize(#000,0.7);
           font-style: italic;
         }
         input[type=text]{
           @include media($large-screen){
-              padding-left:0.5em;
+              padding-left:1.5em;
               width: 99.5%;
               font-size: 1em;
               height: 3.3em;

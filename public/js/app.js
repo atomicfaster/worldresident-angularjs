@@ -208,7 +208,7 @@ var MD5 = function (string) {
 
 
 
- angular.module('ngRouteExample', ['ngRoute', 'ngAnimate'])
+ angular.module('ngRouteExample', ['ngRoute', 'ngAnimate','world.directives'])
    .controller('MainController', function($scope, $route, $routeParams, $location) {
        $scope.$route = $route;
        $scope.$location = $location;
@@ -673,12 +673,13 @@ for (var prop in $scope.items3) {
      .when('/edit_fine', {
       templateUrl: '/template/manage/fine/edit_fine.html',
       controller: 'ChapterController'
-    });
+    })
+     .otherwise({redirectTo : '/homes'});
 
 
     
     // configure html5 to get links working on jsfiddle
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false).hashPrefix('!');
   });
 
 

@@ -1,19 +1,77 @@
- <script type="text/javascript">   
-  var tid = setInterval( function () {
-    if ( document.readyState !== 'complete' ) return;
-    else
-    {
-       if(window.location.pathname!="/homes")
-    window.location.pathname="/homes";
-    clearInterval( tid );       
-   
-}
-}, 100 );
-  
-  </script><div class="main_content">
+<div class="main_content">
 
 <div class="main_content"> 
 <p class="register_pg">Register</p>
+
+<!--Box0------------------------------------------>
+     <div id="box0">
+       <form novalidate name="register" class="css-form"> <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
+          <tr>
+            <td colspan="2" align="center" valign="middle"><h6>สมัครสมาชิกทั่วไป</h6></td>
+          </tr>
+          <tr>
+            <td width="30%" align="right"></td>
+            <td width="70%"><div id="confacebook"><a href="http://www.facebook.com"><img src="image/icon/FBloginbutton.jpg" width="40%"></a></div></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Username-Password
+              <h6></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Username :
+              <h6></td>
+            <td><input type="text" name="username" ng-model="reg.username" ng-pattern="/^\s*\w*\s*$/" required/>
+             </td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              Password :
+              <h6></td>
+            <td><input name="password" type="password" ng-change="passupdate()"  ng-model="password" required />
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              RePassword :
+              <h6></td>
+            <td><input type="password" name="repassword"  ng-change="passupdate()" ng-pattern="patternupdate()" ng-model="repassword" required /></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"><h6>
+              Personal information
+              <h6></td>
+          </tr>
+          <tr>
+            <td align="right"><h6>
+              E-mail :
+              <h6></td>
+            <td><label for="txt_email"></label>
+              <input type="email" ng-model="reg.email" name="email" required /></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><h6>
+              Tel :
+              <h6></td>
+            <td valign="middle" id="tel_box">
+<input type="text" ng-pattern="/^\d*$/"placeholder="" ng-model="tel" required></td>
+          </tr>
+          <tr height="2" >
+            <td height="2" bgcolor="#E3E3E3">&nbsp;</td>
+            <td height="2" bgcolor="#E3E3E3"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><button ng-click="reset()">Reset</button>
+    <button ng-click="update(reg);">Register</button></td>
+          </tr>
+        </table></form>
+      </div>
+</div>    
+<!--Box0------------------------------------------>
 <div class="chose_type">
 <p>Please chose type of user</p>
 <select ng-model="myDropDown" ng-init="myDropDown='zero'">
@@ -23,7 +81,8 @@
           <option value="three">Register Apartment Owner(Corporation)</option>
     </select>
     </div>           
-    <div ng-show="myDropDown=='zero'" style="text-align:center;color:red;"></div>         
+    <div ng-show="myDropDown=='zero'" style="text-align:center;color:red;"></div>
+
 <!--Box1------------------------------------------>
                          <div id="box1" ng-show="myDropDown=='one'">
        <form novalidate name="register" class="css-form"> <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tableregister">
