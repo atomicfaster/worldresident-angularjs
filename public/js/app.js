@@ -208,12 +208,13 @@ var MD5 = function (string) {
 
 
 
- angular.module('ngRouteExample', ['ngRoute', 'ngAnimate','world.directives'])
+ angular.module('ngRouteExample', ['ngRoute', 'ngAnimate','world.directives','xeditable'])
    .controller('MainController', function($scope, $route, $routeParams, $location) {
        $scope.$route = $route;
        $scope.$location = $location;
        $scope.$routeParams = $routeParams;
    })
+   
 
    .controller('BookController', function($scope, $routeParams) {
        
@@ -234,6 +235,12 @@ var MD5 = function (string) {
         $scope.items2 = [];
         $scope.items3 = [];
         $scope.password = "";
+        $scope.run=(function(editableOptions) {
+              editableOptions.theme = 'default'; // bootstrap3 theme. Can be also 'bs2', 'default'
+            });
+        $scope.xuser = {
+            name: 'awesome user'
+        }; 
 
       
      $scope.del_tel = function(txt){
