@@ -11,9 +11,41 @@ h1 {
   width: 100%;
   height: auto; }
 
+.home--map__content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 57.35098%; }
+  .home--map__content:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 1024px) {
+    .home--map__content {
+      height: 500px;
+      margin: 0 0.5em 1em 0.5em; } }
+
+.home--aprt__content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%; }
+  .home--aprt__content:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 1024px) {
+    .home--aprt__content {
+      height: 500px;
+      background-color: red;
+      overflow: auto;
+      margin: 0;
+      margin: 0 0em 1em 0em; } }
+
 #wrapper {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
   width: 100%;
   height: auto; }
+  #wrapper:last-child {
+    margin-right: 0; }
 
 #columns {
   -webkit-column-count: 3;
@@ -90,7 +122,3 @@ p#apartment_txt_head {
   @media screen and (min-width: 1024px) {
     p#apartment_txt_head {
       font-size: 2em; } }
-
-/*#columns:hover .pin:not(:hover) {
-  opacity: 0.4;
-}*/

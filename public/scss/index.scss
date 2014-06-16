@@ -25,11 +25,22 @@ a:hover {color: $link-color;
 a:active {color: $link-color;
   text-decoration:none;}
 
+.header_top_bar{
+  @include span-columns(12);
+  border-top: 4px solid #23B4F4;
+  @include media($large-screen){
+  margin-bottom: 60px;
+  
+  }
+  margin-bottom: 13px;
+}
+
 .login_bar{
   @include span-columns(12);
   @include media($large-screen){
   background-color:transparentize(#000,1);
   height: 0px;
+  
   }
   background-color:#363636;
   
@@ -141,8 +152,8 @@ a:active {color: $link-color;
 .header_box_search{
   @include outer-container;
   @include media($large-screen){
-  height: 18em;
-  border-top: 4px solid #23B4F4;
+  //height: 18em;
+  
   }
   height: auto;
       p{
@@ -202,10 +213,11 @@ a:active {color: $link-color;
           @include media($large-screen){
           margin: 0.1em;
           border-radius: 30px;
-          box-shadow:0px 1px 6px 0px rgba(197, 197, 197, 1) inset;  
+          
           }
+          box-shadow:0px 1px 6px 0px rgba(197, 197, 197, 1) inset;  
           margin: 0.2em;
-          border-radius: 5px;
+          border-radius: 60px;
           border:0px solid transparentize(#000,0.7);
           font-style: italic;
         }
@@ -217,7 +229,8 @@ a:active {color: $link-color;
               height: 3.3em;
               text-align: left; 
               margin: 0em;
-              background-size:20px 20px; 
+              background-size:20px 20px;
+              background-position:98% 50%;
           }
           padding-left:0.5em;
           width: 80%;
@@ -228,7 +241,7 @@ a:active {color: $link-color;
           text-align: left; 
           background-image:url(image/icon/search_icon.png);
           background-repeat: no-repeat;
-          background-position:98% 50%;
+          background-position:94% 50%;
           background-size:50px 50px; 
 
           &:focus{

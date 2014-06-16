@@ -26,6 +26,19 @@ a:active {
   color: #3b8686;
   text-decoration: none; }
 
+.header_top_bar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  border-top: 4px solid #23B4F4;
+  margin-bottom: 13px; }
+  .header_top_bar:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 1024px) {
+    .header_top_bar {
+      margin-bottom: 60px; } }
+
 .login_bar {
   float: left;
   display: block;
@@ -132,10 +145,6 @@ a:active {
     content: "";
     display: table;
     clear: both; }
-  @media screen and (min-width: 1024px) {
-    .header_box_search {
-      height: 18em;
-      border-top: 4px solid #23B4F4; } }
   .header_box_search p {
     font-size: 3em; }
     @media screen and (min-width: 1024px) {
@@ -178,15 +187,15 @@ a:active {
         margin: -0.2em 10% auto 10%;
         vertical-align: middle; } }
     .header_box_search .inner_box_search input {
+      box-shadow: 0px 1px 6px 0px #c5c5c5 inset;
       margin: 0.2em;
-      border-radius: 5px;
+      border-radius: 60px;
       border: 0px solid rgba(0, 0, 0, 0.3);
       font-style: italic; }
       @media screen and (min-width: 1024px) {
         .header_box_search .inner_box_search input {
           margin: 0.1em;
-          border-radius: 30px;
-          box-shadow: 0px 1px 6px 0px #c5c5c5 inset; } }
+          border-radius: 30px; } }
     .header_box_search .inner_box_search input[type=text], .header_box_search .inner_box_search .login_bar .login_fm input[type=password], .login_bar .login_fm .header_box_search .inner_box_search input[type=password], .header_box_search .inner_box_search .login_bar .login_fm button, .login_bar .login_fm .header_box_search .inner_box_search button {
       padding-left: 0.5em;
       width: 80%;
@@ -197,7 +206,7 @@ a:active {
       text-align: left;
       background-image: url(image/icon/search_icon.png);
       background-repeat: no-repeat;
-      background-position: 98% 50%;
+      background-position: 94% 50%;
       background-size: 50px 50px; }
       @media screen and (min-width: 1024px) {
         .header_box_search .inner_box_search input[type=text], .header_box_search .inner_box_search .login_bar .login_fm input[type=password], .login_bar .login_fm .header_box_search .inner_box_search input[type=password], .header_box_search .inner_box_search .login_bar .login_fm button, .login_bar .login_fm .header_box_search .inner_box_search button {
@@ -207,7 +216,8 @@ a:active {
           height: 3.3em;
           text-align: left;
           margin: 0em;
-          background-size: 20px 20px; } }
+          background-size: 20px 20px;
+          background-position: 98% 50%; } }
       .header_box_search .inner_box_search input[type=text]:focus, .header_box_search .inner_box_search .login_bar .login_fm input[type=password]:focus, .login_bar .login_fm .header_box_search .inner_box_search input[type=password]:focus, .header_box_search .inner_box_search .login_bar .login_fm button:focus, .login_bar .login_fm .header_box_search .inner_box_search button:focus {
         background-image: none; }
   .header_box_search .search_bottom_position {
