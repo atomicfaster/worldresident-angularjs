@@ -12,21 +12,64 @@ $large-screen:1024px;
   width:100%;
   height:auto; 
 }
+//----------------------------------------------------------------------------------------------------------
 .home--map__content{
-  @include span-columns(7);
+  @include span-columns(12);
   @include media($large-screen){ 
+    @include span-columns(4);
     height: 500px;
     margin: 0 0.5em 1em 0.5em;
   }
+  #map-canvas { 
+      height: 500px;
+      width: auto;
+    }
 }
 .home--aprt__content{
-  @include span-columns(5);
+  @include span-columns(12);
+  height: 500px;
   @include media($large-screen){ 
+    @include span-columns(4);
     height: 500px;
-    background-color:red;
     overflow: auto;
-    margin: 0;
-    margin: 0 0em 1em 0em;
+    margin: 0 0.5em 1em 0.5em;
+  }
+}
+
+.home--aprt__ads{
+  @include span-columns(12);
+  @include media($large-screen){ 
+    @include span-columns(4);
+    height: 500px;
+    background-color:#e6e6e6;
+    overflow: auto;
+    margin: 0 0.5em 1em 0.5em;
+  }
+}
+
+.home--aprt__content--block{
+  @include media($large-screen){ 
+    height: 100px;
+  }
+    width: 100%;
+    border: 1px solid $default-line;
+    height: 300px;
+    margin: 0.5em 0 0.5em 0;
+    overflow: hidden;
+    border-radius:5px;
+  img.home--aprt__content--block--img__pin{
+    @include span-columns(4);
+    height: 100%;
+    overflow: hidden;
+    margin: 0em;
+  }
+  p.home--aprt__content--block--head__pin{
+    @include span-columns(7);
+    @include media($large-screen){ 
+      font-size: 1em;
+    }
+    margin: 0.5em;
+    font-size: 4em;
   }
 }
 //----------------------------------------------------------------------------------------------------------
